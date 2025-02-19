@@ -9,7 +9,6 @@ import { FaUsers } from 'react-icons/fa';
 import Container from './Container';
 import { siteDetails } from '@/data/siteDetails';
 import { menuItems } from '@/data/menuItems';
-import Logo from '@/assets/logo'
 
 const Header: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);

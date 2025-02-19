@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
 import { FaUsers } from 'react-icons/fa';
-import Logo from '@/assets/logo'
 
 import { siteDetails } from '@/data/siteDetails';
 import { footerDetails } from '@/data/footer';
