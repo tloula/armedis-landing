@@ -8,8 +8,8 @@ export const benefits: IBenefit[] = [
         description: "Add as many checkin times as you want.",
         bullets: [
             {
-                title: "Intelligent Categorization",
-                description: "Automatically sorts your transactions for crystal-clear insights.",
+                title: "Customizable Times",
+                description: "Choose any time of day to receive your checkins.",
                 icon: <FiBarChart2 size={26} />
             },
             {
