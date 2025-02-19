@@ -1,12 +1,13 @@
 export const siteDetails = {
-    siteName: 'Finwise',
-    siteUrl: 'https://finwise-omega.vercel.app/',
+    siteName: 'CheckIn More',
+    siteUrl: 'https://checkin-more.vercel.app/',
     metadata: {
-        title: 'Finwise - Next.js and Tailwind CSS Landing Page Template',
-        description: 'Finwise empowers businesses with cutting-edge technology solutions to drive success and efficiency.',
+        title: 'CheckIn More',
+        description: 'Automated, reoccurring checkins on your loved ones for peace of mind when life gets busy.',
     },
     language: 'en-us',
     locale: 'en-US',
     siteLogo: `${process.env.BASE_PATH || ''}/images/logo.png`, // or use a string for the logo e.g. "TechStartup"
     googleAnalyticsId: '', // e.g. G-XXXXXXX,
+    helpEmail: 'help@checkinmore.com'
 }

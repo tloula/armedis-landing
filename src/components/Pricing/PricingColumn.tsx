@@ -9,7 +9,7 @@ interface Props {
 }
 
 const PricingColumn: React.FC<Props> = ({ tier, highlight }: Props) => {
-    const { name, price, features } = tier;
+    const { name, price, text, features } = tier;
 
     return (
         <div className={clsx("w-full max-w-sm mx-auto bg-white rounded-xl border border-gray-200 lg:max-w-full", { "shadow-lg": highlight })}>
@@ -27,7 +27,7 @@ const PricingColumn: React.FC<Props> = ({ tier, highlight }: Props) => {
             </div>
             <div className="p-6 mt-1">
                 <p className="font-bold mb-0">FEATURES</p>
-                <p className="text-foreground-accent mb-5">Everything in basic, plus...</p>
+                <p className="text-foreground-accent mb-5">{text}</p>
                 <ul className="space-y-4 mb-8">
                     {features.map((feature, index) => (
                         <li key={index} className="flex items-center">

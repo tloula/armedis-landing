@@ -4,8 +4,8 @@ import { IBenefit } from "@/types"
 
 export const benefits: IBenefit[] = [
     {
-        title: "Smart Budgeting",
-        description: "Take the guesswork out of managing your money. Our AI-powered budgeting tool adapts to your lifestyle and helps you stay on track.",
+        title: "Configurable CheckIn Times",
+        description: "Add as many checkin times as you want.",
         bullets: [
             {
                 title: "Intelligent Categorization",
@@ -23,7 +23,7 @@ export const benefits: IBenefit[] = [
                 icon: <FiTrendingUp size={26} />
             }
         ],
-        imageSrc: "/images/mockup-1.webp"
+        imageSrc: "/images/mockup-config.png"
     },
     {
         title: "Seamless Investing",
@@ -45,7 +45,7 @@ export const benefits: IBenefit[] = [
                 icon: <FiPieChart size={26} />
             }
         ],
-        imageSrc: "/images/mockup-2.webp"
+        imageSrc: "/images/mockup-checkin.png"
     },
     {
         title: "Bank-Grade Security",
@@ -67,6 +67,6 @@ export const benefits: IBenefit[] = [
                 icon: <FiShield size={26} />
             }
         ],
-        imageSrc: "/images/mockup-1.webp"
+        imageSrc: "/images/mockup-contact.png"
     },
 ]
