@@ -1,6 +1,6 @@
 export const siteDetails = {
     siteName: 'CheckIn More',
-    siteUrl: 'https://checkin-more.vercel.app/',
+    siteUrl: 'https://armedis.hydroxygenlabs.com/',
     metadata: {
         title: 'CheckIn More',
         description: 'Automated, reoccurring checkins on your loved ones for peace of mind when life gets busy.',
