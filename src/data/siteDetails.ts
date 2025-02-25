@@ -3,7 +3,7 @@ export const siteDetails = {
     siteUrl: 'https://armedis.hydroxygenlabs.com/',
     metadata: {
         title: 'CheckIn More',
-        description: 'Automated, reoccurring checkins on your loved ones for peace of mind when life gets busy.',
+        description: 'Effortless, scheduled check-ins for peace of mind. Delivering instant text updates to your loved ones with a few taps.',
     },
     language: 'en-us',
     locale: 'en-US',

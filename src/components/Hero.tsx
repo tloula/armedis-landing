@@ -17,7 +17,7 @@ const Hero: React.FC = () => {
                 </div>
             </div>
 
-            <div className="absolute left-0 right-0 bottom-0 backdrop-blur-[2px] h-40 bg-gradient-to-b from-transparent via-[rgba(233,238,255,0.5)] to-[rgba(202,208,230,0.5)]">
+            <div className="absolute left-0 right-0 bottom-0 backdrop-blur-[2px] h-40 bg-gradient-to-b from-transparent via-[#dad7cd] to-[#dad7cd]">
             </div>
 
             <div className="text-center">
@@ -29,10 +29,10 @@ const Hero: React.FC = () => {
                 </div>
                 <Image
                     src={heroDetails.centerImageSrc}
-                    width={384}
-                    height={340}
+                    width={420}
+                    height={360}
                     quality={100}
-                    sizes="(max-width: 768px) 100vw, 384px"
+                    sizes="(max-width: 768px) 100vw, 420px"
                     priority={true}
                     unoptimized={true}
                     alt="app mockup"

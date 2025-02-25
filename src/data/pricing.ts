@@ -2,7 +2,7 @@ import { IPricing } from "@/types";
 
 export const tiers: IPricing[] = [
     {
-        name: 'Basic',
+        name: '',
         price: 4.99,
         text: '',
         features: [
@@ -12,14 +12,14 @@ export const tiers: IPricing[] = [
             'Email support',
         ],
     },
-    {
-        name: 'Basic+',
-        price: 6.99,
-        text: 'Everything in basic, plus...',
-        features: [
-            'Last known location',
-        ],
-    },
+    // {
+    //     name: 'Basic+',
+    //     price: 6.99,
+    //     text: 'Everything in basic, plus...',
+    //     features: [
+    //         'Last known location',
+    //     ],
+    // },
     // {
     //     name: 'Enterprise',
     //     price: 'Custom',

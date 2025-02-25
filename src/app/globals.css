@@ -14,13 +14,15 @@
 } */
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --primary: #588157;
-  --secondary: #a3b18a;
+  --background: #dad7cd;
+  --foreground: hsla(0, 20%, 27%, 1);
+  --primary: #5F794F;
+  --secondary: #533737;
 
-  --primary-accent: #3a5a40;
-  --foreground-accent: #3a5a40;
+  --base-dark-text: #eeecf9;
+
+  --primary-accent: hsla(97, 21%, 51%, 1);
+  --foreground-accent: #454545;
   --hero-background: #F3F3F5;
 }
 
