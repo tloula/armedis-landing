@@ -1,5 +1,4 @@
 import { BsBarChartFill, BsFillStarFill } from "react-icons/bs";
-import { PiGlobeFill } from "react-icons/pi";
 
 import { IStats } from "@/types";
 
