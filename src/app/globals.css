@@ -14,14 +14,16 @@
 } */
 
 :root {
-  --background: #dad7cd;
-  --foreground: hsla(0, 20%, 27%, 1);
-  --primary: #5F794F;
+  --background: #dad7cd; /* Base | Light | Background */
+  --foreground: #533737;  /* Base | Light | Subtle Text */
+  --primary: #5F794F; /* Accent | Light | Background */
   --secondary: #533737;
 
-  --base-dark-text: #eeecf9;
+  --base-dark-text: #fdfcfc; /* Base | Dark | 12 - Text */
+  --accent-text: #eeecf9; /* Accent | Light | 12 - Text */
+  --border: #cbc7b9; /* Made Up? */
 
-  --primary-accent: hsla(97, 21%, 51%, 1);
+  --primary-accent: #7c9c68; /* Accent | Light | 5 - Active UI Background */
   --foreground-accent: #454545;
   --hero-background: #F3F3F5;
 }

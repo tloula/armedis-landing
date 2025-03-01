@@ -12,7 +12,7 @@ const CTA: React.FC = () => {
                         <div className="rounded-3xl absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_600px_at_50%_500px,#533737,transparent)]"></div>
                     </div>
 
-                    <div className="h-full flex flex-col items-center justify-center text-[hsla(250,50%,95%,1)] text-center px-5">
+                    <div className="h-full flex flex-col items-center justify-center text-[var(--accent-text)] text-center px-5">
                         <h2 className="text-2xl sm:text-3xl md:text-5xl md:leading-tight font-semibold mb-4 max-w-2xl">{ctaDetails.heading}</h2>
 
                         <p className="mx-auto max-w-xl md:px-5">{ctaDetails.subheading}</p>

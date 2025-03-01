@@ -18,9 +18,13 @@ export const footerDetails: {
             text: "Pricing",
             url: "#pricing"
         },
+        // {
+        //     text: "Testimonials",
+        //     url: "#testimonials"
+        // }
         {
-            text: "Testimonials",
-            url: "#testimonials"
+            text: "About",
+            url: "#about"
         }
     ],
     email: siteDetails.helpEmail,

@@ -1,13 +1,12 @@
-import Hero from "@/components/Hero";
-import Testimonials from "@/components/Testimonials";
-import Pricing from "@/components/Pricing/Pricing";
-import FAQ from "@/components/FAQ";
+import AboutUs from "@/components/AboutUs";
 import Benefits from "@/components/Benefits/Benefits";
 import Container from "@/components/Container";
-import Section from "@/components/Section";
-import Stats from "@/components/Stats";
 import CTA from "@/components/CTA";
+import FAQ from "@/components/FAQ";
+import Hero from "@/components/Hero";
+import Pricing from "@/components/Pricing/Pricing";
 import Promo from "@/components/Promo";
+import Section from "@/components/Section";
 
 const HomePage: React.FC = () => {
   return (
@@ -25,17 +24,25 @@ const HomePage: React.FC = () => {
           <Pricing />
         </Section>
 
-        <Section
+        {/* <Section
           id="testimonials"
-          title="What Our Clients Say"
-          description="Hear from those who have partnered with us."
+          title="What Our Customers Say"
+          description="Hear from those who love our product."
         >
           <Testimonials />
+        </Section> */}
+
+        <Section
+          id="about"
+          title="About Us"
+          description="Learn more about the people behind CheckIn More."
+        >
+          <AboutUs />
         </Section>
 
         <FAQ />
 
-        <Stats />
+        {/* <Stats /> */}
         
         <CTA />
       </Container>

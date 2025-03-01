@@ -1,14 +1,14 @@
 'use client';
 
+import { Transition } from '@headlessui/react';
+import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
-import { Transition } from '@headlessui/react';
-import { HiOutlineXMark, HiBars3 } from 'react-icons/hi2';
-import { FaUsers } from 'react-icons/fa';
+import { HiBars3, HiOutlineXMark } from 'react-icons/hi2';
 
-import Container from './Container';
-import { siteDetails } from '@/data/siteDetails';
 import { menuItems } from '@/data/menuItems';
+import { siteDetails } from '@/data/siteDetails';
+import Container from './Container';
 
 const Header: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -23,7 +23,14 @@ const Header: React.FC = () => {
                 <nav className="shadow-md md:shadow-none bg-white md:bg-transparent mx-auto flex justify-between items-center py-2 px-5 md:py-10">
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-2">
-                        <FaUsers className="text-foreground min-w-fit w-7 h-7" />
+                        {/* <FaUsers className="text-foreground min-w-fit w-7 h-7" /> */}
+                        <Image
+                            src={siteDetails.brownLogoPath}
+                            alt={`${siteDetails.siteName} logo`}
+                            width={32}
+                            height={32}
+                            className="h-8 w-auto object-contain"
+                        />
                         <span className="manrope text-xl font-semibold text-foreground cursor-pointer">
                             {siteDetails.siteName}
                         </span>
@@ -39,7 +46,7 @@ const Header: React.FC = () => {
                             </li>
                         ))}
                         <li>
-                            <Link href="#cta" className="text-black bg-primary hover:bg-primary-accent px-8 py-3 rounded-full transition-colors">
+                            <Link href="#cta" className="text-[var(--accent-text)] bg-primary hover:bg-primary-accent px-8 py-3 rounded-full transition-colors">
                                 Download
                             </Link>
                         </li>
@@ -50,7 +57,7 @@ const Header: React.FC = () => {
                         <button
                             onClick={toggleMenu}
                             type="button"
-                            className="bg-primary text-black focus:outline-none rounded-full w-10 h-10 flex items-center justify-center"
+                            className="text-[var(--accent-text)] bg-primary focus:outline-none rounded-full w-10 h-10 flex items-center justify-center"
                             aria-controls="mobile-menu"
                             aria-expanded={isOpen}
                         >
@@ -85,7 +92,7 @@ const Header: React.FC = () => {
                             </li>
                         ))}
                         <li>
-                            <Link href="#cta" className="text-black bg-primary hover:bg-primary-accent px-5 py-2 rounded-full block w-fit" onClick={toggleMenu}>
+                            <Link href="#cta" className="text-[var(--accent-text)] bg-primary hover:bg-primary-accent px-5 py-2 rounded-full block w-fit" onClick={toggleMenu}>
                                 Get Started
                             </Link>
                         </li>

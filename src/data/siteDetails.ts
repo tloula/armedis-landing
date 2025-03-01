@@ -1,6 +1,9 @@
 export const siteDetails = {
     siteName: 'CheckIn More',
     siteUrl: 'https://armedis.hydroxygenlabs.com/',
+    logoPath: '/images/logo.png',
+    brownLogoPath: '/images/logo-brown.png',
+    whiteLogoPath: '/images/logo-white.png',
     metadata: {
         title: 'CheckIn More',
         description: 'Effortless, scheduled check-ins for peace of mind. Delivering instant text updates to your loved ones with a few taps.',
