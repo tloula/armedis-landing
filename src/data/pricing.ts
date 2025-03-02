@@ -1,35 +1,35 @@
 import { IPricing } from "@/types";
 
 export const tiers: IPricing[] = [
+    // {
+    //     name: 'Basic (Ad Supported)',
+    //     price: 'Free',
+    //     text: '',
+    //     features: [
+    //         '1 checkin option',
+    //         '1 checkin time',
+    //         '1 contact',
+    //         'Email support',
+    //     ],
+    // },
     {
-        name: '',
-        price: 4.99,
-        text: '',
+        name: 'Plus',
+        price: 6.99,
+        text: 'Everything in basic, plus...',
         features: [
+            'No ads',
             '4 checkin options',
             'Unlimited checkin times',
             'Unlimited contacts',
-            'Email support',
         ],
-    },
+    }
     // {
-    //     name: 'Basic+',
-    //     price: 6.99,
-    //     text: 'Everything in basic, plus...',
+    //     name: 'Premium',
+    //     price: 8.99,
+    //     text: 'Everything in Plus, plus...',
     //     features: [
     //         'Last known location',
-    //     ],
-    // },
-    // {
-    //     name: 'Enterprise',
-    //     price: 'Custom',
-    //     features: [
-    //         'Full cloud integration',
-    //         'Unlimited team members',
-    //         'Unlimited storage',
-    //         '24/7 dedicated support',
-    //         'Custom solutions',
-    //         'On-site training',
+    //         'Custom checkin messages'
     //     ],
     // },
 ]
