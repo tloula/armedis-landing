@@ -15,7 +15,7 @@ export const faqs: IFAQ[] = [
         answer: `We provide extensive in-app guides to help you. If you need further assistance, feel free to email us at ${siteDetails.helpEmail}, and we'll respond as quickly as possible.`
     },
     {
-        question: 'Why isn\'t this app free?',
-        answer: `We believe in providing a high-quality experience. Your subscription helps us maintain and improve the app, ensuring you get the best service possible. We appreciate your support!`
+        question: `Why isn't ${siteDetails.siteName} free?`,
+        answer: `Maintaining ${siteDetails.siteName} comes with real costs — app store fees, cloud hosting, SMS services, and business expenses. Instead of selling your data to cover these costs, we charge a small fee to keep things running smoothly.\nThis approach allows us to provide better support, improve our service, and continue building features that matter to you. As a family-run project, we truly appreciate your support in helping us keep ${siteDetails.siteName} going.`
     }
 ];
