@@ -2,8 +2,6 @@ import React from 'react';
 import { aboutUsData } from '@/data/aboutUs';
 
 const AboutUs: React.FC = () => {
-  const halfLength = Math.floor(aboutUsData.content.length / 2);
-
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
       {aboutUsData.content.map((item, index) => (
