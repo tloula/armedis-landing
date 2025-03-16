@@ -1,6 +1,6 @@
 export const siteDetails = {
     siteName: 'CheckIn More',
-    siteUrl: 'https://armedis.hydroxygenlabs.com/',
+    siteUrl: 'https://checkinmore.com/',
     logoPath: '/images/logo.png',
     brownLogoPath: '/images/logo-brown.png',
     whiteLogoPath: '/images/logo-white.png',

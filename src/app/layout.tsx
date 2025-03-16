@@ -15,6 +15,7 @@ const sourceSans = Source_Sans_3({ subsets: ['latin'] });
 const WEBSITE_UUID = '755421fc-6f7f-4418-856b-2ee915e7166c'
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteDetails.siteUrl),
   title: siteDetails.metadata.title,
   description: siteDetails.metadata.description,
   openGraph: {
