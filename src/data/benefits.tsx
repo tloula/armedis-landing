@@ -21,12 +21,12 @@ export const benefits: IBenefit[] = [
                 icon: <TfiInfinite size={26} />
             },
             {
-                title: "Personalize It",
+                title: "Personalize it",
                 description: "Customize check-in times for different days of the week.",
                 icon: <FiClock size={26} />
             },
             {
-                title: "Adjustable Check-in Windows",
+                title: "Adjustable check-in windows",
                 description: "Set flexible windows for more freedom or faster responses.",
                 icon: <CiTimer size={26} />
             },

@@ -4,15 +4,15 @@ import { siteDetails } from "./siteDetails";
 export const faqs: IFAQ[] = [
     {
         question: `Does ${siteDetails.siteName} require an internet connection (WiFi or Mobile Data)?`,
-        answer: `Yes, ${siteDetails.siteName} requires an internet connection to function. If you lose your connection, you will not be able to checkin. If you miss your checkin because of this, your contacts will still be notified.`,
+        answer: `Yes, ${siteDetails.siteName} requires an internet connection to send the check-in notification. If your connection drops and you miss a check-in, your contacts will still be notified to help ensure your safety.`,
     },
     {
         question: `Can I use ${siteDetails.siteName} on multiple devices?`,
-        answer: 'Absolutely! Your account syncs seamlessly across all your devices. You\'ll receive a checkin notification on all devices your signed in to.',
+        answer: 'Absolutely! Your account syncs seamlessly across all your devices. You\'ll receive a CheckIn notification on all devices your signed in to.',
     },
     {
         question: `Can I pause or disable check-ins temporarily?`,
-        answer: `Yes! You can pause check-ins for vacations, travel, or other circumstances without deleting your schedule. Just go to the checkin you want to pause and select "Disable".`
+        answer: `Yes! You can pause check-ins for vacations, travel, or other circumstances without deleting your schedule. Just go to the CheckIn you want to pause and select "Disable".`
     },
     {
         question: `How do I cancel my subscription?`,
@@ -20,7 +20,7 @@ export const faqs: IFAQ[] = [
     },
     {
         question: `What happens when my subscription ends?`,
-        answer: `When your subscription ends, you will still have access to the app, but all your checkins will be disabled.`
+        answer: `When your subscription ends, you will still have access to the app, but all your check-ins will be disabled.`
     },
     {
         question: `Why isn't ${siteDetails.siteName} free?`,
