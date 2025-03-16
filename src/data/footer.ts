@@ -4,6 +4,7 @@ import { siteDetails } from "./siteDetails";
 export const footerDetails: {
     subheading: string;
     quickLinks: IMenuItem[];
+    legalLinks: IMenuItem[];
     email: string;
     telephone?: string;
     socials: ISocials;
@@ -12,19 +13,41 @@ export const footerDetails: {
     quickLinks: [
         {
             text: "Features",
-            url: "#features"
+            url: "/#features"
         },
         {
             text: "Pricing",
-            url: "#pricing"
+            url: "/#pricing"
         },
         // {
         //     text: "Testimonials",
-        //     url: "#testimonials"
+        //     url: "/#testimonials"
         // }
         {
             text: "About",
-            url: "#about"
+            url: "/#about"
+        },
+        {
+            text: "Contact",
+            url: "/contact"
+        }
+    ],
+    legalLinks: [
+        {
+            text: "Privacy Policy",
+            url: "/privacy"
+        },
+        {
+            text: "Terms of Service",
+            url: "/terms"
+        },
+        {
+            text: "Cookie Policy",
+            url: "/cookies"
+        },
+        {
+            text: "Data Request",
+            url: "/data-request"
         }
     ],
     email: siteDetails.helpEmail,

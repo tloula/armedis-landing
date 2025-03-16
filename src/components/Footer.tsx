@@ -9,8 +9,8 @@ import { getPlatformIconByName } from '@/utils';
 const Footer: React.FC = () => {
     return (
         <footer className="bg-secondary text-[#eeecf9] py-10">
-            <div className="max-w-7xl w-full mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
-                <div>
+            <div className="max-w-7xl w-full mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
+                <div className="md:col-span-2">
                     <Link href="/" className="flex items-center gap-2">
                         {/* <FaUsers className="min-w-fit w-5 h-5 md:w-7 md:h-7" /> */}
                         <Image
@@ -27,24 +27,11 @@ const Footer: React.FC = () => {
                     <p className="mt-3.5 text-[#eeecf9]">
                         {footerDetails.subheading}
                     </p>
-                </div>
-                <div>
-                    <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-                    <ul className="text-[#eeecf9]">
-                        {footerDetails.quickLinks.map(link => (
-                            <li key={link.text} className="mb-2">
-                                <Link href={link.url} className="hover:text-foreground">{link.text}</Link>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-                <div>
-                    <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
-
-                    {footerDetails.email && <a href={`mailto:${footerDetails.email}`} className="block text-[#eeecf9] hover:text-foreground">Email: {footerDetails.email}</a>}
-
-                    {footerDetails.telephone && <a href={`tel:${footerDetails.telephone}`} className="block text-[#eeecf9] hover:text-foreground">Phone: {footerDetails.telephone}</a>}
-
+                    <div className="mt-8">
+                        <h4 className="text-lg font-semibold mb-4">Contact</h4>
+                        {footerDetails.email && <a href={`mailto:${footerDetails.email}`} className="block text-[#eeecf9] hover:text-foreground">Email: {footerDetails.email}</a>}
+                        {footerDetails.telephone && <a href={`tel:${footerDetails.telephone}`} className="block text-[#eeecf9] hover:text-foreground">Phone: {footerDetails.telephone}</a>}
+                    </div>
                     {footerDetails.socials && (
                         <div className="mt-5 flex items-center gap-5 flex-wrap">
                             {Object.keys(footerDetails.socials).map(platformName => {
@@ -62,6 +49,27 @@ const Footer: React.FC = () => {
                             })}
                         </div>
                     )}
+                </div>
+                <div>
+                    <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul className="text-[#eeecf9]">
+                        {footerDetails.quickLinks.map(link => (
+                            <li key={link.text} className="mb-2">
+                                <Link href={link.url} className="hover:text-foreground">{link.text}</Link>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+                <div>
+                    <h4 className="text-lg font-semibold mb-4">Legal</h4>
+                    <ul className="text-[#eeecf9]">
+                        {footerDetails.legalLinks.map(link => (
+                            <li key={link.text} className="mb-2">
+                                <Link href={link.url} className="hover:text-foreground">{link.text}</Link>
+                            </li>
+                        ))}
+                    </ul>
+                    <a href="#" className="termly-display-preferences">Consent Preferences</a>
                 </div>
             </div>
             <div className="mt-8 md:text-center text-[#eeecf9] px-6">

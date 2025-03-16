@@ -23,6 +23,9 @@
   --accent-text: #eeecf9; /* Accent | Light | 12 - Text */
   --border: #cbc7b9; /* Made Up? */
 
+  --link-text: #5F794F;
+  --link-hover: #7c9c68;
+
   --primary-accent: #7c9c68; /* Accent | Light | 5 - Active UI Background */
   --foreground-accent: #454545;
   --hero-background: #F3F3F5;
