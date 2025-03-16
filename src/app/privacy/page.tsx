@@ -14,12 +14,12 @@ const PrivacyPage = () => {
 
                     <div className="mt-6">
                         <p>
-                            This Privacy Notice for <strong>HydrOxygen Labs LLC</strong> ("
-                            <strong>we</strong>," "<strong>us</strong>," or "
-                            <strong>our</strong>"), describes how and why we might access,
-                            collect, store, use, and/or share ("<strong>process</strong>")
-                            your personal information when you use our services ("
-                            <strong>Services</strong>"), including when you:
+                            This Privacy Notice for <strong>HydrOxygen Labs LLC</strong> (&quot;
+                            <strong>we</strong>,&quot; &quot;<strong>us</strong>,&quot; or &quot;
+                            <strong>our</strong>&quot;), describes how and why we might access,
+                            collect, store, use, and/or share (&quot;<strong>process</strong>&quot;)
+                            your personal information when you use our services (&quot;
+                            <strong>Services</strong>&quot;), including when you:
                         </p>
 
                         <ul className="list-disc pl-6 mt-4">
@@ -84,7 +84,7 @@ const PrivacyPage = () => {
 
                                 <div>
                                     <p>
-                                        <strong>Do we process any sensitive personal information?</strong> Some of the information may be considered "special" or "sensitive" in certain jurisdictions, for example your racial or ethnic origins, sexual orientation, and religious beliefs. We do not process sensitive personal information.
+                                        <strong>Do we process any sensitive personal information?</strong> Some of the information may be considered &quot;special&quot; or &quot;sensitive&quot; in certain jurisdictions, for example your racial or ethnic origins, sexual orientation, and religious beliefs. We do not process sensitive personal information.
                                     </p>
                                 </div>
 
@@ -303,7 +303,7 @@ const PrivacyPage = () => {
                                 <div className="mb-6">
                                     <strong>Social Media Login Data.</strong> We may provide you with the option to register with us using your existing social media account details, like your Facebook, X, or other social media account. If you choose to register in this way, we will collect certain profile information about you from the social media provider, as described in the section called{" "}
                                     <a href="#sociallogins" className="text-[var(--link-text)] hover:text-[var(--link-hover)]">
-                                        "HOW DO WE HANDLE YOUR SOCIAL LOGINS?"
+                                        &quot;HOW DO WE HANDLE YOUR SOCIAL LOGINS?&quot;
                                     </a>
                                     {" "}below.
                                 </div>
@@ -315,7 +315,7 @@ const PrivacyPage = () => {
                                             <em>Mobile Device Data.</em> We automatically collect device information (such as your mobile device ID, model, and manufacturer), operating system, version information and system configuration information, device and application identification numbers, browser type and version, hardware model Internet service provider and/or mobile carrier, and Internet Protocol (IP) address (or proxy server).
                                         </li>
                                         <li>
-                                            <em>Push Notifications.</em> We may request to send you push notifications regarding your account or certain features of the application(s). If you wish to opt out from receiving these types of communications, you may turn them off in your device's settings.
+                                            <em>Push Notifications.</em> We may request to send you push notifications regarding your account or certain features of the application(s). If you wish to opt out from receiving these types of communications, you may turn them off in your device&apos;s settings.
                                         </li>
                                     </ul>
                                 </div>
@@ -351,13 +351,13 @@ const PrivacyPage = () => {
 
                                 <ul className="list-disc pl-6 mb-6 space-y-2">
                                     <li>
-                                        <em>Log and Usage Data.</em> Log and usage data is service-related, diagnostic, usage, and performance information our servers automatically collect when you access or use our Services and which we record in log files. Depending on how you interact with us, this log data may include your IP address, device information, browser type, and settings and information about your activity in the Services (such as the date/time stamps associated with your usage, pages and files viewed, searches, and other actions you take such as which features you use), device event information (such as system activity, error reports ("crash dumps"), and hardware settings).
+                                        <em>Log and Usage Data.</em> Log and usage data is service-related, diagnostic, usage, and performance information our servers automatically collect when you access or use our Services and which we record in log files. Depending on how you interact with us, this log data may include your IP address, device information, browser type, and settings and information about your activity in the Services (such as the date/time stamps associated with your usage, pages and files viewed, searches, and other actions you take such as which features you use), device event information (such as system activity, error reports (&quot;crash dumps&quot;), and hardware settings).
                                     </li>
                                     <li>
                                         <em>Device Data.</em> We collect device data such as information about your computer, phone, tablet, or other device you use to access the Services. Depending on the device used, this device data may include information such as your IP address (or proxy server), device and application identification numbers, location, browser type, hardware model, Internet service provider and/or mobile carrier, operating system, and system configuration information.
                                     </li>
                                     <li>
-                                        <em>Location Data.</em> We collect location data such as information about your device's location, which can be either precise or imprecise. How much information we collect depends on the type and settings of the device you use to access the Services. For example, we may use GPS and other technologies to collect geolocation data that tells us your current location (based on your IP address). You can opt out of allowing us to collect this information either by refusing access to the information or by disabling your Location setting on your device. However, if you choose to opt out, you may not be able to use certain aspects of the Services.
+                                        <em>Location Data.</em> We collect location data such as information about your device&apos;s location, which can be either precise or imprecise. How much information we collect depends on the type and settings of the device you use to access the Services. For example, we may use GPS and other technologies to collect geolocation data that tells us your current location (based on your IP address). You can opt out of allowing us to collect this information either by refusing access to the information or by disabling your Location setting on your device. However, if you choose to opt out, you may not be able to use certain aspects of the Services.
                                     </li>
                                 </ul>
 
@@ -410,7 +410,7 @@ const PrivacyPage = () => {
 
                                 <li><strong>To request feedback.</strong> We may process your information when necessary to request feedback and to contact you about your use of our Services.</li>
 
-                                <li><strong>To send you marketing and promotional communications.</strong> We may process the personal information you send to us for our marketing purposes, if this is in accordance with your marketing preferences. You can opt out of our marketing emails at any time. For more information, see <a href="#privacyrights" className="text-[var(--link-text)] hover:text-[var(--link-hover)]">"WHAT ARE YOUR PRIVACY RIGHTS?"</a> below.</li>
+                                <li><strong>To send you marketing and promotional communications.</strong> We may process the personal information you send to us for our marketing purposes, if this is in accordance with your marketing preferences. You can opt out of our marketing emails at any time. For more information, see <a href="#privacyrights" className="text-[var(--link-text)] hover:text-[var(--link-hover)]">&quot;WHAT ARE YOUR PRIVACY RIGHTS?&quot;</a> below.</li>
 
                                 <li><strong>To protect our Services.</strong> We may process your information as part of our efforts to keep our Services safe and secure, including fraud monitoring and prevention.</li>
 
@@ -418,7 +418,7 @@ const PrivacyPage = () => {
 
                                 <li><strong>To determine the effectiveness of our marketing and promotional campaigns.</strong> We may process your information to better understand how to provide marketing and promotional campaigns that are most relevant to you.</li>
 
-                                <li><strong>To save or protect an individual's vital interest.</strong> We may process your information when necessary to save or protect an individual's vital interest, such as to prevent harm.</li>
+                                <li><strong>To save or protect an individual&apos;s vital interest.</strong> We may process your information when necessary to save or protect an individual&apos;s vital interest, such as to prevent harm.</li>
                             </ul>
                         </div>
 
@@ -510,7 +510,7 @@ const PrivacyPage = () => {
 
                             <div className="mb-6">
                                 <p className="mb-4">
-                                    <strong>Vendors, Consultants, and Other Third-Party Service Providers.</strong> We may share your data with third-party vendors, service providers, contractors, or agents ("third parties") who perform services for us or on our behalf and require access to such information to do that work. We have contracts in place with our third parties, which are designed to help safeguard your personal information. This means that they cannot do anything with your personal information unless we have instructed them to do it. They will also not share your personal information with any organization apart from us. They also commit to protect the data they hold on our behalf and to retain it for the period we instruct.
+                                    <strong>Vendors, Consultants, and Other Third-Party Service Providers.</strong> We may share your data with third-party vendors, service providers, contractors, or agents (&quot;third parties&quot;) who perform services for us or on our behalf and require access to such information to do that work. We have contracts in place with our third parties, which are designed to help safeguard your personal information. This means that they cannot do anything with your personal information unless we have instructed them to do it. They will also not share your personal information with any organization apart from us. They also commit to protect the data they hold on our behalf and to retain it for the period we instruct.
                                 </p>
 
                                 <p className="mb-4">
@@ -562,7 +562,7 @@ const PrivacyPage = () => {
                             </p>
 
                             <p className="mb-4">
-                                To the extent these online tracking technologies are deemed to be a "sale"/"sharing" (which includes targeted advertising, as defined under the applicable laws) under applicable US state laws, you can opt out of these online tracking technologies by submitting a request as described below under section{" "}
+                                To the extent these online tracking technologies are deemed to be a &quot;sale&quot;/&quot;sharing&quot; (which includes targeted advertising, as defined under the applicable laws) under applicable US state laws, you can opt out of these online tracking technologies by submitting a request as described below under section{" "}
                                 <a href="#uslaws" className="text-[var(--link-text)] hover:text-[var(--link-hover)]">
                                     DO UNITED STATES RESIDENTS HAVE SPECIFIC PRIVACY RIGHTS?
                                 </a>
@@ -627,11 +627,11 @@ const PrivacyPage = () => {
                             </p>
 
                             <p className="mb-4">
-                                European Commission's Standard Contractual Clauses:
+                                European Commission&apos;s Standard Contractual Clauses:
                             </p>
 
                             <p className="mb-6">
-                                We have implemented measures to protect your personal information, including by using the European Commission's Standard Contractual Clauses for transfers of personal information between our group companies and between us and our third-party providers. These clauses require all recipients to protect all personal information that they process originating from the EEA or UK in accordance with European data protection laws and regulations. Our Standard Contractual Clauses can be provided upon request. We have implemented similar appropriate safeguards with our third-party service providers and partners and further details can be provided upon request.
+                                We have implemented measures to protect your personal information, including by using the European Commission&apos;s Standard Contractual Clauses for transfers of personal information between our group companies and between us and our third-party providers. These clauses require all recipients to protect all personal information that they process originating from the EEA or UK in accordance with European data protection laws and regulations. Our Standard Contractual Clauses can be provided upon request. We have implemented similar appropriate safeguards with our third-party service providers and partners and further details can be provided upon request.
                             </p>
                         </div>
 
@@ -677,7 +677,7 @@ const PrivacyPage = () => {
                             </p>
 
                             <p className="mb-6">
-                                We do not knowingly collect, solicit data from, or market to children under 18 years of age, nor do we knowingly sell such personal information. By using the Services, you represent that you are at least 18 or that you are the parent or guardian of such a minor and consent to such minor dependent's use of the Services. If we learn that personal information from users less than 18 years of age has been collected, we will deactivate the account and take reasonable measures to promptly delete such data from our records. If you become aware of any data we may have collected from children under age 18, please contact us at{" "}
+                                We do not knowingly collect, solicit data from, or market to children under 18 years of age, nor do we knowingly sell such personal information. By using the Services, you represent that you are at least 18 or that you are the parent or guardian of such a minor and consent to such minor dependent&apos;s use of the Services. If we learn that personal information from users less than 18 years of age has been collected, we will deactivate the account and take reasonable measures to promptly delete such data from our records. If you become aware of any data we may have collected from children under age 18, please contact us at{" "}
                                 <a href="mailto:support@hydroxygenlabs.com" className="text-[var(--link-text)] hover:text-[var(--link-hover)]">
                                     support@hydroxygenlabs.com
                                 </a>.
@@ -739,7 +739,7 @@ const PrivacyPage = () => {
 
                             <div className="mb-6">
                                 <p className="mb-4">
-                                    <strong><u>Opting out of marketing and promotional communications:</u></strong> You can unsubscribe from our marketing and promotional communications at any time by clicking on the unsubscribe link in the emails that we send, replying "STOP" or "UNSUBSCRIBE" to the SMS messages that we send, or by contacting us using the details provided in the section{" "}
+                                    <strong><u>Opting out of marketing and promotional communications:</u></strong> You can unsubscribe from our marketing and promotional communications at any time by clicking on the unsubscribe link in the emails that we send, replying &quot;STOP&quot; or &quot;UNSUBSCRIBE&quot; to the SMS messages that we send, or by contacting us using the details provided in the section{" "}
                                     <a href="#contact" className="text-[var(--link-text)] hover:text-[var(--link-hover)]">
                                         HOW CAN YOU CONTACT US ABOUT THIS NOTICE?
                                     </a>{" "}
@@ -784,7 +784,7 @@ const PrivacyPage = () => {
                             </h2>
 
                             <p className="mb-4">
-                                Most web browsers and some mobile operating systems and mobile applications include a Do-Not-Track ("DNT") feature or setting you can activate to signal your privacy preference not to have data about your online browsing activities monitored and collected. At this stage, no uniform technology standard for recognizing and implementing DNT signals has been finalized. As such, we do not currently respond to DNT browser signals or any other mechanism that automatically communicates your choice not to be tracked online. If a standard for online tracking is adopted that we must follow in the future, we will inform you about that practice in a revised version of this Privacy Notice.
+                                Most web browsers and some mobile operating systems and mobile applications include a Do-Not-Track (&quot;DNT&quot;) feature or setting you can activate to signal your privacy preference not to have data about your online browsing activities monitored and collected. At this stage, no uniform technology standard for recognizing and implementing DNT signals has been finalized. As such, we do not currently respond to DNT browser signals or any other mechanism that automatically communicates your choice not to be tracked online. If a standard for online tracking is adopted that we must follow in the future, we will inform you about that practice in a revised version of this Privacy Notice.
                             </p>
 
                             <p className="mb-6">
@@ -869,7 +869,7 @@ const PrivacyPage = () => {
                                         </tr>
                                         <tr className="border-b">
                                             <td className="py-2 px-4">K. Inferences drawn from collected personal information</td>
-                                            <td className="py-2 px-4">Inferences drawn from any of the collected personal information listed above to create a profile or summary about, for example, an individual's preferences and characteristics</td>
+                                            <td className="py-2 px-4">Inferences drawn from any of the collected personal information listed above to create a profile or summary about, for example, an individual&apos;s preferences and characteristics</td>
                                             <td className="py-2 px-4">NO</td>
                                         </tr>
                                         <tr className="border-b">
@@ -954,7 +954,7 @@ const PrivacyPage = () => {
                             </p>
 
                             <p className="mb-6">
-                                We may update this Privacy Notice from time to time. The updated version will be indicated by an updated "Last updated" date and the updated version will be effective as soon as it is accessible. If we make material changes to this Privacy Notice, we may notify you either by prominently posting a notice of such changes or by directly sending you a notification. We encourage you to review this Privacy Notice frequently to be informed of how we are protecting your information.
+                                We may update this Privacy Notice from time to time. The updated version will be indicated by an updated &quot;Last updated&quot; date and the updated version will be effective as soon as it is accessible. If we make material changes to this Privacy Notice, we may notify you either by prominently posting a notice of such changes or by directly sending you a notification. We encourage you to review this Privacy Notice frequently to be informed of how we are protecting your information.
                             </p>
                         </div>
 

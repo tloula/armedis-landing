@@ -14,11 +14,11 @@ const CookiesPage = () => {
 
                     <div className="mt-8 space-y-6">
                         <p>
-                            This Cookie Policy explains how HydrOxygen Labs LLC ("Company," "we," "us," and "our") uses cookies and similar technologies to recognize you when you visit our website at{" "}
+                            This Cookie Policy explains how HydrOxygen Labs LLC (&quot;Company,&quot; &quot;we,&quot; &quot;us,&quot; and &quot;our&quot;) uses cookies and similar technologies to recognize you when you visit our website at{" "}
                             <a href="https://checkinmore.com" target="_blank" rel="noopener noreferrer" className="text-[var(--link-text)] hover:text-[var(--link-hover)]">
                                 https://checkinmore.com
                             </a>{" "}
-                            ("Website"). It explains what these technologies are and why we use them, as well as your rights to control our use of them.
+                            (&quot;Website&quot;). It explains what these technologies are and why we use them, as well as your rights to control our use of them.
                         </p>
 
                         <p>
@@ -31,12 +31,12 @@ const CookiesPage = () => {
                         </p>
 
                         <p>
-                            Cookies set by the website owner (in this case, HydrOxygen Labs LLC) are called "first-party cookies." Cookies set by parties other than the website owner are called "third-party cookies." Third-party cookies enable third-party features or functionality to be provided on or through the website (e.g., advertising, interactive content, and analytics). The parties that set these third-party cookies can recognize your computer both when it visits the website in question and also when it visits certain other websites.
+                            Cookies set by the website owner (in this case, HydrOxygen Labs LLC) are called &quot;first-party cookies.&quot; Cookies set by parties other than the website owner are called &quot;third-party cookies.&quot; Third-party cookies enable third-party features or functionality to be provided on or through the website (e.g., advertising, interactive content, and analytics). The parties that set these third-party cookies can recognize your computer both when it visits the website in question and also when it visits certain other websites.
                         </p>
 
                         <h2 className="text-2xl font-bold mt-8 mb-4">Why do we use cookies?</h2>
                         <p>
-                            We use first- and third-party cookies for several reasons. Some cookies are required for technical reasons in order for our Website to operate, and we refer to these as "essential" or "strictly necessary" cookies. Other cookies also enable us to track and target the interests of our users to enhance the experience on our Online Properties. Third parties serve cookies through our Website for advertising, analytics, and other purposes. This is described in more detail below.
+                            We use first- and third-party cookies for several reasons. Some cookies are required for technical reasons in order for our Website to operate, and we refer to these as &quot;essential&quot; or &quot;strictly necessary&quot; cookies. Other cookies also enable us to track and target the interests of our users to enhance the experience on our Online Properties. Third parties serve cookies through our Website for advertising, analytics, and other purposes. This is described in more detail below.
                         </p>
 
                         <h2 className="text-2xl font-bold mt-8 mb-4">How can I control cookies?</h2>
@@ -72,7 +72,7 @@ const CookiesPage = () => {
 
                         <h2 className="text-2xl font-bold mt-8 mb-4">How can I control cookies on my browser?</h2>
                         <p>
-                            As the means by which you can refuse cookies through your web browser controls vary from browser to browser, you should visit your browser's help menu for more information. The following is information about how to manage cookies on the most popular browsers:
+                            As the means by which you can refuse cookies through your web browser controls vary from browser to browser, you should visit your browser&apos;s help menu for more information. The following is information about how to manage cookies on the most popular browsers:
                         </p>
 
                         <ul className="list-disc pl-6 space-y-2 mt-4">
@@ -96,12 +96,12 @@ const CookiesPage = () => {
 
                         <h2 className="text-2xl font-bold mt-8 mb-4">What about other tracking technologies, like web beacons?</h2>
                         <p>
-                            Cookies are not the only way to recognize or track visitors to a website. We may use other, similar technologies from time to time, like web beacons (sometimes called "tracking pixels" or "clear gifs"). These are tiny graphics files that contain a unique identifier that enables us to recognize when someone has visited our Website or opened an email including them. This allows us, for example, to monitor the traffic patterns of users from one page within a website to another, to deliver or communicate with cookies, to understand whether you have come to the website from an online advertisement displayed on a third-party website, to improve site performance, and to measure the success of email marketing campaigns. In many instances, these technologies are reliant on cookies to function properly, and so declining cookies will impair their functioning.
+                            Cookies are not the only way to recognize or track visitors to a website. We may use other, similar technologies from time to time, like web beacons (sometimes called &quot;tracking pixels&quot; or &quot;clear gifs&quot;). These are tiny graphics files that contain a unique identifier that enables us to recognize when someone has visited our Website or opened an email including them. This allows us, for example, to monitor the traffic patterns of users from one page within a website to another, to deliver or communicate with cookies, to understand whether you have come to the website from an online advertisement displayed on a third-party website, to improve site performance, and to measure the success of email marketing campaigns. In many instances, these technologies are reliant on cookies to function properly, and so declining cookies will impair their functioning.
                         </p>
 
                         <h2 className="text-2xl font-bold mt-8 mb-4">Do you use Flash cookies or Local Shared Objects?</h2>
                         <p>
-                            Websites may also use so-called "Flash Cookies" (also known as Local Shared Objects or "LSOs") to, among other things, collect and store information about your use of our services, fraud prevention, and for other site operations.
+                            Websites may also use so-called &quot;Flash Cookies&quot; (also known as Local Shared Objects or &quot;LSOs&quot;) to, among other things, collect and store information about your use of our services, fraud prevention, and for other site operations.
                         </p>
 
                         <p className="mt-4">
