@@ -28,6 +28,14 @@ export const footerDetails: {
             url: "/#about"
         },
         {
+            text: "FAQs",
+            url: "/faqs"
+        },
+        {
+            text: "How It Works",
+            url: "/how-it-works"
+        },
+        {
             text: "Contact",
             url: "/contact"
         }
