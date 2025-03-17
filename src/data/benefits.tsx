@@ -42,7 +42,7 @@ export const benefits: IBenefit[] = [
             }
         ],
         close: "Your routine isn't one-size-fits-all. This system adapts to your life, not the other way around.",
-        imageSrc: "/images/mockup-config.png"
+        imageSrc: "/images/mockup-config.webp"
     },
     {
         title: "Check In—Fast, Easy, and Hassle-Free",
@@ -70,7 +70,7 @@ export const benefits: IBenefit[] = [
             },
         ],
         close: "Checking in should be effortless. A few taps for peace of mind.",
-        imageSrc: "/images/mockup-checkin.png"
+        imageSrc: "/images/mockup-checkin.webp"
     },
     {
         title: "Keep Everyone in the Loop—Effortlessly",
@@ -93,6 +93,6 @@ export const benefits: IBenefit[] = [
             }
         ],
         close: 'Get the right information to the right people. With simple text alerts, staying connected is seamless.',
-        imageSrc: "/images/mockup-contact.png"
+        imageSrc: "/images/mockup-contacts.webp"
     },
 ]
