@@ -15,7 +15,7 @@ export const tiers: IPricing[] = [
     {
         name: 'Plus',
         price: 6.99,
-        text: 'Everything in basic, plus...',
+        text: '',
         features: [
             'No ads',
             '4 checkin options',
