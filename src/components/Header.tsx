@@ -25,7 +25,7 @@ const Header: React.FC = () => {
                     <Link href="/" className="flex items-center gap-2">
                         {/* <FaUsers className="text-foreground min-w-fit w-7 h-7" /> */}
                         <Image
-                            src={siteDetails.brownLogoPath}
+                            src={siteDetails.darkLogoPath}
                             alt={`${siteDetails.siteName} logo`}
                             width={32}
                             height={32}

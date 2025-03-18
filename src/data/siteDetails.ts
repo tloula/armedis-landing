@@ -2,8 +2,8 @@ export const siteDetails = {
     siteName: 'CheckIn More',
     siteUrl: 'https://checkinmore.com/',
     logoPath: '/images/logo.png',
-    brownLogoPath: '/images/logo-brown.png',
-    whiteLogoPath: '/images/logo-white.png',
+    darkLogoPath: '/images/logo-dark.png',
+    lightLogoPath: '/images/logo-light.png',
     metadata: {
         title: 'CheckIn More',
         description: 'Effortless, scheduled check-ins for peace of mind. Delivering instant text updates to your loved ones with a few taps.',
