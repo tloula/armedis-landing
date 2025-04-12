@@ -53,3 +53,16 @@ export interface ISocials {
     x?: string;
     [key: string]: string | undefined;
 }
+
+export interface IHowItWorksSubsection {
+    subtitle: string;
+    description: string;
+    imageSrc?: string;
+}
+
+export interface IHowItWorksSection {
+    title: string;
+    description?: string;
+    subsections?: IHowItWorksSubsection[];
+    imageSrc?: string;
+}

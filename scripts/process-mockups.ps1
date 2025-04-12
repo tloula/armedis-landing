@@ -64,9 +64,11 @@ function Remove-PortraitFromNames {
 }
 
 function Ensure-CroppedFolder {
-    if (-not (Test-Path "Cropped")) {
-        New-Item -ItemType Directory -Path "Cropped"
+    $croppedPath = Join-Path $PSScriptRoot "Cropped"
+    if (-not (Test-Path $croppedPath)) {
+        New-Item -ItemType Directory -Path $croppedPath
     }
+    return $croppedPath
 }
 
 function Crop-ImageTopHalf {
@@ -86,8 +88,17 @@ function Crop-ImageTopHalf {
         $graphics.DrawImage($image, $destRect, $sourceRect, [System.Drawing.GraphicsUnit]::Pixel)
         
         # Save to Cropped folder with same filename
-        $newPath = Join-Path "Cropped" (Split-Path $imagePath -Leaf)
+        $croppedPath = Join-Path $PSScriptRoot "Cropped"
+        $newPath = Join-Path $croppedPath (Split-Path $imagePath -Leaf)
+        
+        # Ensure the directory exists
+        if (-not (Test-Path $croppedPath)) {
+            New-Item -ItemType Directory -Path $croppedPath -Force
+        }
+        
+        # Save the image
         $newBitmap.Save($newPath, [System.Drawing.Imaging.ImageFormat]::Png)
+        Write-Host "Successfully cropped and saved: $newPath"
         
         # Cleanup
         $graphics.Dispose()
@@ -96,25 +107,28 @@ function Crop-ImageTopHalf {
     }
     catch {
         Write-Error "Failed to process image $imagePath : $_"
+        if ($graphics) { $graphics.Dispose() }
+        if ($newBitmap) { $newBitmap.Dispose() }
+        if ($image) { $image.Dispose() }
     }
 }
 
 # Main execution
 try {
     # 1. Extract all zip files and track new files
-    $newlyExtractedFiles = Extract-ZipFiles
+    # $newlyExtractedFiles = Extract-ZipFiles
     
-    # 2. Remove non-portrait files from extracted content only
-    Remove-NonPortraitFiles -extractedFiles $newlyExtractedFiles
+    # # 2. Remove non-portrait files from extracted content only
+    # Remove-NonPortraitFiles -extractedFiles $newlyExtractedFiles
     
-    # 3. Remove "portrait" from filenames
-    Remove-PortraitFromNames
+    # # 3. Remove "portrait" from filenames
+    # Remove-PortraitFromNames
 
     # 4. Create Cropped folder
-    Ensure-CroppedFolder
+    $croppedPath = Ensure-CroppedFolder
     
     # 5. Crop all PNGs in root folder
-    Get-ChildItem -Filter "*.png" | ForEach-Object {
+    Get-ChildItem -Path $PSScriptRoot -Filter "*.png" | ForEach-Object {
         Crop-ImageTopHalf -imagePath $_.FullName
     }
 }
