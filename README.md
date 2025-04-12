@@ -2,7 +2,7 @@
 
 # Finwise - Next.js + Tailwind Landing Page Template
 
-Finwise is a lightweight, easily configurable, and customizable **Next.js** and **Tailwind CSS** landing page template. It’s built to be adaptable, performant, and perfect for any product launch, portfolio, or promotional site.
+Finwise is a lightweight, easily configurable, and customizable **Next.js** and **Tailwind CSS** landing page template. It's built to be adaptable, performant, and perfect for any product launch, portfolio, or promotional site.
 
 Try out the demo here: [https://finwise-omega.vercel.app](https://finwise-omega.vercel.app).
 
@@ -94,7 +94,7 @@ Finwise is an open-source project, and we welcome contributions from the communi
 
 ## Community and Support
 
-Join our community discussions on GitHub to share ideas, ask questions, or suggest improvements. Let’s build something amazing together!
+Join our community discussions on GitHub to share ideas, ask questions, or suggest improvements. Let's build something amazing together!
 
 
 --- 
