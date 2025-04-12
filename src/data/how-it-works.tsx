@@ -31,19 +31,21 @@ export const howItWorksSections: IHowItWorksSection[] = [
             {
                 subtitle: "Set Your Check-In Schedule",
                 description: `Customize your schedule by choosing:
-	- Check-in time: When notifications are sent to remind you to check in.
-	- Check-in window: How long you have to complete your check-in.
-	- Days of the week: Select specific days for check-ins to align with your weekly routine.
-	- Additional check-ins: Add multiple check-ins per day to match your schedule and ensure regular updates.
+
+	- **Check-in time**: When notifications are sent to remind you to check in.
+	- **Check-in window**: How long you have to complete your check-in.
+	- **Days of the week**: Select specific days for check-ins to align with your weekly routine.
+	- **Additional check-ins**: Add multiple check-ins per day to match your schedule and ensure regular updates.
 This flexibility lets you tailor your check-ins to fit your unique lifestyle and commitments.`,
                 imageSrc: "/images/how-it-works/5-set-checkin-schedule.webp"
             },
             {
                 subtitle: "Select Your Check-In Option",
                 description: `Choose how you want to check in:
-	- One-Tap: Quick and straightforward.
-	- Mood Status: Share your mood with emoji options for bad, okay, good, or great.
-	- Request Assistance: Notify your contacts if help is needed.
+
+	- **One-Tap:** Quick and straightforward.
+	- **Mood Status:** Share your mood with emoji options for bad, okay, good, or great.
+	- **Request Assistance:** Notify your contacts if help is needed.
 Combination: Include multiple check-in types for more detailed updates.`,
                 imageSrc: "/images/how-it-works/6-set-checkin-option.webp"
             },
@@ -56,6 +58,7 @@ Combination: Include multiple check-in types for more detailed updates.`,
     },
     {
         title: "Completing a Check-In",
+        offset: 1,
         subsections: [
             {
                 subtitle: "It's Check In Time",
@@ -65,15 +68,17 @@ Combination: Include multiple check-in types for more detailed updates.`,
             {
                 subtitle: "Submit Your Check-In",
                 description: `Complete your check-in with just a few taps, and the app handles notifying your contacts based on your response:
-    - Completed Check-Ins: Contacts opted in for completed check-ins will get the time you checked in and, if applicable, your status (great, good, okay, or bad).
-    - Missed Check-Ins: If you don't check in before the window closes, contacts set to receive missed check-in alerts will be notified.
-    - Need Assistance: If you request assistance, an immediate text alert is sent to your designated contacts so they can follow up and provide help as needed.`,
+
+    - **Completed Check-Ins:** Contacts opted in for completed check-ins will get the time you checked in and, if applicable, your status (great, good, okay, or bad).
+    - **Missed Check-Ins:** If you don't check in before the window closes, contacts set to receive missed check-in alerts will be notified.
+    - **Need Assistance:** If you request assistance, an immediate text alert is sent to your designated contacts so they can follow up and provide help as needed.`,
                 imageSrc: "/images/how-it-works/9-checkin.webp"
             }
         ]
     },
     {
         title: "Bonus Features",
+        offset: 1,
         subsections: [
             {
                 subtitle: "Review Your Check-In History",

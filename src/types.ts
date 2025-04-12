@@ -65,4 +65,5 @@ export interface IHowItWorksSection {
     description?: string;
     subsections?: IHowItWorksSubsection[];
     imageSrc?: string;
+    offset?: number;
 }

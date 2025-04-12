@@ -90,7 +90,7 @@ export default function HowItWorks() {
                                             variants={childVariants}
                                             className={`
           flex flex-wrap items-center justify-center gap-8 lg:gap-20 lg:flex-nowrap
-          ${idx % 2 === 0 ? 'flex-col lg:flex-row' : 'flex-col lg:flex-row-reverse'}
+          ${idx % 2 === (section.offset ?? 0) ? 'flex-col lg:flex-row' : 'flex-col lg:flex-row-reverse'}
         `}
                                         >
                                             <div className="flex flex-col w-full max-w-lg">
