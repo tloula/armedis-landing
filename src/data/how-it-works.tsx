@@ -46,7 +46,7 @@ This flexibility lets you tailor your check-ins to fit your unique lifestyle and
 	- **One-Tap:** Quick and straightforward.
 	- **Mood Status:** Share your mood with emoji options for bad, okay, good, or great.
 	- **Request Assistance:** Notify your contacts if help is needed.
-Combination: Include multiple check-in types for more detailed updates.`,
+    - **Combination:** Include multiple check-in types for more detailed updates.`,
                 imageSrc: "/images/how-it-works/6-set-checkin-option.webp"
             },
             {
