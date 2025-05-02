@@ -19,7 +19,7 @@ export const notificationFAQs: IFAQ[] = [
     },
     {
         question: `Can I customize the message that my contacts receive?`,
-        answer: `No, ${siteDetails.siteName} sends pre-written messages to ensure clarity and consistency in communication. If this is a feature that you would be interested in, feel free to send your feedback to ${siteDetails.helpEmail}.`,
+        answer: `No, ${siteDetails.siteName} sends pre-written messages to ensure clarity and consistency in communication. If this is a feature that you would be interested in, feel free to send your feedback to ${siteDetails.supportEmail}.`,
     },
     {
         question: `What happens if one of my contacts doesn't receive a notification?`,

@@ -58,7 +58,7 @@ export const footerDetails: {
             url: "/data-request"
         }
     ],
-    email: siteDetails.helpEmail,
+    email: siteDetails.supportEmail,
     // telephone: '+1 (123) 456-7890',
     socials: {
         // github: 'https://github.com',

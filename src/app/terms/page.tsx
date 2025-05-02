@@ -1,5 +1,6 @@
 import Container from "@/components/Container";
 import Section from "@/components/Section";
+import { siteDetails } from "@/data/siteDetails";
 
 const TermsPage = () => {
     return (
@@ -379,7 +380,7 @@ const TermsPage = () => {
 
                             <div>
                                 <h3 className="text-xl font-bold mb-3">Cancellation</h3>
-                                <p>You may cancel your subscription by logging into the app, navigating to Settings {`>`} Manage Subscription, and selecting Cancel Subscription; by canceling directly through Google Play or the Apple App Store; or by contacting our customer support at help@checkinmore.com for assistance. Your cancellation will take effect at the end of the current paid term. If you have any questions or are unsatisfied with our Services, please email us at support@hydroxygenlabs.com.</p>
+                                <p>You may cancel your subscription by logging into the app, navigating to Settings {`>`} Manage Subscription, and selecting Cancel Subscription; by canceling directly through Google Play or the Apple App Store; or by contacting our customer support at {siteDetails.supportEmail} for assistance. Your cancellation will take effect at the end of the current paid term. If you have any questions or are unsatisfied with our Services, please email us at support@hydroxygenlabs.com.</p>
                             </div>
 
                             <div>
