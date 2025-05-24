@@ -12,5 +12,6 @@ export const siteDetails = {
     locale: 'en-US',
     siteLogo: `${process.env.BASE_PATH || ''}/images/logo.png`, // or use a string for the logo e.g. "TechStartup"
     googleAnalyticsId: 'G-DGXP6PQJE6', // e.g. G-XXXXXXX,
+    clarityId: 'rob3bxu4gs',
     supportEmail: 'support@checkinmore.com'
 }

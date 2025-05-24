@@ -1,3 +1,5 @@
+"use client";
+
 import AboutUs from "@/components/AboutUs";
 import Benefits from "@/components/Benefits/Benefits";
 import Container from "@/components/Container";
@@ -7,8 +9,19 @@ import Hero from "@/components/Hero";
 import Pricing from "@/components/Pricing/Pricing";
 import Promo from "@/components/Promo";
 import Section from "@/components/Section";
+import { siteDetails } from "@/data/siteDetails";
+import Clarity from "@microsoft/clarity";
+import React from "react";
 
 const HomePage: React.FC = () => {
+
+  React.useEffect(() => {
+    if (siteDetails.clarityId) {
+      console.log('Initializing Clarity', siteDetails.clarityId);
+      Clarity.init(siteDetails.clarityId);
+    }
+  }, []);
+
   return (
     <>
       <Hero />
