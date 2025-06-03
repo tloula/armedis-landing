@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate-sitemap": "node scripts/generate-sitemap.js",
+    "prebuild": "npm run generate-sitemap && npm run prebuild:custom || :",
+    "preexport": "npm run generate-sitemap && npm run preexport:custom || :"
   },
   "dependencies": {
     "@headlessui/react": "^2.1.8",
