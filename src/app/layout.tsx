@@ -1,6 +1,7 @@
 import { GoogleAnalytics } from '@next/third-parties/google';
 import type { Metadata } from "next";
 import { Manrope, Source_Sans_3 } from "next/font/google";
+import Script from "next/script";
 
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
@@ -57,6 +58,12 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <Script
+          defer
+          data-website-id="6858c1e2f4a5bf0c3a1d5bac"
+          data-domain="checkinmore.com"
+          src="https://datafa.st/js/script.js"
+        />
       </body>
     </html>
   );
