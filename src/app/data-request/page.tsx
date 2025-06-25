@@ -7,7 +7,7 @@ const DataRequestPage = () => {
             <Section
                 id="data-request"
                 title="Data Request"
-                description="Request your personal data or exercise your data rights"
+                description="Request your data be updated, exported, or deleted"
             >
                 <div className="max-w-lg mx-auto">
                     <form className="space-y-6" action="https://submit-form.com/YmcpcuoG8" method="POST">
@@ -48,10 +48,10 @@ const DataRequestPage = () => {
                                 required
                             >
                                 <option value="">Select a request type</option>
-                                <option value="access">Access my data</option>
-                                <option value="delete">Delete my data</option>
                                 <option value="update">Update my data</option>
                                 <option value="export">Export my data</option>
+                                <option value="delete-data">Delete my data</option>
+                                <option value="delete-account">Delete my account</option>
                             </select>
                         </div>
 
@@ -80,6 +80,9 @@ const DataRequestPage = () => {
 
                     <div className="mt-6 text-sm text-gray-500">
                         <p>We will process your request within 30 days in accordance with applicable data protection laws.</p>
+                    </div>
+                    <div className="mt-6 text-sm text-gray-500">
+                        <p>If you choose to delete your account, all of your data will be deleted except for purchase history, which we retain in Stripe and/or RevenueCat for legal and bookkeeping purposes.</p>
                     </div>
                 </div>
             </Section>
