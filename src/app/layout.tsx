@@ -54,7 +54,6 @@ export default function RootLayout({
         {siteDetails.googleAnalyticsId && <GoogleAnalytics gaId={siteDetails.googleAnalyticsId} />}
         <Header />
         <main>
-          <TermlyCMP websiteUUID={WEBSITE_UUID} />
           {children}
         </main>
         <Footer />
