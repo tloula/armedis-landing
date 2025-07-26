@@ -4,7 +4,7 @@ import { siteDetails } from "./siteDetails";
 export const notificationFAQs: IFAQ[] = [
     {
         question: `How does the app notify my contacts?`,
-        answer: `The app sends notifications to your selected contacts via text messages whenever a check-in status is updated. These alerts are based on the preferences you've set for each contact—so they'll only receive the updates you've chosen for them.
+        answer: `The app sends notifications to your selected contacts via text messages whenever a check-in status is updated. These alerts are based on the preferences you've set for each contact - so they'll only receive the updates you've chosen for them.
         
         For example:
         - **Completed check-ins:** As soon as you confirm your check-in, the app immediately sends a text notification to your designated contacts, letting them know you're okay.

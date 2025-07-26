@@ -45,7 +45,7 @@ export const benefits: IBenefit[] = [
         imageSrc: "/images/mockup-config.webp"
     },
     {
-        title: "Check In—Fast, Easy, and Hassle-Free",
+        title: "Check In - Fast, Easy, and Hassle-Free",
         description: "Simple Check-Ins, Your Way",
         bullets: [
             {
@@ -73,7 +73,7 @@ export const benefits: IBenefit[] = [
         imageSrc: "/images/mockup-checkin.webp"
     },
     {
-        title: "Keep Everyone in the Loop—Effortlessly",
+        title: "Keep Everyone in the Loop - Effortlessly",
         description: "Different People, Different Needs",
         bullets: [
             {

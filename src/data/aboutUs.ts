@@ -5,7 +5,7 @@ export const aboutUsData = {
   content: [
     {
       heading: "Our Story",
-      text: "We're a husband-and-wife team who saw a growing need for a simple way to help loved ones stay connected—whether it's an elderly parent living alone or a young adult navigating independent life. Inspired by personal experience and a shared desire to bring people closer, we created CheckIn More to offer peace of mind and ensure no one feels truly alone."
+      text: "We're a husband-and-wife team who saw a growing need for a simple way to help loved ones stay connected - whether it's an elderly parent living alone or a young adult navigating independent life. Inspired by personal experience and a shared desire to bring people closer, we created CheckIn More to offer peace of mind and ensure no one feels truly alone."
     },
     {
       heading: "Our Mission",
@@ -17,7 +17,7 @@ export const aboutUsData = {
     },
     {
       heading: "Our Values",
-      text: "Simplicity: Keeping things as straightforward as possible—our app is designed to make check-ins quick and effortless.\nEfficiency: A few taps are all it takes to keep everyone in the loop.\nPeace of Mind: Knowing someone gets notified if a check-in is missed."
+      text: "Simplicity: Keeping things as straightforward as possible - our app is designed to make check-ins quick and effortless.\nEfficiency: A few taps are all it takes to keep everyone in the loop.\nPeace of Mind: Knowing someone gets notified if a check-in is missed."
     },
   ],
   imagePath: "/images/rainier.png"

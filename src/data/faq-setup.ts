@@ -29,10 +29,10 @@ export const setupFAQs: IFAQ[] = [
     },
     {
         question: `How do I schedule my check-ins?`,
-        answer: `You can schedule your check-ins by selecting the days of the week, the time you'd like your check-in to open, and how long you'd like the check-in window to stay open. You can add multiple check-ins to fully customize your schedule—for example, setting different times or durations for specific days. This allows you to tailor your routine, like giving yourself extra time on busier days or adjusting check-ins to fit weekdays and weekends differently. The flexibility helps ensure your schedule aligns with your lifestyle and needs.`,
+        answer: `You can schedule your check-ins by selecting the days of the week, the time you'd like your check-in to open, and how long you'd like the check-in window to stay open. You can add multiple check-ins to fully customize your schedule - for example, setting different times or durations for specific days. This allows you to tailor your routine, like giving yourself extra time on busier days or adjusting check-ins to fit weekdays and weekends differently. The flexibility helps ensure your schedule aligns with your lifestyle and needs.`,
     },
     {
         question: `Can I set different check-in times or frequencies for different days?`,
-        answer: `Yes, ${siteDetails.siteName} lets you fully customize your check-in schedule. You can set multiple check-ins a day, once a day, or even just once a week, depending on your needs. You can also adjust the schedule for specific days—for example, set daily check-ins during the week and fewer or no check-ins on weekends. Additionally, you can customize the duration of each check-in, giving yourself more time on busier days. This flexibility ensures your check-ins fit seamlessly into your routine.`,
-    } 
+        answer: `Yes, ${siteDetails.siteName} lets you fully customize your check-in schedule. You can set multiple check-ins a day, once a day, or even just once a week, depending on your needs. You can also adjust the schedule for specific days - for example, set daily check-ins during the week and fewer or no check-ins on weekends. Additionally, you can customize the duration of each check-in, giving yourself more time on busier days. This flexibility ensures your check-ins fit seamlessly into your routine.`,
+    }
 ];

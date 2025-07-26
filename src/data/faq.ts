@@ -8,11 +8,11 @@ export const faqs: IFAQ[] = [
     },
     {
         question: `Can multiple family members share the same account to monitor a loved one?`,
-        answer: `Absolutely! A single account keeps a person's selected circle informed. Emergency contacts receive text updates for completed check-ins, missed check-ins, or assistance requests, ensuring they stay aware of their loved one's status—no extra accounts needed!`,
+        answer: `Absolutely! A single account keeps a person's selected circle informed. Emergency contacts receive text updates for completed check-ins, missed check-ins, or assistance requests, ensuring they stay aware of their loved one's status - no extra accounts needed!`,
     },
     {
         question: `How does the app notify my contacts?`,
-        answer: `The app sends notifications to your selected contacts via text messages whenever a check-in status is updated. These alerts are based on the preferences you've set for each contact—so they'll only receive the updates you've chosen for them.
+        answer: `The app sends notifications to your selected contacts via text messages whenever a check-in status is updated. These alerts are based on the preferences you've set for each contact - so they'll only receive the updates you've chosen for them.
         
         For example:
         - **Completed check-ins:** As soon as you confirm your check-in, the app immediately sends a text notification to your designated contacts, letting them know you're okay.
@@ -31,6 +31,6 @@ export const faqs: IFAQ[] = [
     },
     {
         question: `Why isn't ${siteDetails.siteName} free?`,
-        answer: `Maintaining ${siteDetails.siteName} comes with real costs — app store fees, cloud hosting, SMS services, and business expenses. Instead of selling your data to cover these costs, we charge a small fee to keep things running smoothly.\nThis approach allows us to provide better support, improve our service, and continue building features that matter to you. As a family-run project, we truly appreciate your support in helping us keep ${siteDetails.siteName} going.`
+        answer: `Maintaining ${siteDetails.siteName} comes with real costs - app store fees, cloud hosting, SMS services, and business expenses. Instead of selling your data to cover these costs, we charge a small fee to keep things running smoothly.\nThis approach allows us to provide better support, improve our service, and continue building features that matter to you. As a family-run project, we truly appreciate your support in helping us keep ${siteDetails.siteName} going.`
     }
 ];

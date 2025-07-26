@@ -333,7 +333,7 @@ const PrivacyPage = () => {
                                 </h3>
 
                                 <p className="mb-4">
-                                    <em><strong>In Short:</strong> Some information — such as your Internet Protocol (IP) address and/or browser and device characteristics — is collected automatically when you visit our Services.</em>
+                                    <em><strong>In Short:</strong> Some information - such as your Internet Protocol (IP) address and/or browser and device characteristics - is collected automatically when you visit our Services.</em>
                                 </p>
 
                                 <p className="mb-4">
@@ -743,7 +743,7 @@ const PrivacyPage = () => {
                                     <a href="#contact" className="text-[var(--link-text)] hover:text-[var(--link-hover)]">
                                         HOW CAN YOU CONTACT US ABOUT THIS NOTICE?
                                     </a>{" "}
-                                    below. You will then be removed from the marketing lists. However, we may still communicate with you — for example, to send you service-related messages that are necessary for the administration and use of your account, to respond to service requests, or for other non-marketing purposes.
+                                    below. You will then be removed from the marketing lists. However, we may still communicate with you - for example, to send you service-related messages that are necessary for the administration and use of your account, to respond to service requests, or for other non-marketing purposes.
                                 </p>
                             </div>
 
