@@ -277,6 +277,7 @@ const PrivacyPage = () => {
                                         <li>phone numbers</li>
                                         <li>email addresses</li>
                                         <li>passwords</li>
+                                        <li>profile photos</li>
                                     </ul>
                                 </div>
 
@@ -584,6 +585,25 @@ const PrivacyPage = () => {
                                 <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-[var(--link-text)] hover:text-[var(--link-hover)]">
                                     Google Privacy & Terms page
                                 </a>.
+                            </p>
+
+                            <h3 className="text-xl font-bold mb-3">Microsoft Clarity</h3>
+                            <p className="mb-6">
+                                We may share your information with Microsoft Clarity to track and analyze the use of the Services. To opt out of being tracked by Microsoft Clarity across the Services, visit{" "}
+                                <a href="https://clarity.microsoft.com/privacy" target="_blank" rel="noopener noreferrer" className="text-[var(--link-text)] hover:text-[var(--link-hover)]">
+                                    https://clarity.microsoft.com/privacy
+                                </a>. For more information on the privacy practices of Microsoft, please visit the{" "}
+                                <a href="https://privacy.microsoft.com/en-us/privacystatement" target="_blank" rel="noopener noreferrer" className="text-[var(--link-text)] hover:text-[var(--link-hover)]">
+                                    Microsoft Privacy Statement
+                                </a>.
+                            </p>
+
+                            <h3 className="text-xl font-bold mb-3">Mixpanel</h3>
+                            <p className="mb-6">
+                                We may share your information with Mixpanel to track and analyze the use of the Services. To opt out of being tracked by Mixpanel across the Services, visit{" "}
+                                <a href="https://mixpanel.com/privacy/" target="_blank" rel="noopener noreferrer" className="text-[var(--link-text)] hover:text-[var(--link-hover)]">
+                                    https://mixpanel.com/privacy/
+                                </a>. For more information on the privacy practices of Mixpanel, please visit the{" "}
                             </p>
                         </div>
 
