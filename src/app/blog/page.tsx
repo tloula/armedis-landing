@@ -5,8 +5,8 @@ import Container from '@/components/Container';
 import SectionTitle from '@/components/SectionTitle';
 
 export const metadata: Metadata = {
-  title: 'Blog - Armedis',
-  description: 'Stay up to date with the latest news, tips, and insights from the Armedis team.',
+  title: 'Blog - CheckIn More',
+  description: 'Stay up to date with the latest news, tips, and insights from the folks behind CheckIn More.',
 };
 
 export default async function BlogPage() {
@@ -23,7 +23,7 @@ export default async function BlogPage() {
             className="mt-4"
             style={{ color: 'var(--foreground-accent)' }}
           >
-            Stay up to date with the latest news, tips, and insights from the Armedis team.
+            Stay up to date with the latest news, tips, and insights from the folks behind CheckIn More.
           </p>
         </div>
         
