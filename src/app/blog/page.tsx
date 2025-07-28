@@ -36,7 +36,7 @@ export default async function BlogPage() {
               No blog posts yet
             </h3>
             <p style={{ color: 'var(--foreground-accent)' }}>
-              We're working on creating great content for you. Check back soon!
+              We&apos;re working on creating great content for you. Check back soon!
             </p>
           </div>
         ) : (
