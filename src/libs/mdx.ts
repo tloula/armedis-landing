@@ -24,6 +24,8 @@ async function processMarkdown(content: string): Promise<string> {
     .replace(/<\/h([1-6])>/g, '</h$1><div class="mb-4"></div>')
     // Add spacing before headings (except first one)
     .replace(/(?<!^)<h([1-6])>/g, '<div class="mt-6"></div><h$1>')
+    // Make H1 elements smaller in content
+    .replace(/<h1>/g, '<h1 class="text-2xl lg:text-3xl font-bold">')
     // Add spacing around lists
     .replace(/<ul>/g, '<div class="my-4"></div><ul class="list-disc ml-8 mb-4">')
     .replace(/<\/ul>/g, '</ul><div class="mb-4"></div>')

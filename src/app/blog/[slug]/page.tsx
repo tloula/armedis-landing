@@ -84,7 +84,7 @@ export default async function BlogPost({ params }: Props) {
               )}
               
               <h1 
-                className="text-4xl lg:text-5xl font-bold leading-tight"
+                className="text-3xl lg:text-4xl font-bold leading-tight"
                 style={{ color: 'var(--foreground)' }}
               >
                 {post.title}
