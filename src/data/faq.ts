@@ -13,12 +13,12 @@ export const faqs: IFAQ[] = [
     {
         question: `How does the app notify my contacts?`,
         answer: `The app sends notifications to your selected contacts via text messages whenever a check-in status is updated. These alerts are based on the preferences you've set for each contact - so they'll only receive the updates you've chosen for them.
-        
+
         For example:
         - **Completed check-ins:** As soon as you confirm your check-in, the app immediately sends a text notification to your designated contacts, letting them know you're okay.
         - **Missed check-ins:** If a check-in window closes without a response, a notification is sent to your contacts, alerting them that the check-in wasn't completed.
         - **Help requests or concerns:** If you mark a bad day or request help, your contacts receive an immediate alert so they can respond quickly.
-        
+
         This ensures your loved ones are informed when it matters while avoiding unnecessary alerts. You're in full control of who gets notified and when!`,
     },
     {
@@ -31,6 +31,6 @@ export const faqs: IFAQ[] = [
     },
     {
         question: `Why isn't ${siteDetails.siteName} free?`,
-        answer: `Maintaining ${siteDetails.siteName} comes with real costs - app store fees, cloud hosting, SMS services, and business expenses. Instead of selling your data to cover these costs, we charge a small fee to keep things running smoothly.\nThis approach allows us to provide better support, improve our service, and continue building features that matter to you. As a family-run project, we truly appreciate your support in helping us keep ${siteDetails.siteName} going.`
+        answer: `Maintaining ${siteDetails.siteName} comes with real costs - app store fees, cloud hosting, SMS services, and business expenses. We charge a small fee to keep things running smoothly.\nThis approach allows us to provide better support, improve our service, and continue building features that matter to you. As a family-run project, we truly appreciate your support in helping us keep ${siteDetails.siteName} going.`
     }
 ];

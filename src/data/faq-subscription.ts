@@ -4,7 +4,7 @@ import { siteDetails } from "./siteDetails";
 export const subscriptionFAQs: IFAQ[] = [
     {
         question: `Why isn't ${siteDetails.siteName} free?`,
-        answer: `Maintaining ${siteDetails.siteName} comes with real costs - app store fees, cloud hosting, SMS services, and business expenses. Instead of selling your data to cover these costs, we charge a small fee to keep things running smoothly.\nThis approach allows us to provide better support, improve our service, and continue building features that matter to you. As a family-run project, we truly appreciate your support in helping us keep ${siteDetails.siteName} going.`
+        answer: `Maintaining ${siteDetails.siteName} comes with real costs - app store fees, cloud hosting, SMS services, and business expenses. We charge a small fee to keep things running smoothly.\nThis approach allows us to provide better support, improve our service, and continue building features that matter to you. As a family-run project, we truly appreciate your support in helping us keep ${siteDetails.siteName} going.`
     },
     {
         question: `What is included in the subscription plan?`,
