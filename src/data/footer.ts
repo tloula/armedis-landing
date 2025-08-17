@@ -64,10 +64,10 @@ export const footerDetails: {
         // github: 'https://github.com',
         // x: 'https://twitter.com/x',
         // twitter: 'https://twitter.com/Twitter',
-        facebook: 'https://facebook.com',
+        facebook: 'https://www.facebook.com/people/CheckIn-More/61579662565810/',
         // youtube: 'https://youtube.com',
         // linkedin: 'https://www.linkedin.com',
         // threads: 'https://www.threads.net',
-        instagram: 'https://www.instagram.com',
+        instagram: 'https://www.instagram.com/checkin.more/',
     }
 }
