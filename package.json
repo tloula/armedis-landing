@@ -12,9 +12,11 @@
     "prebuild": "npm run generate:sitemap && npm run generate:mdx"
   },
   "dependencies": {
+    "@botpoison/browser": "^0.1.30",
     "@headlessui/react": "^2.1.8",
     "@microsoft/clarity": "^1.0.0",
     "@next/third-parties": "^14.2.13",
+    "axios": "^1.11.0",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
     "framer-motion": "^11.11.9",

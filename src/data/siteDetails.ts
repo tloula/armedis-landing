@@ -13,5 +13,7 @@ export const siteDetails = {
     siteLogo: `${process.env.BASE_PATH || ''}/images/logo.png`, // or use a string for the logo e.g. "TechStartup"
     googleAnalyticsId: 'G-DGXP6PQJE6', // e.g. G-XXXXXXX,
     clarityId: 'rob3bxu4gs',
-    supportEmail: 'support@checkinmore.com'
+    supportEmail: 'support@checkinmore.com',
+    botpoisonContactPublicKey: 'pk_1a8c80bf-4b9d-4666-b3b6-b7691864b8f1',
+    botpoisonDataRequestPublicKey: 'pk_0ff57e52-9701-49cf-9853-f814b716eaf2'
 }
