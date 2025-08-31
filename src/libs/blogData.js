@@ -18,6 +18,20 @@ export default [
     "readTime": "5 min read"
   },
   {
+    "slug": "daily-checkin-app-for-seniors",
+    "title": "CheckIn More: A Daily Check-In App for Seniors",
+    "description": "CheckIn More is a daily check-in app for seniors that gives families peace of mind while respecting independence.",
+    "date": "2025-08-31",
+    "author": "Trevor",
+    "tags": [
+      "daily check-in",
+      "seniors"
+    ],
+    "image": "/images/seniors-2.jpg",
+    "content": "\r\nAs the developer behind CheckIn More, this idea started from something I noticed in my own family: seniors often reach a stage where they're too independent to move into senior living, but not quite independent enough to be left entirely on their own.\r\n\r\nAt that stage, family members often feel a responsibility to check in every day. A quick call or text turns into a routine: \"Do you need anything today?\" These daily check-ins come from love - but when they happen out of obligation, they can quickly feel like a chore for everyone involved.\r\n\r\nThat's why I built CheckIn More. It's a daily check-in app for seniors designed to reduce pressure on families while still keeping seniors safe and supported.\r\n\r\nInstead of requiring constant texts or calls, the app sends a simple notification to your loved one at the times you choose. All they need to do is check in with a quick tap. If they miss a check-in, their trusted contacts get notified - so you know when it's actually important to reach out.\r\n\r\nThe result:\r\n\r\n- Peace of mind for family members, without the guilt of missing a call.\r\n- Independence for seniors, who don't feel \"hovered over.\"\r\n- Meaningful communication when you do connect, because conversations aren't limited to daily status updates.\r\n\r\nFor me, this project is about making technology feel more human. A simple daily check-in shouldn't take away from real connection - it should support it.\r\n\r\nIf you've been searching for a daily check in app for seniors that balances safety and independence, I built CheckIn More with exactly that in mind.\r\n",
+    "readTime": "2 min read"
+  },
+  {
     "slug": "solo-living-safety",
     "title": "Solo Living Safety: How Technology Helps You Stay Connected—Without the Constant Check-Ins",
     "description": "Discover how smart technology and wellness check-ins provide safety and peace of mind for solo living without compromising independence or privacy.",
