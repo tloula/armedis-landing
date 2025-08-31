@@ -1,6 +1,20 @@
 // AUTO-GENERATED FILE. DO NOT EDIT.
 export default [
   {
+    "slug": "check-in-service-for-people-living-alone",
+    "title": "CheckIn More: A Check-In Service for People Living Alone",
+    "description": "CheckIn More is a check-in service for people living alone that creates balance between safety and freedom.",
+    "date": "2025-09-01",
+    "author": "Trevor",
+    "tags": [
+      "daily check-in",
+      "seniors"
+    ],
+    "image": "/images/living-alone.jpg",
+    "content": "\r\nI've seen it happen many times now - kids grow up, move out, and start building their own lives. Sometimes they find roommates or a partner, but often they choose to live on their own.\r\n\r\nFor parents, that independence comes with a new kind of worry: is no news really good news? A missed call or unanswered text can spiral into concern. But at the same time, calling or texting every day just to \"check in\" can feel overbearing - especially for young adults who are craving independence.\r\n\r\nThis is one of the reasons why I built CheckIn More. It's a check-in service for people living alone that creates balance between safety and freedom.\r\n\r\nHere's how it works:\r\n\r\n- The person living alone sets up daily check-ins at times that make sense for their routine.\r\n- Parents or loved ones can choose how often they want to be notified:\r\n  - Every check-in completed (extra reassurance)\r\n  - Only missed check-ins (the \"no news is good news\" approach)\r\n\r\nThis way, independence isn't sacrificed - and peace of mind is built right in.\r\n\r\nAs a developer (and someone who's been both the worried loved one and the independent young adult), I wanted a solution that felt respectful. CheckIn More removes the pressure of constant texts and calls while making sure everyone stays connected when it really matters.\r\n",
+    "readTime": "2 min read"
+  },
+  {
     "slug": "daily-check-ins",
     "title": "The Importance of Daily Check-Ins: How Small Actions Bring Big Peace of Mind",
     "description": "Discover how daily wellness check-ins provide emotional support, reduce anxiety, and strengthen connections between seniors and their families.",
