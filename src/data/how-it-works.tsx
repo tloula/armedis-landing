@@ -73,12 +73,16 @@ This flexibility lets you tailor your check-ins to fit your unique lifestyle and
     - **Missed Check-Ins:** If you don't check in before the window closes, contacts set to receive missed check-in alerts will be notified.
     - **Need Assistance:** If you request assistance, an immediate text alert is sent to your designated contacts so they can follow up and provide help as needed.`,
                 imageSrc: "/images/how-it-works/9-checkin.webp"
+            },
+            {
+                subtitle: "Missed a Check-In",
+                description: "If you miss a check-in, your specified contacts will be texted as soon as the check-in window closes.",
+                imageSrc: "/images/how-it-works/10-sms-missed.webp"
             }
         ]
     },
     {
         title: "Bonus Features",
-        offset: 1,
         subsections: [
             {
                 subtitle: "Review Your Check-In History",
