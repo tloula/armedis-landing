@@ -87,6 +87,22 @@ export default [
     "readTime": "2 min read"
   },
   {
+    "slug": "snug-safety-vs-checkin-more",
+    "title": "Snug Safety vs. CheckIn More",
+    "description": "Snug Safety and CheckIn More are two check-in apps for seniors that give families peace of mind while respecting independence.",
+    "date": "2025-09-11",
+    "author": "Trevor",
+    "tags": [
+      "daily check-in",
+      "seniors",
+      "snug safety",
+      "checkin more"
+    ],
+    "image": "/images/snug-safety-alternative.png",
+    "content": "\r\nSnug Safety is a popular check-in app. CheckIn More is a new family-run check-in app. Here are a few of the key differences between the two.\r\n\r\n## 1. Pricing\r\n\r\nSnug Safety has a completely free plan, but it only allows one check-in per day. The paid plan is $19.99 / month and unlocks up to 3 daily check-ins and phone-calls for missed check-ins.\r\n\r\nAs a small family-run business, CheckIn More unfortunately cannot currently offer a completely free plan. However, our plan has a two-week free trial and is only $6.99 / month and includes unlimited daily check-ins.\r\n\r\n## 2. Location Tracking\r\n\r\nSnug Safety requires you to grant them access to your location in order for the app to function. If you miss a check-in, Snug sends your location to your contacts and their dispatch service.\r\n\r\nCheckIn More does not have location tracking. While supporting location sharing in case of an emergency is on our roadmap, we won't make it a requirement for the app to function.\r\n\r\n## 3. Check-In Schedule\r\n\r\nSnug only allows daily check-ins at a specific time.\r\n\r\nCheckIn More allows you to configure your check-ins similar to how you can configure your phone's alarms. You can create as many as you would like. You choose the day of the week, the time, and the duration of the check-in window for each one.\r\n\r\n## 4. Check-In Style\r\n\r\nSnug only has one check-in option: a one-tap check-in.\r\n\r\nCheckIn More has a variety of check-in options: one-tap, mood status, request assistance, or a combination of them.\r\n\r\n## 5. Dispatch Service\r\n\r\nIf you miss a check-in, Snug has a dispatch service that will call you, then your contacts, then request a wellness check to your last-known location.\r\n\r\nCheckIn More does not currently have have a dispatch service like this.\r\n\r\n## Conclusion\r\n\r\nBoth apps are great options for staying connected with loved ones. Hopefully this helps give you a quick overview of the key differences between the two.\r\n\r\nIf you want to learn more about how CheckIn More works, checkout the **[how it works](/how-it-works)** page.\r\n\r\nStill have questions? try our **[FAQs](/faqs)** or **[contact us](/contact)**.\r\n",
+    "readTime": "2 min read"
+  },
+  {
     "slug": "solo-living-safety",
     "title": "Solo Living Safety: How Technology Helps You Stay Connected—Without the Constant Check-Ins",
     "description": "Discover how smart technology and wellness check-ins provide safety and peace of mind for solo living without compromising independence or privacy.",
