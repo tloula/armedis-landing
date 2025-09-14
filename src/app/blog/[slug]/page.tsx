@@ -21,17 +21,17 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const resolvedParams = await params;
   const post = await getBlogPost(resolvedParams.slug);
-  
+
   if (!post) {
     return {
-      title: 'Post Not Found - Armedis',
+      title: 'Post Not Found - CheckIn More',
       description: 'The requested blog post could not be found.',
     };
   }
 
   return {
-    title: `${post.title} - Armedis Blog`,
-    description: post.description || `Read about ${post.title} on the Armedis blog.`,
+    title: `${post.title}`,
+    description: post.description,
     openGraph: {
       title: post.title,
       description: post.description,
@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function BlogPost({ params }: Props) {
   const resolvedParams = await params;
   const post = await getBlogPost(resolvedParams.slug);
-  
+
   if (!post) {
     notFound();
   }
@@ -73,7 +73,7 @@ export default async function BlogPost({ params }: Props) {
                 />
               </div>
             )}
-            
+
             <div className="space-y-4">
               {post.tags && post.tags.length > 0 && (
                 <div className="flex gap-2 flex-wrap">
@@ -82,29 +82,29 @@ export default async function BlogPost({ params }: Props) {
                   ))}
                 </div>
               )}
-              
-              <h1 
+
+              <h1
                 className="text-3xl lg:text-4xl font-bold leading-tight"
                 style={{ color: 'var(--foreground)' }}
               >
                 {post.title}
               </h1>
-              
+
               {post.description && (
-                <p 
+                <p
                   className="text-xl leading-relaxed"
                   style={{ color: 'var(--foreground-accent)' }}
                 >
                   {post.description}
                 </p>
               )}
-              
-              <div 
+
+              <div
                 className="flex items-center gap-6"
                 style={{ color: 'var(--foreground-accent)' }}
               >
                 {post.author && (
-                  <span 
+                  <span
                     className="font-medium"
                     style={{ color: 'var(--foreground)' }}
                   >
@@ -122,7 +122,7 @@ export default async function BlogPost({ params }: Props) {
           </div>
 
           {/* Content */}
-          <div 
+          <div
             className="prose prose-lg max-w-none [&_ul]:ml-8 [&_ol]:ml-8 [&_li]:mb-2 [&_li]:pl-2"
             style={{
               '--tw-prose-headings': 'var(--foreground)',
@@ -140,7 +140,7 @@ export default async function BlogPost({ params }: Props) {
         {/* Related Posts */}
         {relatedPosts.length > 0 && (
           <div className="mt-20">
-            <h2 
+            <h2
               className="text-3xl font-bold mb-8 text-center"
               style={{ color: 'var(--foreground)' }}
             >
@@ -166,4 +166,4 @@ export default async function BlogPost({ params }: Props) {
       </Container>
     </div>
   );
-} 
+}
