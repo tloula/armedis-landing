@@ -7,6 +7,9 @@ import SectionTitle from '@/components/SectionTitle';
 export const metadata: Metadata = {
   title: 'Blog - CheckIn More',
   description: 'Stay up to date with the latest news, tips, and insights from the folks behind CheckIn More.',
+  alternates: {
+    canonical: '/blog',
+  },
 };
 
 export default async function BlogPage() {
@@ -19,17 +22,17 @@ export default async function BlogPage() {
           <SectionTitle>
             <h2 className="my-3 !leading-snug">Our Blog</h2>
           </SectionTitle>
-          <p 
+          <p
             className="mt-4"
             style={{ color: 'var(--foreground-accent)' }}
           >
             Stay up to date with the latest news, tips, and insights from the folks behind CheckIn More.
           </p>
         </div>
-        
+
         {posts.length === 0 ? (
           <div className="text-center py-20">
-            <h3 
+            <h3
               className="text-2xl font-semibold mb-4"
               style={{ color: 'var(--foreground)' }}
             >
@@ -59,4 +62,4 @@ export default async function BlogPage() {
       </Container>
     </div>
   );
-} 
+}

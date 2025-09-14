@@ -152,4 +152,4 @@ const CookiesPage = () => {
     );
 };
 
-export default CookiesPage; 
+export default CookiesPage;
