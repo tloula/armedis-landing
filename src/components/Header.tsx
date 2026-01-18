@@ -46,7 +46,7 @@ const Header: React.FC = () => {
                             </li>
                         ))}
                         <li>
-                            <Link href="#cta" className="text-[var(--accent-text)] bg-primary hover:bg-primary-accent px-8 py-3 rounded-full transition-colors">
+                            <Link href="/download" className="text-[var(--accent-text)] bg-primary hover:bg-primary-accent px-8 py-3 rounded-full transition-colors">
                                 Download
                             </Link>
                         </li>
@@ -92,8 +92,8 @@ const Header: React.FC = () => {
                             </li>
                         ))}
                         <li>
-                            <Link href="#cta" className="text-[var(--accent-text)] bg-primary hover:bg-primary-accent px-5 py-2 rounded-full block w-fit" onClick={toggleMenu}>
-                                Get Started
+                            <Link href="/download" className="text-[var(--accent-text)] bg-primary hover:bg-primary-accent px-5 py-2 rounded-full block w-fit" onClick={toggleMenu}>
+                                Download
                             </Link>
                         </li>
                     </ul>

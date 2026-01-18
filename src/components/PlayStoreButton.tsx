@@ -1,11 +1,21 @@
-import React from 'react'
-import clsx from 'clsx'
+"use client";
 
-import { ctaDetails } from '@/data/cta'
+import clsx from 'clsx';
+import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 
-const PlayStoreButton = ({ dark }: { dark?: boolean }) => {
+import { ctaDetails } from '@/data/cta';
+import { buildPlayStoreUrl } from '@/utils/appStoreUrls';
+import { detectDevice, parseTrackingParams, trackGA4Event } from '@/utils/tracking';
+
+interface PlayStoreButtonProps {
+    dark?: boolean;
+    url?: string;
+}
+
+function PlayStoreButtonInner({ dark, href, onClick }: { dark?: boolean; href: string; onClick?: () => void }) {
     return (
-        <a href={ctaDetails.googlePlayUrl}>
+        <a href={href} onClick={onClick}>
             <button
                 type="button"
                 className={clsx("flex items-center justify-center min-w-[205px] mt-3 px-6 h-14 rounded-full w-full sm:w-fit", { "text-white bg-foreground": dark, "text-foreground bg-white": !dark })}
@@ -32,6 +42,52 @@ const PlayStoreButton = ({ dark }: { dark?: boolean }) => {
                 </div>
             </button>
         </a>
+    )
+}
+
+function PlayStoreButtonContent({ dark, url }: PlayStoreButtonProps) {
+    const searchParams = useSearchParams()
+    
+    // If url is provided, use it directly (for fallback page with tracking params)
+    // Otherwise, build URL with UTM parameters from current page
+    const href = url || (() => {
+        // Get existing UTM parameters from URL
+        const existingParams = parseTrackingParams(searchParams)
+        
+        // Add website source if not already present
+        const params = {
+            utm_source: existingParams.utm_source || 'website',
+            utm_medium: existingParams.utm_medium || 'button',
+            utm_campaign: existingParams.utm_campaign || 'app_download',
+            utm_content: existingParams.utm_content,
+        }
+        
+        return buildPlayStoreUrl(params)
+    })()
+
+    // Track button click event
+    const handleClick = () => {
+        const existingParams = parseTrackingParams(searchParams)
+        const deviceInfo = detectDevice()
+        
+        trackGA4Event('app_store_button_click', {
+            store: 'google_play',
+            device_type: deviceInfo.type,
+            utm_source: existingParams.utm_source || 'website',
+            utm_medium: existingParams.utm_medium || 'button',
+            utm_campaign: existingParams.utm_campaign || 'app_download',
+            utm_content: existingParams.utm_content || '',
+        })
+    }
+
+    return <PlayStoreButtonInner dark={dark} href={href} onClick={handleClick} />
+}
+
+const PlayStoreButton = (props: PlayStoreButtonProps) => {
+    return (
+        <Suspense fallback={<PlayStoreButtonInner dark={props.dark} href={props.url || ctaDetails.googlePlayUrl} />}>
+            <PlayStoreButtonContent {...props} />
+        </Suspense>
     )
 }
 
