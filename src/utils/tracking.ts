@@ -19,8 +19,10 @@ export function detectDevice(): DeviceInfo {
     return { type: 'unknown', isIOS: false, isAndroid: false };
   }
 
-  const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;
-  const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !(window as any).MSStream;
+  const windowWithOpera = window as Window & { opera?: string };
+  const windowWithMSStream = window as Window & { MSStream?: unknown };
+  const userAgent = navigator.userAgent || navigator.vendor || windowWithOpera.opera || '';
+  const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !windowWithMSStream.MSStream;
   const isAndroid = /android/i.test(userAgent);
 
   return {
@@ -35,13 +37,14 @@ export function detectDevice(): DeviceInfo {
  */
 export function trackGA4Event(
   eventName: string,
-  eventParams?: Record<string, any>
+  eventParams?: Record<string, unknown>
 ): void {
   if (typeof window === 'undefined') {
     return;
   }
 
-  const gtag = (window as any).gtag;
+  const windowWithGtag = window as Window & { gtag?: (command: string, eventName: string, params?: Record<string, unknown>) => void };
+  const gtag = windowWithGtag.gtag;
   if (gtag && typeof gtag === 'function') {
     gtag('event', eventName, eventParams);
   }
