@@ -18,13 +18,11 @@ import { Suspense, useEffect, useState } from 'react';
 
 function DownloadPageContent() {
   const [detecting, setDetecting] = useState(true);
-  const [trackingParams, setTrackingParams] = useState<ReturnType<typeof parseTrackingParams>>({});
   const searchParams = useSearchParams();
 
   useEffect(() => {
     // Parse tracking parameters from URL
     const params = parseTrackingParams(searchParams);
-    setTrackingParams(params);
 
     // Detect device type
     const deviceInfo = detectDevice();
@@ -74,9 +72,6 @@ function DownloadPageContent() {
   }
 
   // Fallback: show both options if device can't be detected
-  const appStoreUrl = buildAppStoreUrl(trackingParams);
-  const playStoreUrl = buildPlayStoreUrl(trackingParams);
-
   return (
     <Container className="min-h-screen flex items-center justify-center">
       <div className="max-w-md w-full text-center">
@@ -85,8 +80,8 @@ function DownloadPageContent() {
           Choose your platform to download the app:
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <AppStoreButton url={appStoreUrl} />
-          <PlayStoreButton url={playStoreUrl} />
+          <AppStoreButton />
+          <PlayStoreButton />
         </div>
       </div>
     </Container>
