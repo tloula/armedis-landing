@@ -69,5 +69,6 @@ export const footerDetails: {
         // linkedin: 'https://www.linkedin.com',
         // threads: 'https://www.threads.net',
         instagram: 'https://www.instagram.com/checkin.more/',
+        tiktok: 'https://www.tiktok.com/@checkin.more',
     }
 }
