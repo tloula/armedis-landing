@@ -9,6 +9,7 @@ import Hero from "@/components/Hero";
 import Pricing from "@/components/Pricing/Pricing";
 import Promo from "@/components/Promo";
 import Section from "@/components/Section";
+import Testimonials from "@/components/Testimonials";
 import { siteDetails } from "@/data/siteDetails";
 import Clarity from "@microsoft/clarity";
 import React from "react";
@@ -30,20 +31,20 @@ const HomePage: React.FC = () => {
         <Benefits />
 
         <Section
+          id="testimonials"
+          title="What Our Users Say"
+          description="Real reviews from the App Store."
+        >
+          <Testimonials />
+        </Section>
+
+        <Section
           id="pricing"
           title="Pricing"
           description="Simple, transparent pricing. No surprises."
         >
           <Pricing />
         </Section>
-
-        {/* <Section
-          id="testimonials"
-          title="What Our Customers Say"
-          description="Hear from those who love our product."
-        >
-          <Testimonials />
-        </Section> */}
 
         <Section
           id="about"
