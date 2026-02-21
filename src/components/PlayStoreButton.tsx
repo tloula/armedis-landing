@@ -11,6 +11,7 @@ import { detectDevice, parseTrackingParams, trackGA4Event } from '@/utils/tracki
 interface PlayStoreButtonProps {
     dark?: boolean;
     url?: string;
+    utmContent?: string;
 }
 
 function PlayStoreButtonInner({ dark, href, onClick }: { dark?: boolean; href: string; onClick?: () => void }) {
@@ -45,27 +46,24 @@ function PlayStoreButtonInner({ dark, href, onClick }: { dark?: boolean; href: s
     )
 }
 
-function PlayStoreButtonContent({ dark, url }: PlayStoreButtonProps) {
+function PlayStoreButtonContent({ dark, url, utmContent }: PlayStoreButtonProps) {
     const searchParams = useSearchParams()
     
     // If url is provided, use it directly (for fallback page with tracking params)
     // Otherwise, build URL with UTM parameters from current page
     const href = url || (() => {
-        // Get existing UTM parameters from URL
         const existingParams = parseTrackingParams(searchParams)
         
-        // Add website source if not already present
         const params = {
             utm_source: existingParams.utm_source || 'website',
             utm_medium: existingParams.utm_medium || 'button',
             utm_campaign: existingParams.utm_campaign || 'app_download',
-            utm_content: existingParams.utm_content,
+            utm_content: utmContent || existingParams.utm_content,
         }
         
         return buildPlayStoreUrl(params)
     })()
 
-    // Track button click event
     const handleClick = () => {
         const existingParams = parseTrackingParams(searchParams)
         const deviceInfo = detectDevice()
@@ -76,7 +74,7 @@ function PlayStoreButtonContent({ dark, url }: PlayStoreButtonProps) {
             utm_source: existingParams.utm_source || 'website',
             utm_medium: existingParams.utm_medium || 'button',
             utm_campaign: existingParams.utm_campaign || 'app_download',
-            utm_content: existingParams.utm_content || '',
+            utm_content: utmContent || existingParams.utm_content || '',
         })
     }
 

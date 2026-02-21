@@ -2,7 +2,10 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { format, parse } from 'date-fns';
+import { MDXRemote } from 'next-mdx-remote/rsc';
+import remarkGfm from 'remark-gfm';
 import { getBlogPost, getBlogPosts, getAllBlogSlugs } from '@/libs/mdx';
+import { mdxComponents } from '@/components/Blog/MdxComponents';
 import Container from '@/components/Container';
 import TagBadge from '@/components/Blog/TagBadge';
 import BlogCard from '@/components/Blog/BlogCard';
@@ -61,7 +64,7 @@ export default async function BlogPost({ params }: Props) {
   return (
     <div className="py-20 lg:py-32">
       <Container>
-        <article className="max-w-4xl mx-auto border rounded-lg p-8" style={{ borderColor: 'var(--border)' }}>
+        <article className="max-w-4xl mx-auto border rounded-lg p-8 shadow-sm" style={{ borderColor: 'var(--border)', backgroundColor: '#faf9f6' }}>
           {/* Header */}
           <div className="mb-8">
             {post.image && (
@@ -103,40 +106,43 @@ export default async function BlogPost({ params }: Props) {
               )}
 
               <div
-                className="flex items-center gap-6"
-                style={{ color: 'var(--foreground-accent)' }}
+                className="flex items-center gap-4 text-sm pt-2 mt-2 border-t"
+                style={{ color: 'var(--foreground-accent)', borderColor: 'var(--border)', opacity: 0.75 }}
               >
                 {post.author && (
-                  <span
-                    className="font-medium"
-                    style={{ color: 'var(--foreground)' }}
-                  >
-                    By {post.author}
+                  <span className="font-medium">
+                    {post.author}
                   </span>
+                )}
+                {post.author && post.date && (
+                  <span style={{ color: 'var(--border)' }}>|</span>
                 )}
                 {post.date && (
                   <time>
                     {format(parse(post.date, 'yyyy-MM-dd', new Date()), 'MMMM d, yyyy')}
                   </time>
                 )}
-                {post.readTime && <span>{post.readTime}</span>}
+                {post.readTime && (
+                  <>
+                    <span style={{ color: 'var(--border)' }}>|</span>
+                    <span>{post.readTime}</span>
+                  </>
+                )}
               </div>
             </div>
           </div>
 
           {/* Content */}
-          <div
-            className="prose prose-lg max-w-none [&_ul]:ml-8 [&_ol]:ml-8 [&_li]:mb-2 [&_li]:pl-2"
-            style={{
-              '--tw-prose-headings': 'var(--foreground)',
-              '--tw-prose-body': 'var(--foreground-accent)',
-              '--tw-prose-links': 'var(--link-text)',
-              '--tw-prose-bold': 'var(--foreground)',
-              '--tw-prose-code': 'var(--foreground)',
-              '--tw-prose-quotes': 'var(--foreground-accent)'
-            } as React.CSSProperties}
-          >
-            <div dangerouslySetInnerHTML={{ __html: post.content }} />
+          <div className="max-w-none">
+            <MDXRemote
+              source={post.content}
+              components={mdxComponents}
+              options={{
+                mdxOptions: {
+                  remarkPlugins: [remarkGfm],
+                },
+              }}
+            />
           </div>
         </article>
 
