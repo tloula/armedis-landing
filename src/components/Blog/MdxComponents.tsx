@@ -12,6 +12,8 @@ import {
   Clock,
   AlertTriangle,
   ShieldAlert,
+  Shield,
+  MapPin,
   PhoneIcon,
   type LucideIcon,
 } from 'lucide-react';
@@ -31,6 +33,8 @@ const iconMap: Record<string, LucideIcon> = {
   clock: Clock,
   'alert-triangle': AlertTriangle,
   'shield-alert': ShieldAlert,
+  shield: Shield,
+  'map-pin': MapPin,
 };
 
 function Icon({ name, className }: { name: string; className?: string }) {
