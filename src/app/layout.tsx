@@ -43,6 +43,25 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'MobileApplication',
+  name: 'CheckIn More',
+  operatingSystem: 'iOS, Android',
+  applicationCategory: 'HealthApplication',
+  offers: {
+    '@type': 'Offer',
+    price: '6.99',
+    priceCurrency: 'USD',
+  },
+  description: siteDetails.metadata.description,
+  url: siteDetails.siteUrl,
+  downloadUrl: [
+    'https://apps.apple.com/us/app/checkin-more/id6748661948',
+    'https://play.google.com/store/apps/details?id=com.hydroxygenlabs.armedis',
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -50,6 +69,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         className={`${manrope.className} ${sourceSans.className} antialiased`}
       >
