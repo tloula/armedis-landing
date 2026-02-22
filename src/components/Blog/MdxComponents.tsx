@@ -34,6 +34,9 @@ import {
   Home,
   Feather,
   ShieldCheck,
+  Briefcase,
+  MessageSquare,
+  Activity,
   type LucideIcon,
 } from 'lucide-react';
 import AppStoreButton from '@/components/AppStoreButton';
@@ -75,6 +78,9 @@ const iconMap: Record<string, LucideIcon> = {
   home: Home,
   feather: Feather,
   'shield-check': ShieldCheck,
+  briefcase: Briefcase,
+  'message-square': MessageSquare,
+  activity: Activity,
 };
 
 function Icon({ name, className }: { name: string; className?: string }) {

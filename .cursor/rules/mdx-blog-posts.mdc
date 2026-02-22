@@ -1,0 +1,15 @@
+---
+description: Conventions for MDX blog posts — icon registration requirement
+globs: src/markdown/blog/**/*.mdx
+alwaysApply: false
+---
+
+# MDX Blog Posts
+
+When using `<Icon name="..." />` in blog posts, the icon **must** be registered in `src/components/Blog/MdxComponents.tsx`. Unregistered names render nothing silently.
+
+If you use a new icon name, add it to `MdxComponents.tsx`:
+1. Import the Lucide component (e.g. `import { Star } from 'lucide-react'`)
+2. Add an entry to `iconMap` (e.g. `star: Star`)
+
+Reference existing blog posts in `src/markdown/blog/` for frontmatter format, component usage, and style conventions.
