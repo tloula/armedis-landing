@@ -1,4 +1,4 @@
 export const heroDetails = {
     heading: 'Quick check-ins for loved ones living alone',
-    subheading: 'Effortless, scheduled check-ins for peace of mind. Delivering instant text updates to your loved ones with a few taps.',
+    subheading: 'A daily check-in app for safety and peace of mind. Scheduled check-ins with instant text alerts to your loved ones.',
 }

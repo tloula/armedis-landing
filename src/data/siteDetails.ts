@@ -5,8 +5,8 @@ export const siteDetails = {
     darkLogoPath: '/images/logo-dark.png',
     lightLogoPath: '/images/logo-light.png',
     metadata: {
-        title: 'CheckIn More',
-        description: 'Effortless, scheduled check-ins for peace of mind. Delivering instant text updates to your loved ones with a few taps.',
+        title: 'CheckIn More - Daily Check-In App for Safety & Peace of Mind',
+        description: 'CheckIn More is a daily check-in app for safety and peace of mind. Scheduled check-ins with instant text alerts keep your loved ones informed.',
     },
     language: 'en-us',
     locale: 'en-US',

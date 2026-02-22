@@ -61,8 +61,34 @@ export default async function BlogPost({ params }: Props) {
     .filter((p) => p.slug !== post.slug)
     .slice(0, 3);
 
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    description: post.description,
+    image: post.image ? `https://checkinmore.com${post.image}` : undefined,
+    datePublished: post.date,
+    author: {
+      '@type': 'Person',
+      name: post.author || 'CheckIn More Team',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'CheckIn More',
+      url: 'https://checkinmore.com',
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://checkinmore.com/blog/${resolvedParams.slug}`,
+    },
+  };
+
   return (
     <div className="py-20 lg:py-32">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <Container>
         <article className="max-w-4xl mx-auto border rounded-lg p-8 shadow-sm" style={{ borderColor: 'var(--border)', backgroundColor: '#faf9f6' }}>
           {/* Header */}

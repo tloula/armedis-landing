@@ -62,6 +62,53 @@ const jsonLd = {
   ],
 };
 
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is CheckIn More?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'CheckIn More is a mobile app for automated, virtual wellness check-ins. You set your preferred times and frequency to check in, and the app reminds you when it\'s time. With just a tap, you confirm your check-in, and your chosen contacts are notified. If you miss a check-in or need assistance, the app sends alerts to your contacts so they can respond.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can multiple family members share the same account to monitor a loved one?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Absolutely! A single account keeps a person\'s selected circle informed. Emergency contacts receive text updates for completed check-ins, missed check-ins, or assistance requests, ensuring they stay aware of their loved one\'s status - no extra accounts needed!',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How does the app notify my contacts?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The app sends notifications to your selected contacts via text messages whenever a check-in status is updated. These alerts are based on the preferences you\'ve set for each contact. Completed check-ins send an instant notification. Missed check-ins alert your contacts that the check-in wasn\'t completed. Help requests or concerns trigger an immediate alert so contacts can respond quickly.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I change my check-in schedule and contact preferences?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, you can update your check-in schedule, contact preferences, and check-in options at any time by going to the Settings tab. You can adjust days, times, and durations, add or edit contacts and their notification preferences, change check-in options like mood tracking, and pause check-ins temporarily.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why isn\'t CheckIn More free?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Maintaining CheckIn More comes with real costs - app store fees, cloud hosting, SMS services, and business expenses. We charge a small fee to keep things running smoothly. This approach allows us to provide better support, improve our service, and continue building features that matter to you. As a family-run project, we truly appreciate your support.',
+      },
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -73,6 +120,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
         />
       </head>
       <body
