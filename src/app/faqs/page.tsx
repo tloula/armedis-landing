@@ -1,6 +1,7 @@
 import Container from "@/components/Container";
 import FAQAccordian from "@/components/FAQAccordian";
 import Section from "@/components/Section";
+import { IFAQ } from "@/types";
 import { overviewFAQs } from "@/data/faq-overview";
 import { notificationFAQs } from "@/data/faq-notification";
 import { setupFAQs } from "@/data/faq-setup";
@@ -9,9 +10,40 @@ import { usageFAQs } from "@/data/faq-usage";
 import { useCaseFAQs } from "@/data/faq-use-cases";
 import { subscriptionFAQs } from "@/data/faq-subscription";
 
+const sanitizeFaqAnswer = (answer: string) =>
+    answer.replace(/\*\*/g, "").replace(/^\s*-\s+/gm, "").replace(/\s+/g, " ").trim();
+
+const allFAQs: IFAQ[] = [
+    ...overviewFAQs,
+    ...subscriptionFAQs,
+    ...setupFAQs,
+    ...usageFAQs,
+    ...notificationFAQs,
+    ...useCaseFAQs,
+    ...supportFAQs,
+];
+
+const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: allFAQs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+            "@type": "Answer",
+            text: sanitizeFaqAnswer(faq.answer),
+        },
+    })),
+};
+
 const FAQsPage = () => {
     return (
-        <Container className="mt-12">
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+            />
+            <Container className="mt-12">
             <Section
                 id="faqs"
                 title="FAQs"
@@ -46,7 +78,8 @@ const FAQsPage = () => {
                     <FAQAccordian faqs={supportFAQs} />
                 </div>
             </Section>
-        </Container>
+            </Container>
+        </>
     );
 };
 
