@@ -16,6 +16,7 @@ export const usageFAQs: IFAQ[] = [
         - **One-tap check-in:** A single tap lets you confirm you're okay, with no additional input required.
         - **Mood status:** Select from mood options like bad, okay, good, or great to let your loved ones know how you're feeling.
         - **Request assistance:** Send an alert to your contacts to let them know you need help.
+        - **Note:** Include a note and optionally send it to your contacts.
         - **Combination:** Use a mix of the above options to provide more detailed updates during a check-in.`,
     },
     {
