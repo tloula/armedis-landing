@@ -87,7 +87,7 @@ export const benefits: IBenefit[] = [
                 icon: <IoOptionsOutline size={26} />
             },
             {
-                title: "Stay updated via text",
+                title: "Stay updated via email, text, or phone call",
                 description: "Instant updates sent directly to you.",
                 icon: <BsChatText size={26} />
             }

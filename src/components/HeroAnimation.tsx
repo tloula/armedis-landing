@@ -1,11 +1,12 @@
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { BsCheckCircleFill, BsChatLeftTextFill } from "react-icons/bs";
 import { CiBellOn } from "react-icons/ci";
 import { FiClock } from "react-icons/fi";
-import { LuFrown, LuMeh, LuSmile, LuLaugh } from "react-icons/lu";
+import { LuFrown, LuMeh, LuSmile, LuLaugh, LuPhone } from "react-icons/lu";
 
 const STEPS = [
     { label: "Get Reminded" },
@@ -102,7 +103,7 @@ function CheckInContent() {
                 <p className="text-lg font-bold text-foreground">Good Morning Sarah!</p>
                 <p className="text-sm text-foreground/60 mt-1">How are you feeling?</p>
 
-                <div className="flex gap-5 mt-7">
+                <div className="flex gap-1 md:gap-5 mt-7">
                     {moods.map((mood, i) => {
                         const Icon = mood.icon;
                         const isActive = i === 3 && selected;
@@ -296,6 +297,66 @@ function SmsBubble({ variant }: { variant: "success" | "alert" }) {
     );
 }
 
+// ─── Floating phone call bubble ──────────────────────────────────────
+
+function PhoneCallBubble({ variant }: { variant: "success" | "alert" }) {
+    const isAlert = variant === "alert";
+
+    return (
+        <motion.div
+            initial={{ opacity: 0, x: -30, scale: 0.9 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            exit={{ opacity: 0, x: -30, scale: 0.9, transition: { duration: 0.2 } }}
+            transition={{
+                delay: 0.7,
+                type: "spring",
+                bounce: 0.25,
+                duration: 0.6,
+            }}
+            className={`
+                absolute z-20 w-[210px] md:w-[250px]
+                -left-8 top-32
+                md:top-[26%] md:-left-16 lg:-left-24
+                bg-white rounded-xl p-3 md:p-3.5 shadow-lg
+                border ${isAlert ? "border-foreground/20" : "border-primary/20"}
+            `}
+        >
+            <div className="flex items-center gap-2.5">
+                {/* App icon */}
+                <motion.div
+                    className="w-9 h-9 rounded-xl overflow-hidden flex-shrink-0"
+                    animate={{ rotate: [0, -12, 12, -12, 12, -8, 8, 0] }}
+                    transition={{
+                        delay: 1.3,
+                        duration: 0.6,
+                        repeat: Infinity,
+                        repeatDelay: 2,
+                        ease: "easeInOut",
+                    }}
+                >
+                    <Image src="/images/logo-dark.png" alt="CheckIn More" width={36} height={36} className="w-full h-full object-cover" />
+                </motion.div>
+
+                {/* Text */}
+                <div className="flex-1 min-w-0">
+                    <p className="text-xs font-bold text-gray-800 leading-tight">CheckIn More</p>
+                    <p className="text-[10px] text-gray-400 leading-tight">Incoming Call</p>
+                </div>
+
+                {/* Action buttons */}
+                <div className="flex gap-1.5">
+                    <button className="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0">
+                        <LuPhone className="text-white text-sm" />
+                    </button>
+                    <button className="w-8 h-8 rounded-full bg-red-500 flex items-center justify-center flex-shrink-0">
+                        <LuPhone className="text-white text-sm rotate-[135deg]" />
+                    </button>
+                </div>
+            </div>
+        </motion.div>
+    );
+}
+
 // ─── Main component ─────────────────────────────────────────────────
 
 export default function HeroAnimation() {
@@ -388,7 +449,10 @@ export default function HeroAnimation() {
                         <SmsBubble key="sms-success" variant="success" />
                     )}
                     {activeStep === 3 && (
+                        <>
                         <SmsBubble key="sms-alert" variant="alert" />
+                        <PhoneCallBubble key="phone-alert" variant="alert" />
+                        </>
                     )}
                 </AnimatePresence>
             </div>
