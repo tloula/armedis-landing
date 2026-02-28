@@ -37,6 +37,7 @@ import {
   Briefcase,
   MessageSquare,
   Activity,
+  Cpu,
   type LucideIcon,
 } from 'lucide-react';
 import AppStoreButton from '@/components/AppStoreButton';
@@ -81,6 +82,7 @@ const iconMap: Record<string, LucideIcon> = {
   briefcase: Briefcase,
   'message-square': MessageSquare,
   activity: Activity,
+  cpu: Cpu,
 };
 
 function Icon({ name, className }: { name: string; className?: string }) {
