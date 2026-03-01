@@ -1,11 +1,12 @@
 "use client";
 
-import { useState, useEffect, useCallback, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { BsCheckCircleFill, BsChatLeftTextFill } from "react-icons/bs";
+import { AnimatePresence, motion } from "framer-motion";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { BsChatLeftTextFill, BsCheckCircleFill } from "react-icons/bs";
 import { CiBellOn } from "react-icons/ci";
 import { FiClock } from "react-icons/fi";
-import { LuFrown, LuMeh, LuSmile, LuLaugh } from "react-icons/lu";
+import { LuFrown, LuLaugh, LuMeh, LuSmile } from "react-icons/lu";
+import PhoneMockup from "./PhoneMockup";
 
 const STEPS = [
     { label: "Get Reminded" },
@@ -335,52 +336,30 @@ export default function HeroAnimation() {
             {/* Phone + floating SMS container */}
             <div className="relative">
                 {/* Phone frame */}
-                <div className="relative w-[260px] md:w-[355px]">
-                    {/* Side buttons */}
-                    <div className="absolute -left-[2px] top-[18%] w-[3px] h-8 bg-[#2a2323] rounded-l-sm" />
-                    <div className="absolute -left-[2px] top-[28%] w-[3px] h-12 bg-[#2a2323] rounded-l-sm" />
-                    <div className="absolute -left-[2px] top-[38%] w-[3px] h-12 bg-[#2a2323] rounded-l-sm" />
-                    <div className="absolute -right-[2px] top-[30%] w-[3px] h-16 bg-[#2a2323] rounded-r-sm" />
-
-                    <div className="bg-gradient-to-br from-[#2a2323] via-[#1c1817] to-[#141010] rounded-[2.5rem] p-[7px] shadow-[0_20px_60px_-10px_rgba(0,0,0,0.4),0_8px_20px_-6px_rgba(0,0,0,0.3)] ring-1 ring-white/[0.08]">
-                        {/* Dynamic Island */}
-                        <div className="absolute top-[16px] left-1/2 -translate-x-1/2 w-20 md:w-24 h-[22px] md:h-[26px] bg-[#0a0808] rounded-full z-20" />
-
-                        {/* Screen */}
-                        <div className="relative bg-[#f0eeea] rounded-[2.2rem] overflow-hidden aspect-[9/17.5]">
-                            {/* Screen inner shadow for depth */}
-                            <div className="absolute inset-0 z-[5] pointer-events-none rounded-[2.2rem] shadow-[inset_0_0_8px_rgba(0,0,0,0.08)]" />
-                            {/* Subtle glass reflection */}
-                            <div className="absolute inset-0 z-[5] pointer-events-none bg-gradient-to-br from-white/[0.06] via-transparent to-transparent" />
-
-                            <AnimatePresence>
-                                <motion.div
-                                    key={activeStep}
-                                    initial={{ opacity: 0 }}
-                                    animate={{
-                                        opacity: 1,
-                                        transition: { duration: 0.4 },
-                                    }}
-                                    exit={{
-                                        opacity: 0,
-                                        transition: { duration: 0.35 },
-                                    }}
-                                    className="absolute inset-0"
-                                >
-                                    {activeStep === 0 && (
-                                        <NotificationContent />
-                                    )}
-                                    {activeStep === 1 && <CheckInContent />}
-                                    {activeStep === 2 && <CompleteContent />}
-                                    {activeStep === 3 && <MissedContent />}
-                                </motion.div>
-                            </AnimatePresence>
-
-                            {/* Home indicator bar */}
-                            <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-[35%] h-1 bg-black/20 rounded-full z-10" />
-                        </div>
-                    </div>
-                </div>
+                <PhoneMockup className="w-[260px] md:w-[355px]">
+                    <AnimatePresence>
+                        <motion.div
+                            key={activeStep}
+                            initial={{ opacity: 0 }}
+                            animate={{
+                                opacity: 1,
+                                transition: { duration: 0.4 },
+                            }}
+                            exit={{
+                                opacity: 0,
+                                transition: { duration: 0.35 },
+                            }}
+                            className="absolute inset-0"
+                        >
+                            {activeStep === 0 && (
+                                <NotificationContent />
+                            )}
+                            {activeStep === 1 && <CheckInContent />}
+                            {activeStep === 2 && <CompleteContent />}
+                            {activeStep === 3 && <MissedContent />}
+                        </motion.div>
+                    </AnimatePresence>
+                </PhoneMockup>
 
                 {/* Floating SMS bubbles */}
                 <AnimatePresence>
