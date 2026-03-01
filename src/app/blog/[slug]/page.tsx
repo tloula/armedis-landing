@@ -90,7 +90,7 @@ export default async function BlogPost({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
       />
       <Container>
-        <article className="max-w-4xl mx-auto border rounded-lg p-8 shadow-sm" style={{ borderColor: 'var(--border)', backgroundColor: '#faf9f6' }}>
+        <article className="-mx-5 sm:mx-auto sm:max-w-4xl border-0 sm:border rounded-none sm:rounded-lg p-5 sm:p-8 sm:shadow-sm" style={{ borderColor: 'var(--border)', backgroundColor: '#faf9f6' }}>
           {/* Header */}
           <div className="mb-8">
             {post.image && (
