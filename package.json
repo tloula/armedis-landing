@@ -4,12 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm run generate:mdx && next build",
+    "build": "npm run generate:mdx && npm run generate:sitemap && next build",
     "start": "next start",
     "lint": "next lint",
     "generate:mdx": "node scripts/generateMdxData.js",
-    "generate:sitemap": "node scripts/generate-sitemap.js",
-    "prebuild": "npm run generate:sitemap && npm run generate:mdx"
+    "generate:sitemap": "node scripts/generate-sitemap.js"
   },
   "dependencies": {
     "@botpoison/browser": "^0.1.30",
