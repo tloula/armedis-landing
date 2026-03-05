@@ -26,7 +26,7 @@ const TODAY = new Date().toLocaleDateString("en-US", {
 
 // ─── Scene 1: Notification arrives ──────────────────────────────────
 
-function NotificationContent() {
+export function NotificationContent() {
     return (
         <div className="absolute inset-0 bg-gradient-to-b from-[#f0eeea] to-[#e6e3de] flex flex-col">
             <div className="flex justify-between items-center px-6 pt-14 pb-1">
@@ -76,7 +76,7 @@ function NotificationContent() {
 
 // ─── Scene 2: User checks in ────────────────────────────────────────
 
-function CheckInContent() {
+export function CheckInContent() {
     const [selected, setSelected] = useState(false);
 
     useEffect(() => {
@@ -100,7 +100,7 @@ function CheckInContent() {
                 </p>
             </div>
 
-            <div className="flex-1 flex flex-col items-center justify-center px-6 -mt-4 bg-gradient-to-b from-[#f0eeea] to-[#e6e3de]">
+            <div className="flex-1 flex flex-col items-center justify-center px-6 bg-gradient-to-b from-[#f0eeea] to-[#e6e3de]">
                 <p className="text-lg font-bold text-foreground">Good Morning Sarah!</p>
                 <p className="text-sm text-foreground/60 mt-1">How are you feeling?</p>
 
@@ -156,7 +156,7 @@ function CheckInContent() {
 
 // ─── Scene 3: Check-in complete ─────────────────────────────────────
 
-function CompleteContent() {
+export function CompleteContent() {
     return (
         <div className="absolute inset-0 bg-primary flex flex-col">
             <div className="px-4 pt-14 pb-4 relative">
@@ -206,7 +206,7 @@ function CompleteContent() {
 
 // ─── Scene 4: Missed check-in ───────────────────────────────────────
 
-function MissedContent() {
+export function MissedContent() {
     return (
         <div className="absolute inset-0 bg-foreground flex flex-col">
             <div className="px-4 pt-14 pb-4 relative">
@@ -254,7 +254,7 @@ function MissedContent() {
 
 // ─── Floating SMS bubble ────────────────────────────────────────────
 
-function SmsBubble({ variant }: { variant: "success" | "alert" }) {
+export function SmsBubble({ variant }: { variant: "success" | "alert" }) {
     const isAlert = variant === "alert";
 
     return (
@@ -300,7 +300,7 @@ function SmsBubble({ variant }: { variant: "success" | "alert" }) {
 
 // ─── Floating phone call bubble ──────────────────────────────────────
 
-function PhoneCallBubble({ variant }: { variant: "success" | "alert" }) {
+export function PhoneCallBubble({ variant }: { variant: "success" | "alert" }) {
     const isAlert = variant === "alert";
 
     return (

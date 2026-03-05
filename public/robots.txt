@@ -3,5 +3,6 @@ Allow: /
 Disallow: /download
 Disallow: /email-verified
 Disallow: /verify-expired
+Disallow: /screenshot-helper
 
 Sitemap: https://checkinmore.com/sitemap.xml
