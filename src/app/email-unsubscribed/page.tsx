@@ -1,29 +1,29 @@
 import Container from "@/components/Container";
-import { MailCheck } from "lucide-react";
+import { MailX } from "lucide-react";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Email Verified — CheckIn More",
-  description: "Your email address has been verified for CheckIn More alerts.",
+  title: "Email Unsubscribed — CheckIn More",
+  description: "You have been unsubscribed from email alerts.",
   robots: { index: false, follow: false },
 };
 
-export default function EmailVerifiedPage() {
+export default function EmailUnsubscribedPage() {
   return (
     <Container className="min-h-[60vh] flex items-center justify-center">
       <div className="max-w-md w-full text-center py-16">
         <div className="flex justify-center mb-6">
-          <MailCheck
+          <MailX
             size={64}
             strokeWidth={1.5}
             style={{ color: "var(--primary)" }}
           />
         </div>
         <h1 className="text-3xl lg:text-4xl font-bold mb-4">
-          Email Verified
+          Email Unsubscribed
         </h1>
         <p className="text-lg mb-8" style={{ color: "var(--foreground-accent)" }}>
-          Your email address is confirmed.
+          You have been unsubscribed from email alerts.
         </p>
         <Link
           href="/"
