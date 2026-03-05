@@ -5,6 +5,7 @@ import Link from "next/link";
 export const metadata = {
   title: "Email Verified — CheckIn More",
   description: "Your email address has been verified for CheckIn More alerts.",
+  robots: { index: false, follow: false },
 };
 
 export default function EmailVerifiedPage() {

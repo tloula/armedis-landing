@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /download
+Disallow: /email-verified
+Disallow: /verify-expired
 
 Sitemap: https://checkinmore.com/sitemap.xml
