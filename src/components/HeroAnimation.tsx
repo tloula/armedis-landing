@@ -1,18 +1,12 @@
 "use client";
 
-import { useState, useEffect, useCallback, useRef } from "react";
-import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
-import { BsCheckCircleFill, BsChatLeftTextFill } from "react-icons/bs";
-import { CiBellOn } from "react-icons/ci";
-import { FiClock } from "react-icons/fi";
-import { LuFrown, LuMeh, LuSmile, LuLaugh, LuPhone } from "react-icons/lu";
 import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { BsChatLeftTextFill, BsCheckCircleFill } from "react-icons/bs";
 import { CiBellOn } from "react-icons/ci";
 import { FiClock } from "react-icons/fi";
-import { LuFrown, LuLaugh, LuMeh, LuSmile } from "react-icons/lu";
+import { LuFrown, LuLaugh, LuMeh, LuPhone, LuSmile } from "react-icons/lu";
 import PhoneMockup from "./PhoneMockup";
 
 const STEPS = [
