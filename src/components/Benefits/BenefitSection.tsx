@@ -5,6 +5,7 @@ import { motion, Variants } from "framer-motion"
 
 import BenefitBullet from "./BenefitBullet";
 import SectionTitle from "../SectionTitle";
+import PhoneMockup from "../PhoneMockup";
 import { IBenefit } from "@/types";
 
 interface Props {
@@ -47,7 +48,7 @@ export const childVariants = {
 };
 
 const BenefitSection: React.FC<Props> = ({ benefit, imageAtRight }: Props) => {
-    const { title, description, imageSrc, bullets } = benefit;
+    const { title, description, imageSrc, imageWidth, imageHeight, bullets } = benefit;
 
     return (
         <section className="benefit-section">
@@ -88,7 +89,9 @@ const BenefitSection: React.FC<Props> = ({ benefit, imageAtRight }: Props) => {
 
                 <div className={clsx("mt-5 lg:mt-0", { "lg:order-2": imageAtRight })}>
                     <div className={clsx("w-fit flex", { "justify-start": imageAtRight, "justify-end": !imageAtRight })}>
-                        <Image src={imageSrc} alt={title} width="384" height="762" quality={100} className="lg:ml-0" />
+                        <PhoneMockup className="w-[260px] md:w-[340px]" imageWidth={imageWidth} imageHeight={imageHeight}>
+                            <Image src={imageSrc} alt={title} fill className="object-fill" quality={100} />
+                        </PhoneMockup>
                     </div>
                 </div>
             </motion.div>

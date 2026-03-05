@@ -1,7 +1,6 @@
-"use client";
-
 import AboutUs from "@/components/AboutUs";
 import Benefits from "@/components/Benefits/Benefits";
+import ClarityInit from "@/components/ClarityInit";
 import Container from "@/components/Container";
 import CTA from "@/components/CTA";
 import FAQ from "@/components/FAQ";
@@ -11,9 +10,6 @@ import Promo from "@/components/Promo";
 import Section from "@/components/Section";
 import Testimonials from "@/components/Testimonials";
 import { faqs } from "@/data/faq";
-import { siteDetails } from "@/data/siteDetails";
-import Clarity from "@microsoft/clarity";
-import React from "react";
 
 const sanitizeFaqAnswer = (answer: string) =>
   answer.replace(/\*\*/g, "").replace(/^\s*-\s+/gm, "").replace(/\s+/g, " ").trim();
@@ -31,15 +27,7 @@ const faqJsonLd = {
   })),
 };
 
-const HomePage: React.FC = () => {
-
-  React.useEffect(() => {
-    if (siteDetails.clarityId) {
-      console.log('Initializing Clarity', siteDetails.clarityId);
-      Clarity.init(siteDetails.clarityId);
-    }
-  }, []);
-
+export default function HomePage() {
   return (
     <>
       <script
@@ -81,8 +69,7 @@ const HomePage: React.FC = () => {
 
         <CTA />
       </Container>
+      <ClarityInit />
     </>
   );
-};
-
-export default HomePage;
+}

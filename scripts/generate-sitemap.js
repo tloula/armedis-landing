@@ -33,19 +33,24 @@ function getBlogPosts() {
     }
     
     const blogPosts = eval(match[1]);
-    return blogPosts.map(post => `blog/${post.slug}`);
+    return blogPosts.map(post => ({ route: `blog/${post.slug}`, lastmod: post.date || null }));
   } catch (error) {
     console.log("Error reading blog data:", error.message);
     return [];
   }
 }
 
+const today = new Date().toISOString().split("T")[0];
 const blogRoutes = getBlogPosts();
-const allRoutes = [...staticRoutes, ...blogRoutes];
 
-const urls = allRoutes
-  .map((route) => {
-    return `<url><loc>${baseUrl}/${route}</loc></url>`;
+const staticEntries = staticRoutes.map((route) => ({ route, lastmod: today }));
+const allEntries = [...staticEntries, ...blogRoutes];
+
+const urls = allEntries
+  .map(({ route, lastmod }) => {
+    const loc = `${baseUrl}/${route}`;
+    const lastmodTag = lastmod ? `<lastmod>${lastmod}</lastmod>` : "";
+    return `<url><loc>${loc}</loc>${lastmodTag}</url>`;
   })
   .join("");
 

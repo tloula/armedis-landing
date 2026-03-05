@@ -7,6 +7,8 @@ export interface IBenefit {
     title: string;
     description: string;
     imageSrc: string;
+    imageWidth?: number;
+    imageHeight?: number;
     bullets: IBenefitBullet[]
     close: string;
 }

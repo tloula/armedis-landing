@@ -5,6 +5,7 @@ import Link from "next/link";
 export const metadata = {
   title: "Link Expired — CheckIn More",
   description: "This verification link has expired or is no longer valid.",
+  robots: { index: false, follow: false },
 };
 
 export default function VerifyExpiredPage() {

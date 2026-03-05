@@ -83,14 +83,43 @@ export default async function BlogPost({ params }: Props) {
     },
   };
 
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://checkinmore.com',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Blog',
+        item: 'https://checkinmore.com/blog',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: post.title,
+        item: `https://checkinmore.com/blog/${resolvedParams.slug}`,
+      },
+    ],
+  };
+
   return (
     <div className="py-20 lg:py-32">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <Container>
-        <article className="max-w-4xl mx-auto border rounded-lg p-8 shadow-sm" style={{ borderColor: 'var(--border)', backgroundColor: '#faf9f6' }}>
+        <article className="-mx-5 sm:mx-auto sm:max-w-4xl border-0 sm:border rounded-none sm:rounded-lg p-5 sm:p-8 sm:shadow-sm" style={{ borderColor: 'var(--border)', backgroundColor: '#faf9f6' }}>
           {/* Header */}
           <div className="mb-8">
             {post.image && (
