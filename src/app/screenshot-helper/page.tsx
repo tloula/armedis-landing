@@ -64,6 +64,19 @@ export default function ScreenshotHelper() {
                     <PhoneCallBubble variant="alert" />
                 </div>
             </div>
+
+            {/* Standalone bubble screenshots */}
+            <div data-scene="bubble-sms-success" style={{ padding: 20, display: "inline-block" }}>
+                <SmsBubble variant="success" standalone />
+            </div>
+
+            <div data-scene="bubble-sms-alert" style={{ padding: 20, display: "inline-block" }}>
+                <SmsBubble variant="alert" standalone />
+            </div>
+
+            <div data-scene="bubble-phone-call" style={{ padding: 20, display: "inline-block" }}>
+                <PhoneCallBubble variant="alert" standalone />
+            </div>
         </div>
     );
 }

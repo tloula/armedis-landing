@@ -254,14 +254,14 @@ export function MissedContent() {
 
 // ─── Floating SMS bubble ────────────────────────────────────────────
 
-export function SmsBubble({ variant }: { variant: "success" | "alert" }) {
+export function SmsBubble({ variant, standalone }: { variant: "success" | "alert"; standalone?: boolean }) {
     const isAlert = variant === "alert";
 
     return (
         <motion.div
-            initial={{ opacity: 0, x: 30, scale: 0.9 }}
+            initial={{ opacity: 0, x: standalone ? 0 : 30, scale: 0.9 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
-            exit={{ opacity: 0, x: 30, scale: 0.9, transition: { duration: 0.2 } }}
+            exit={{ opacity: 0, x: standalone ? 0 : 30, scale: 0.9, transition: { duration: 0.2 } }}
             transition={{
                 delay: 0.7,
                 type: "spring",
@@ -269,10 +269,10 @@ export function SmsBubble({ variant }: { variant: "success" | "alert" }) {
                 duration: 0.6,
             }}
             className={`
-                absolute z-20 w-[190px] md:w-[230px]
-                -right-8 bottom-2
-                md:bottom-auto md:-right-16 lg:-right-24
-                ${isAlert ? "md:top-[48%]" : "md:top-[38%]"}
+                ${standalone
+                    ? "relative w-[230px]"
+                    : `absolute z-20 w-[190px] md:w-[230px] -right-8 bottom-2 md:bottom-auto md:-right-16 lg:-right-24 ${isAlert ? "md:top-[48%]" : "md:top-[38%]"}`
+                }
                 bg-white rounded-xl p-3 md:p-3.5 shadow-lg
                 border ${isAlert ? "border-foreground/20" : "border-primary/20"}
             `}
@@ -300,14 +300,14 @@ export function SmsBubble({ variant }: { variant: "success" | "alert" }) {
 
 // ─── Floating phone call bubble ──────────────────────────────────────
 
-export function PhoneCallBubble({ variant }: { variant: "success" | "alert" }) {
+export function PhoneCallBubble({ variant, standalone }: { variant: "success" | "alert"; standalone?: boolean }) {
     const isAlert = variant === "alert";
 
     return (
         <motion.div
-            initial={{ opacity: 0, x: -30, scale: 0.9 }}
+            initial={{ opacity: 0, x: standalone ? 0 : -30, scale: 0.9 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
-            exit={{ opacity: 0, x: -30, scale: 0.9, transition: { duration: 0.2 } }}
+            exit={{ opacity: 0, x: standalone ? 0 : -30, scale: 0.9, transition: { duration: 0.2 } }}
             transition={{
                 delay: 0.7,
                 type: "spring",
@@ -315,9 +315,10 @@ export function PhoneCallBubble({ variant }: { variant: "success" | "alert" }) {
                 duration: 0.6,
             }}
             className={`
-                absolute z-20 w-[210px] md:w-[250px]
-                -left-8 top-32
-                md:top-[26%] md:-left-16 lg:-left-24
+                ${standalone
+                    ? "relative w-[250px]"
+                    : "absolute z-20 w-[210px] md:w-[250px] -left-8 top-32 md:top-[26%] md:-left-16 lg:-left-24"
+                }
                 bg-white rounded-xl p-3 md:p-3.5 shadow-lg
                 border ${isAlert ? "border-foreground/20" : "border-primary/20"}
             `}

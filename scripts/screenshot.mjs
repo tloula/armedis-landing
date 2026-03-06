@@ -22,10 +22,18 @@ const outDir = path.join(__dirname, "..", "screenshots");
 fs.mkdirSync(outDir, { recursive: true });
 
 const BASE_URL = process.env.SCREENSHOT_URL ?? "http://localhost:3000";
-const scenes = ["notification", "checkin", "complete", "missed"];
+const scenes = [
+    "notification",
+    "checkin",
+    "complete",
+    "missed",
+    "bubble-sms-success",
+    "bubble-sms-alert",
+    "bubble-phone-call",
+];
 
 const browser = await chromium.launch();
-const page = await browser.newPage();
+const page = await browser.newPage({ deviceScaleFactor: 3 });
 
 // Disable animations — framer-motion respects prefers-reduced-motion and snaps
 // to final state immediately, so we don't have to time our screenshots.
