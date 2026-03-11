@@ -33,7 +33,7 @@ export const tiers: IPricing[] = [
         features: [
             'Email notifications',
             'SMS notifications',
-            'Voice notifications',
+            'Phone call notifications',
             '4 check-in options',
             'Unlimited check-in times',
             'Unlimited contacts',
