@@ -21,7 +21,7 @@ const PricingColumn: React.FC<Props> = ({ tier, highlight }: Props) => {
                     </span>
                     {typeof price === 'number' && <span className="text-lg font-normal text-gray-600">/mo</span>}
                 </p>
-                <a href="#cta" className={clsx("w-full py-3 px-4 rounded-full transition-colors text-[var(--accent-text)] block text-center", { "bg-primary hover:bg-primary": highlight, "bg-primary hover:bg-primary-accent": !highlight })}>
+                <a href="/download" className={clsx("w-full py-3 px-4 rounded-full transition-colors text-[var(--accent-text)] block text-center", { "bg-primary hover:bg-primary": highlight, "bg-primary hover:bg-primary-accent": !highlight })}>
                     Get Started
                 </a>
             </div>

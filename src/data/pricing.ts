@@ -1,35 +1,43 @@
 import { IPricing } from "@/types";
 
 export const tiers: IPricing[] = [
-    // {
-    //     name: 'Basic (Ad Supported)',
-    //     price: 'Free',
-    //     text: '',
-    //     features: [
-    //         '1 checkin option',
-    //         '1 checkin time',
-    //         '1 contact',
-    //         'Email support',
-    //     ],
-    // },
     {
-        name: 'Plus',
-        price: 6.99,
-        text: '',
+        name: 'Free Plan',
+        price: 'Free',
+        text: 'Email notifications to your contacts & limited features',
         features: [
-            'No ads',
-            '4 checkin options',
-            'Unlimited checkin times',
+            'Email notifications',
+            '1 check-in option',
+            '1 check-in time',
+            '1 contact',
+            'Email support',
+        ],
+    },
+    {
+        name: 'Plus Plan',
+        price: 6.99,
+        text: 'SMS text notifications to your contacts and all features',
+        features: [
+            'Email notifications',
+            'SMS notifications',
+            '4 check-in options',
+            'Unlimited check-in times',
             'Unlimited contacts',
+            '14-day free trial',
+        ],
+    },
+    {
+        name: 'Premium Plan',
+        price: 19.99,
+        text: 'Phone calls or SMS text notifications to your contacts and all features',
+        features: [
+            'Email notifications',
+            'SMS notifications',
+            'Voice notifications',
+            '4 check-in options',
+            'Unlimited check-in times',
+            'Unlimited contacts',
+            '14-day free trial',
         ],
     }
-    // {
-    //     name: 'Premium',
-    //     price: 8.99,
-    //     text: 'Everything in Plus, plus...',
-    //     features: [
-    //         'Last known location',
-    //         'Custom checkin messages'
-    //     ],
-    // },
 ]
