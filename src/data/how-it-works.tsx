@@ -76,7 +76,7 @@ This flexibility lets you tailor your check-ins to fit your unique lifestyle and
             },
             {
                 subtitle: "Missed a Check-In",
-                description: "If you miss a check-in, your specified contacts will be texted as soon as the check-in window closes.",
+                description: "If you miss a check-in, your specified contacts will be notified as soon as the check-in window closes.",
                 imageSrc: "/images/how-it-works/10-sms-missed.webp"
             }
         ]

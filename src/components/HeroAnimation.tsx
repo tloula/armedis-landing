@@ -1,11 +1,12 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { BsChatLeftTextFill, BsCheckCircleFill } from "react-icons/bs";
 import { CiBellOn } from "react-icons/ci";
 import { FiClock } from "react-icons/fi";
-import { LuFrown, LuLaugh, LuMeh, LuSmile } from "react-icons/lu";
+import { LuFrown, LuLaugh, LuMeh, LuPhone, LuSmile } from "react-icons/lu";
 import PhoneMockup from "./PhoneMockup";
 
 const STEPS = [
@@ -25,7 +26,7 @@ const TODAY = new Date().toLocaleDateString("en-US", {
 
 // ─── Scene 1: Notification arrives ──────────────────────────────────
 
-function NotificationContent() {
+export function NotificationContent() {
     return (
         <div className="absolute inset-0 bg-gradient-to-b from-[#f0eeea] to-[#e6e3de] flex flex-col">
             <div className="flex justify-between items-center px-6 pt-14 pb-1">
@@ -75,7 +76,7 @@ function NotificationContent() {
 
 // ─── Scene 2: User checks in ────────────────────────────────────────
 
-function CheckInContent() {
+export function CheckInContent() {
     const [selected, setSelected] = useState(false);
 
     useEffect(() => {
@@ -99,11 +100,11 @@ function CheckInContent() {
                 </p>
             </div>
 
-            <div className="flex-1 flex flex-col items-center justify-center px-6 -mt-4 bg-gradient-to-b from-[#f0eeea] to-[#e6e3de]">
+            <div className="flex-1 flex flex-col items-center justify-center px-6 bg-gradient-to-b from-[#f0eeea] to-[#e6e3de]">
                 <p className="text-lg font-bold text-foreground">Good Morning Sarah!</p>
                 <p className="text-sm text-foreground/60 mt-1">How are you feeling?</p>
 
-                <div className="flex gap-5 mt-7">
+                <div className="flex gap-1 md:gap-5 mt-7">
                     {moods.map((mood, i) => {
                         const Icon = mood.icon;
                         const isActive = i === 3 && selected;
@@ -155,7 +156,7 @@ function CheckInContent() {
 
 // ─── Scene 3: Check-in complete ─────────────────────────────────────
 
-function CompleteContent() {
+export function CompleteContent() {
     return (
         <div className="absolute inset-0 bg-primary flex flex-col">
             <div className="px-4 pt-14 pb-4 relative">
@@ -205,7 +206,7 @@ function CompleteContent() {
 
 // ─── Scene 4: Missed check-in ───────────────────────────────────────
 
-function MissedContent() {
+export function MissedContent() {
     return (
         <div className="absolute inset-0 bg-foreground flex flex-col">
             <div className="px-4 pt-14 pb-4 relative">
@@ -253,14 +254,14 @@ function MissedContent() {
 
 // ─── Floating SMS bubble ────────────────────────────────────────────
 
-function SmsBubble({ variant }: { variant: "success" | "alert" }) {
+export function SmsBubble({ variant, standalone }: { variant: "success" | "alert"; standalone?: boolean }) {
     const isAlert = variant === "alert";
 
     return (
         <motion.div
-            initial={{ opacity: 0, x: 30, scale: 0.9 }}
+            initial={{ opacity: 0, x: standalone ? 0 : 30, scale: 0.9 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
-            exit={{ opacity: 0, x: 30, scale: 0.9, transition: { duration: 0.2 } }}
+            exit={{ opacity: 0, x: standalone ? 0 : 30, scale: 0.9, transition: { duration: 0.2 } }}
             transition={{
                 delay: 0.7,
                 type: "spring",
@@ -268,10 +269,10 @@ function SmsBubble({ variant }: { variant: "success" | "alert" }) {
                 duration: 0.6,
             }}
             className={`
-                absolute z-20 w-[190px] md:w-[230px]
-                -right-8 bottom-2
-                md:bottom-auto md:-right-16 lg:-right-24
-                ${isAlert ? "md:top-[48%]" : "md:top-[38%]"}
+                ${standalone
+                    ? "relative w-[230px]"
+                    : `absolute z-20 w-[190px] md:w-[230px] -right-8 bottom-2 md:bottom-auto md:-right-16 lg:-right-24 ${isAlert ? "md:top-[48%]" : "md:top-[38%]"}`
+                }
                 bg-white rounded-xl p-3 md:p-3.5 shadow-lg
                 border ${isAlert ? "border-foreground/20" : "border-primary/20"}
             `}
@@ -291,6 +292,67 @@ function SmsBubble({ variant }: { variant: "success" | "alert" }) {
                             ? "Sarah missed her 9:00 AM check-in"
                             : "Sarah completed her check-in and is having a great day!"}
                     </p>
+                </div>
+            </div>
+        </motion.div>
+    );
+}
+
+// ─── Floating phone call bubble ──────────────────────────────────────
+
+export function PhoneCallBubble({ variant, standalone }: { variant: "success" | "alert"; standalone?: boolean }) {
+    const isAlert = variant === "alert";
+
+    return (
+        <motion.div
+            initial={{ opacity: 0, x: standalone ? 0 : -30, scale: 0.9 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            exit={{ opacity: 0, x: standalone ? 0 : -30, scale: 0.9, transition: { duration: 0.2 } }}
+            transition={{
+                delay: 0.7,
+                type: "spring",
+                bounce: 0.25,
+                duration: 0.6,
+            }}
+            className={`
+                ${standalone
+                    ? "relative w-[250px]"
+                    : "absolute z-20 w-[210px] md:w-[250px] -left-8 top-32 md:top-[26%] md:-left-16 lg:-left-24"
+                }
+                bg-white rounded-xl p-3 md:p-3.5 shadow-lg
+                border ${isAlert ? "border-foreground/20" : "border-primary/20"}
+            `}
+        >
+            <div className="flex items-center gap-2.5">
+                {/* App icon */}
+                <motion.div
+                    className="w-9 h-9 rounded-xl overflow-hidden flex-shrink-0"
+                    animate={{ rotate: [0, -12, 12, -12, 12, -8, 8, 0] }}
+                    transition={{
+                        delay: 1.3,
+                        duration: 0.6,
+                        repeat: Infinity,
+                        repeatDelay: 2,
+                        ease: "easeInOut",
+                    }}
+                >
+                    <Image src="/images/logo-dark.png" alt="CheckIn More" width={36} height={36} className="w-full h-full object-cover" />
+                </motion.div>
+
+                {/* Text */}
+                <div className="flex-1 min-w-0">
+                    <p className="text-xs font-bold text-gray-800 leading-tight">CheckIn More</p>
+                    <p className="text-[10px] text-gray-400 leading-tight">Incoming Call</p>
+                </div>
+
+                {/* Action buttons */}
+                <div className="flex gap-1.5">
+                    <button className="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0">
+                        <LuPhone className="text-white text-sm" />
+                    </button>
+                    <button className="w-8 h-8 rounded-full bg-red-500 flex items-center justify-center flex-shrink-0">
+                        <LuPhone className="text-white text-sm rotate-[135deg]" />
+                    </button>
                 </div>
             </div>
         </motion.div>
@@ -367,7 +429,10 @@ export default function HeroAnimation() {
                         <SmsBubble key="sms-success" variant="success" />
                     )}
                     {activeStep === 3 && (
+                        <>
                         <SmsBubble key="sms-alert" variant="alert" />
+                        <PhoneCallBubble key="phone-alert" variant="alert" />
+                        </>
                     )}
                 </AnimatePresence>
             </div>

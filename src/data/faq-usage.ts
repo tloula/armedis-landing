@@ -16,6 +16,7 @@ export const usageFAQs: IFAQ[] = [
         - **One-tap check-in:** A single tap lets you confirm you're okay, with no additional input required.
         - **Mood status:** Select from mood options like bad, okay, good, or great to let your loved ones know how you're feeling.
         - **Request assistance:** Send an alert to your contacts to let them know you need help.
+        - **Note:** Include a note and optionally send it to your contacts.
         - **Combination:** Use a mix of the above options to provide more detailed updates during a check-in.`,
     },
     {
@@ -40,12 +41,11 @@ export const usageFAQs: IFAQ[] = [
     },
     {
         question: `How do I customize the notification settings for each contact?`,
-        answer: `When adding or editing a contact, you can adjust their notification preferences using three toggles:
-        - The first toggle enables notifications if you miss a check-in.
-        - The second toggle sends updates for completed check-ins, which may include your mood status (e.g., bad, okay, good, or great), depending on your check-in option.
-        - The third toggle alerts contacts when you request assistance, ensuring they can follow up promptly.
-        
-        Each toggle can be set to "off" or "on" by sliding left or right. For example, you can configure some contacts to receive notifications only for missed check-ins, while others may receive all completed check-in updates or assistance alerts.`,
+        answer: `When adding or editing a contact, you can adjust their notification preferences choosing any mix of the following options:
+        - Email, text, and/or phone call if you miss a check-in.
+        - Email and/or text when you complete a check-in and optionally include your mood, note, or assistance request.
+
+        Each setting can be set to "off" or "on" by tapping on it. For example, you can configure some contacts to receive notifications only for missed check-ins, while others may receive all completed check-in updates or assistance alerts.`,
     },
     {
         question: `Do my contacts need to verify their phone numbers?`,

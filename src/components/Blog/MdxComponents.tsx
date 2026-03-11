@@ -18,6 +18,7 @@ import {
   Cpu,
   Download,
   Feather,
+  Gift,
   Globe,
   Handshake,
   Heart,
@@ -28,14 +29,18 @@ import {
   Link,
   Mail,
   MapPin,
+  MapPinOff,
   Megaphone,
   MessageSquare,
+  PhoneCall,
   PhoneIcon,
   Rocket,
   Shield,
   ShieldAlert,
   ShieldCheck,
   Smartphone,
+  Smile,
+  Target,
   ThumbsUp,
   Timer,
   TrendingUp,
@@ -43,7 +48,7 @@ import {
   Users,
   XCircle,
   Zap,
-  type LucideIcon,
+  type LucideIcon
 } from 'lucide-react';
 import React from 'react';
 
@@ -91,6 +96,11 @@ const iconMap: Record<string, LucideIcon> = {
   layers: Layers,
   link: Link,
   check: Check,
+  'map-pin-off': MapPinOff,
+  target: Target,
+  smile: Smile,
+  gift: Gift,
+  'phone-call': PhoneCall,
 };
 
 function Icon({ name, className }: { name: string; className?: string }) {
