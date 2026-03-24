@@ -2,7 +2,7 @@ import { IPricing } from "@/types";
 
 export const tiers: IPricing[] = [
     {
-        name: 'Free Plan',
+        name: 'Free',
         price: 'Free',
         text: 'Email notifications to your contacts & limited features',
         features: [
@@ -14,7 +14,7 @@ export const tiers: IPricing[] = [
         ],
     },
     {
-        name: 'Plus Plan',
+        name: 'Plus',
         price: 6.99,
         text: 'SMS text notifications to your contacts and all features',
         features: [
@@ -27,7 +27,7 @@ export const tiers: IPricing[] = [
         ],
     },
     {
-        name: 'Premium Plan',
+        name: 'Premium',
         price: 19.99,
         text: 'Phone calls or SMS text notifications to your contacts and all features',
         features: [
