@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "generate:mdx": "node scripts/generateMdxData.js",
-    "generate:sitemap": "node scripts/generate-sitemap.js"
+    "generate:sitemap": "node scripts/generate-sitemap.js",
+    "generate:screenshots": "node scripts/screenshot.mjs"
   },
   "dependencies": {
     "@botpoison/browser": "^0.1.30",
