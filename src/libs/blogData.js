@@ -303,6 +303,23 @@ export default [
     "readTime": "4 min read"
   },
   {
+    "slug": "safety-app-first-dates",
+    "title": "The Best Safety App for First Dates in 2026",
+    "description": "Heading out to meet someone new? CheckIn More's Safety Timers let someone you trust know where you're going — and alerts them automatically if you don't check back in.",
+    "date": "2026-03-25",
+    "author": "CheckIn More Team",
+    "tags": [
+      "safety app for first dates",
+      "first date safety app",
+      "dating safety app",
+      "personal safety app",
+      "safety timer app"
+    ],
+    "image": "/images/safety-app-first-dates.png",
+    "content": "\r\nMost first dates are fine. Great, even. But meeting a stranger from the internet is still meeting a stranger — and having someone in your corner, quietly watching the clock, is just smart.\r\n\r\n**CheckIn More's Safety Timers** give you that without making a production of it.\r\n\r\n---\r\n\r\n## Set a Timer Before You Go\r\n\r\nBefore you head out, set a safety timer for how long you expect to be out. If you check back in when it expires, your contact gets a quick notification that you're safe. If you don't, they're alerted automatically.\r\n\r\nNo one has to sit by their phone all night. No one has to remember to text. The timer runs quietly in the background, and only speaks up if it needs to.\r\n\r\n---\r\n\r\n## Tell the App Where You're Going\r\n\r\nWhen you start your timer, add a note — the name of the bar, the neighborhood, who you're meeting. You can do it all over text:\r\n\r\n- **\"first date, back by 10pm, Bar Laguna on Capitol Hill\"**\r\n- **\"dinner date, 2 hours, meeting Jake from Hinge\"**\r\n- **\"drinks downtown, back by midnight\"**\r\n\r\nYour contact has the details if they ever need them.\r\n\r\n---\r\n\r\n## Extend If the Date's Going Well\r\n\r\nPlans change. If things are going well and you want more time, just text the app:\r\n\r\n- **\"need another hour\"**\r\n- **\"running late, back by 11\"**\r\n\r\nNo awkward excuse to check your phone. Just a quick text and the timer resets.\r\n\r\nAnd when you're home safe, a quick \"I'm back\" closes it out and notifies your contact.\r\n\r\n---\r\n\r\n## You Control Who Gets What\r\n\r\nFor each contact, you can choose whether they're notified when you check in successfully, when you miss a check-in, or both. A close friend might want to hear either way. Someone else might only need to know if something seems wrong. It's up to you.\r\n\r\n---\r\n\r\n## What Your Contact Receives\r\n\r\nNotifications go out by **email, SMS, or phone call** depending on your setup. Your contacts don't need to download anything — they just get the message when it matters.\r\n\r\n---\r\n\r\n## Quiet When Everything's Fine\r\n\r\nThe best version of this feature is the one you never think about. You set the timer, enjoy your evening, check back in when you're home, and that's the whole story.\r\n\r\n---\r\n\r\n## Get Started Free\r\n\r\nNo credit card required. Paid plans include a free trial.\r\n\r\n<DownloadButtons slug=\"safety-app-first-dates\" />\r\n\r\n---\r\n\r\n## Frequently Asked Questions\r\n\r\n**Does my date know I'm using the app?**\r\nNo. The timer runs in the background. There's nothing visible on your screen and no notification your date would see.\r\n\r\n**What if I want to stay out longer than planned?**\r\nJust text the app to extend your timer. Your contact won't be alerted and the clock resets.\r\n\r\n**Do my contacts need to download CheckIn More?**\r\nNo. They receive alerts by email, SMS, or phone call — no app or account needed.\r\n\r\n**Can I add details about where I'm going?**\r\nYes. When you start a timer via text, just include the location and any other details you want your contact to have.\r\n\r\n**Can I choose what my contacts are notified about?**\r\nYes. For each contact you can choose to notify them when you check in successfully, when you miss a check-in, or both.\r\n",
+    "readTime": "3 min read"
+  },
+  {
     "slug": "safety-app-running-alone",
     "title": "The Best Safety App for Running Alone in 2026",
     "description": "Looking for a safety app for solo runs? CheckIn More's Safety Timers let you set a countdown before you head out — if you don't check back in, your contacts are automatically notified.",
