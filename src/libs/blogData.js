@@ -306,7 +306,7 @@ export default [
     "slug": "safety-app-running-alone",
     "title": "The Best Safety App for Running Alone in 2026",
     "description": "Looking for a safety app for solo runs? CheckIn More's Safety Timers let you set a countdown before you head out — if you don't check back in, your contacts are automatically notified.",
-    "date": "2026-04-01",
+    "date": "2026-04-04",
     "author": "CheckIn More Team",
     "tags": [
       "safety app for running alone",
