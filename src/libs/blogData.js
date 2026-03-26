@@ -160,7 +160,7 @@ export default [
     "slug": "life360-alternative",
     "title": "CheckIn More: The Best Life360 Alternative for Solo Living",
     "description": "Looking for a Life360 alternative? Compare CheckIn More vs Life360 on price, features, privacy, and purpose. Find the right check-in app for adults living alone.",
-    "date": "2026-03-06",
+    "date": "2026-03-11",
     "author": "CheckIn More Team",
     "tags": [
       "life360 alternative",
@@ -177,7 +177,7 @@ export default [
     "slug": "life360-vs-checkin-more",
     "title": "Life360 vs CheckIn More: Key Differences (2026)",
     "description": "A quick, honest comparison of Life360 vs CheckIn More — purpose, pricing, privacy, scheduling, and who each app is actually built for.",
-    "date": "2026-03-06",
+    "date": "2026-03-11",
     "author": "CheckIn More Team",
     "tags": [
       "life360 vs checkin more",
@@ -194,7 +194,7 @@ export default [
     "slug": "new-plans-announcement",
     "title": "Introducing CheckIn More's Free & Premium Plans",
     "description": "CheckIn More now offers a free plan with email check-in alerts, and a new Premium plan with AI phone calls and anomaly detection. Here's what's new and why it matters.",
-    "date": "2026-03-06",
+    "date": "2026-03-11",
     "author": "CheckIn More Team",
     "tags": [
       "checkin more update",
