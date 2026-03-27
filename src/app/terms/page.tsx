@@ -375,7 +375,7 @@ const TermsPage = () => {
 
                             <div>
                                 <h3 className="text-xl font-bold mb-3">Free Trial</h3>
-                                <p>We offer a 14-day free trial to new users who register with the Services. The account will be charged according to the user&apos;s chosen subscription at the end of the free trial.</p>
+                                <p>We offer a 7-day free trial to new users who register with the Services. The account will be charged according to the user&apos;s chosen subscription at the end of the free trial.</p>
                             </div>
 
                             <div>

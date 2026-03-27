@@ -23,7 +23,7 @@ export const tiers: IPricing[] = [
             '4 check-in options',
             'Unlimited check-in times',
             'Unlimited contacts',
-            '14-day free trial',
+            '7-day free trial',
         ],
     },
     {
@@ -37,7 +37,7 @@ export const tiers: IPricing[] = [
             '4 check-in options',
             'Unlimited check-in times',
             'Unlimited contacts',
-            '14-day free trial',
+            '7-day free trial',
         ],
     }
 ]
