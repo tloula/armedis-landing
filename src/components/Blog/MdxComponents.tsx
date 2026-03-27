@@ -46,6 +46,7 @@ import {
   TrendingUp,
   UserCheck,
   Users,
+  Video,
   XCircle,
   Zap,
   type LucideIcon
@@ -101,6 +102,7 @@ const iconMap: Record<string, LucideIcon> = {
   smile: Smile,
   gift: Gift,
   'phone-call': PhoneCall,
+  video: Video
 };
 
 function Icon({ name, className }: { name: string; className?: string }) {
