@@ -4,7 +4,7 @@ export default [
     "slug": "bsafe-alternative",
     "title": "The Best bSafe Alternative in 2026",
     "description": "Looking for a bSafe alternative? CheckIn More offers reliable daily check-ins and safety timers without the GPS tracking, paywalled SOS, or mixed reviews. Here's how they compare.",
-    "date": "2026-04-5",
+    "date": "2026-04-1",
     "author": "CheckIn More Team",
     "tags": [
       "bsafe alternative",
@@ -21,7 +21,7 @@ export default [
     "slug": "bsafe-vs-checkin-more",
     "title": "bSafe vs CheckIn More: Key Differences (2026)",
     "description": "A quick, honest comparison of bSafe vs CheckIn More — features, pricing, location tracking, reliability, and who each app is right for.",
-    "date": "2026-04-5",
+    "date": "2026-04-01",
     "author": "CheckIn More Team",
     "tags": [
       "bsafe vs checkin more",
@@ -221,7 +221,7 @@ export default [
     "slug": "kitestring-alternative",
     "title": "The Best Kitestring Alternative in 2026",
     "description": "Kitestring shut down and is no longer available. If you're looking for a Kitestring alternative, CheckIn More's Safety Timers do everything Kitestring did — and more.",
-    "date": "2026-04-03",
+    "date": "2026-03-30",
     "author": "CheckIn More Team",
     "tags": [
       "kitestring alternative",
@@ -238,7 +238,7 @@ export default [
     "slug": "kitestring-vs-checkin-more",
     "title": "Kitestring vs CheckIn More: Key Differences (2026)",
     "description": "Kitestring has shut down. Here's how it compared to CheckIn More's Safety Timers — and why CheckIn More is the natural replacement for anyone who relied on Kitestring.",
-    "date": "2026-04-03",
+    "date": "2026-03-30",
     "author": "CheckIn More Team",
     "tags": [
       "kitestring vs checkin more",
@@ -340,7 +340,7 @@ export default [
     "slug": "safety-app-first-dates",
     "title": "The Best Safety App for First Dates in 2026",
     "description": "Heading out to meet someone new? CheckIn More's Safety Timers let someone you trust know where you're going — and alerts them automatically if you don't check back in.",
-    "date": "2026-03-25",
+    "date": "2026-03-29",
     "author": "CheckIn More Team",
     "tags": [
       "safety app for first dates",
@@ -357,7 +357,7 @@ export default [
     "slug": "safety-app-running-alone",
     "title": "The Best Safety App for Running Alone in 2026",
     "description": "Looking for a safety app for solo runs? CheckIn More's Safety Timers let you set a countdown before you head out — if you don't check back in, your contacts are automatically notified.",
-    "date": "2026-04-04",
+    "date": "2026-03-31",
     "author": "CheckIn More Team",
     "tags": [
       "safety app for running alone",
@@ -374,7 +374,7 @@ export default [
     "slug": "safety-timers-announcement",
     "title": "Introducing Safety Timers: A New Kind of Check-In",
     "description": "CheckIn More now has safety timers — set a countdown for a run, a date night, or any solo activity, and your contacts are automatically notified if you don't check back in.",
-    "date": "2026-04-01",
+    "date": "2026-03-28",
     "author": "CheckIn More Team",
     "tags": [
       "checkin more update",
@@ -442,7 +442,7 @@ export default [
     "slug": "text-when-you-get-home",
     "title": "An App That Texts When You Get Home Safe (And Alerts If You Don't)",
     "description": "Stop relying on yourself to remember to text when you get home. CheckIn More does it automatically — and alerts your contacts if you don't make it back.",
-    "date": "2026-04-02",
+    "date": "2026-03-29",
     "author": "CheckIn More Team",
     "tags": [
       "text when you get home app",
