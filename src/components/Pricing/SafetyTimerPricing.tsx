@@ -20,7 +20,7 @@ const safetyTimerTiers: IPricing[] = [
             'Unlimited safety timers',
             'Unlimited contacts',
             'Email & SMS notifications',
-            '14-day free trial',
+            '7-day free trial',
         ],
     },
     {
@@ -32,7 +32,7 @@ const safetyTimerTiers: IPricing[] = [
             'Unlimited contacts',
             'Email & SMS notifications',
             'AI phone call alerts',
-            '14-day free trial',
+            '7-day free trial',
         ],
     }
 ]
