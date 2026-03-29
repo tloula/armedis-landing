@@ -12,7 +12,7 @@ export const subscriptionFAQs: IFAQ[] = [
     },
     {
         question: `Is there a free trial available?`,
-        answer: `Yes, ${siteDetails.siteName} offers a two-week free trial. This allows you to explore all the app's features before committing to a subscription.`,
+        answer: `Yes, ${siteDetails.siteName} offers a 7 day free trial. This allows you to explore all the app's features before committing to a subscription.`,
     },
     {
         question: `How do I activate my subscription?`,

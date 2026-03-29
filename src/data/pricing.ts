@@ -26,7 +26,7 @@ export const tiers: IPricing[] = [
             'Unlimited contacts',
             'Unlimited safety timers',
             'SMS timer management',
-            '14-day free trial',
+            '7-day free trial',
         ],
     },
     {
@@ -42,7 +42,7 @@ export const tiers: IPricing[] = [
             'Unlimited contacts',
             'Unlimited safety timers',
             'SMS timer management',
-            '14-day free trial',
+            '7-day free trial',
         ],
     }
 ]
