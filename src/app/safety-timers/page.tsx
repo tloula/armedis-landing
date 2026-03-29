@@ -39,7 +39,7 @@ const howItWorksSteps = [
         icon: LuTimer,
         title: "Set a Timer",
         description:
-            "Open the app and set a duration with an optional reason — \"45 minute run\" or \"hiking trail, back by 3pm\".",
+            "Open the app and set a duration with an optional reason - or just text us — \"45 minute run\" or \"hiking trail, back by 3pm\".",
     },
     {
         icon: LuShieldCheck,
