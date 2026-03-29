@@ -9,6 +9,7 @@ import {
   Briefcase,
   Calendar,
   ChartBar,
+  Check,
   CircleArrowRight,
   CircleCheck,
   CircleDollarSign,
@@ -25,6 +26,7 @@ import {
   Info,
   Layers,
   Lightbulb,
+  Link,
   Mail,
   MapPin,
   MapPinOff,
@@ -40,17 +42,20 @@ import {
   Smile,
   Target,
   ThumbsUp,
+  Timer,
   TrendingUp,
   UserCheck,
   Users,
+  Video,
   XCircle,
   Zap,
-  type LucideIcon,
+  type LucideIcon
 } from 'lucide-react';
 import React from 'react';
 
 const iconMap: Record<string, LucideIcon> = {
   zap: Zap,
+  timer: Timer,
   'circle-dollar-sign': CircleDollarSign,
   calendar: Calendar,
   smartphone: Smartphone,
@@ -89,12 +94,15 @@ const iconMap: Record<string, LucideIcon> = {
   'message-square': MessageSquare,
   activity: Activity,
   cpu: Cpu,
+  layers: Layers,
+  link: Link,
+  check: Check,
   'map-pin-off': MapPinOff,
   target: Target,
   smile: Smile,
   gift: Gift,
   'phone-call': PhoneCall,
-  layers: Layers,
+  video: Video
 };
 
 function Icon({ name, className }: { name: string; className?: string }) {

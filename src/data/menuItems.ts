@@ -26,6 +26,10 @@ export const menuItems: IMenuItem[] = [
         url: "/how-it-works"
     },
     {
+        text: "Safety Timers",
+        url: "/safety-timers"
+    },
+    {
         text: "Blog",
         url: "/blog"
     }

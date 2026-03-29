@@ -101,4 +101,34 @@ export const benefits: IBenefit[] = [
         imageWidth: 1206,
         imageHeight: 2622
     },
+    {
+        title: "Safety Timers for What's Not Routine",
+        description: "Set a Countdown, Go, Check Back In",
+        bullets: [
+            {
+                title: "Set a timer",
+                description: "Set a duration before a run, a date, or a drive. Your contacts are notified if you don't check back in.",
+                icon: <CiTimer size={26} />
+            },
+            {
+                title: "Text to start",
+                description: "Create and cancel timers via SMS — no app required.",
+                icon: <BsChatText size={26} />
+            },
+            {
+                title: "Five-minute grace period",
+                description: "Life doesn't run on the minute. A brief buffer before alerts go out.",
+                icon: <FiClock size={26} />
+            },
+            {
+                title: "Works with your contacts",
+                description: "Uses the same contacts and notification channels you've already configured.",
+                icon: <BsPeople size={26} />
+            }
+        ],
+        close: "For the moments that aren't routine. Set a timer, go, and let us handle the rest.",
+        imageSrc: "/images/home/safety-timer.webp",
+        imageWidth: 1206,
+        imageHeight: 2622
+    },
 ]
