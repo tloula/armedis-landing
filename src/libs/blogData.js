@@ -102,7 +102,7 @@ export default [
     "slug": "check-in-service-solo-living",
     "title": "The Best Check-In Service for Solo Living",
     "description": "Solo living is freeing — but the people who love you still worry. A check-in service for solo living gives them peace of mind without turning your independence into a daily obligation.",
-    "date": "2026-03-30",
+    "date": "2026-04-01",
     "author": "CheckIn More Team",
     "tags": [
       "check-in service solo living",
