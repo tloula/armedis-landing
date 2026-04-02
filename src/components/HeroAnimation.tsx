@@ -18,6 +18,11 @@ const STEPS = [
 
 const STEP_DURATION = 4000;
 
+interface HeroAnimationProps {
+    loop?: boolean;
+    stepDuration?: number;
+}
+
 const TODAY = new Date().toLocaleDateString("en-US", {
     weekday: "long",
     month: "long",
@@ -361,32 +366,49 @@ export function PhoneCallBubble({ variant, standalone }: { variant: "success" | 
 
 // ─── Main component ─────────────────────────────────────────────────
 
-export default function HeroAnimation() {
+export default function HeroAnimation({
+    loop = true,
+    stepDuration = STEP_DURATION,
+}: HeroAnimationProps) {
     const [activeStep, setActiveStep] = useState(0);
     const [isPaused, setIsPaused] = useState(false);
-    const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+    const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-    const startTimer = useCallback(() => {
-        if (intervalRef.current) clearInterval(intervalRef.current);
-        intervalRef.current = setInterval(() => {
-            setActiveStep((prev) => (prev + 1) % STEPS.length);
-        }, STEP_DURATION);
+    const clearTimer = useCallback(() => {
+        if (timeoutRef.current) {
+            clearTimeout(timeoutRef.current);
+            timeoutRef.current = null;
+        }
     }, []);
 
     useEffect(() => {
-        if (!isPaused) {
-            startTimer();
-        } else if (intervalRef.current) {
-            clearInterval(intervalRef.current);
+        clearTimer();
+
+        if (isPaused) {
+            return;
         }
-        return () => {
-            if (intervalRef.current) clearInterval(intervalRef.current);
-        };
-    }, [isPaused, startTimer]);
+
+        const isLastStep = activeStep >= STEPS.length - 1;
+        if (!loop && isLastStep) {
+            return;
+        }
+
+        timeoutRef.current = setTimeout(() => {
+            setActiveStep((prev) => {
+                if (loop) {
+                    return (prev + 1) % STEPS.length;
+                }
+
+                return Math.min(prev + 1, STEPS.length - 1);
+            });
+        }, stepDuration);
+
+        return clearTimer;
+    }, [activeStep, clearTimer, isPaused, loop, stepDuration]);
 
     const handleStepClick = (index: number) => {
         setActiveStep(index);
-        startTimer();
+        clearTimer();
     };
 
     return (

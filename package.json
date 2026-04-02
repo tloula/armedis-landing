@@ -9,7 +9,8 @@
     "lint": "next lint",
     "generate:mdx": "node scripts/generateMdxData.js",
     "generate:sitemap": "node scripts/generate-sitemap.js",
-    "generate:screenshots": "node scripts/screenshot.mjs"
+    "generate:screenshots": "node scripts/screenshot.mjs",
+    "generate:video": "node scripts/video.mjs"
   },
   "dependencies": {
     "@botpoison/browser": "^0.1.30",
