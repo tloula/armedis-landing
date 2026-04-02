@@ -29,6 +29,7 @@ const outDir = variant === "ad"
 fs.mkdirSync(outDir, { recursive: true });
 
 const BASE_URL = process.env.SCREENSHOT_URL ?? "http://localhost:3000";
+const helperPath = variant === "ad" ? "/screenshot-helper/ad" : "/screenshot-helper";
 const scenes = [
     "notification",
     "checkin",
@@ -49,12 +50,7 @@ await page.emulateMedia({ reducedMotion: "reduce" });
 // Use a wide viewport so Tailwind md: breakpoints apply (bubbles use md: offsets).
 await page.setViewportSize({ width: 1440, height: 900 });
 
-const helperUrl = new URL("/screenshot-helper", BASE_URL);
-if (variant !== "default") {
-    helperUrl.searchParams.set("variant", variant);
-}
-
-await page.goto(helperUrl.toString());
+await page.goto(new URL(helperPath, BASE_URL).toString());
 
 // Override the body/html background that globals.css sets — omitBackground only
 // strips the browser's default canvas, not explicit CSS background colors.
