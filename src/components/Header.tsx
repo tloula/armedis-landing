@@ -9,6 +9,7 @@ import { HiBars3, HiOutlineXMark } from 'react-icons/hi2';
 import { menuItems } from '@/data/menuItems';
 import { siteDetails } from '@/data/siteDetails';
 import Container from './Container';
+import DownloadLink from './DownloadLink';
 
 const Header: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -46,9 +47,9 @@ const Header: React.FC = () => {
                             </li>
                         ))}
                         <li>
-                            <Link href="/download" className="text-[var(--accent-text)] bg-primary hover:bg-primary-accent px-8 py-3 rounded-full transition-colors">
+                            <DownloadLink className="text-[var(--accent-text)] bg-primary hover:bg-primary-accent px-8 py-3 rounded-full transition-colors">
                                 Download
-                            </Link>
+                            </DownloadLink>
                         </li>
                     </ul>
 
@@ -92,9 +93,9 @@ const Header: React.FC = () => {
                             </li>
                         ))}
                         <li>
-                            <Link href="/download" className="text-[var(--accent-text)] bg-primary hover:bg-primary-accent px-5 py-2 rounded-full block w-fit" onClick={toggleMenu}>
+                            <DownloadLink className="text-[var(--accent-text)] bg-primary hover:bg-primary-accent px-5 py-2 rounded-full block w-fit" onClick={toggleMenu}>
                                 Download
-                            </Link>
+                            </DownloadLink>
                         </li>
                     </ul>
                 </div>

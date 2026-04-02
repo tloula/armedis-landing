@@ -1,4 +1,5 @@
 import AppStoreButton from '@/components/AppStoreButton';
+import DownloadLink from '@/components/DownloadLink';
 import PlayStoreButton from '@/components/PlayStoreButton';
 import {
   Activity,
@@ -179,13 +180,25 @@ export const mdxComponents = {
   strong: (props: React.HTMLAttributes<HTMLElement>) => (
     <strong className="font-semibold" style={{ color: 'var(--foreground)' }} {...props} />
   ),
-  a: (props: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
-    <a
-      className="underline-offset-2 hover:underline transition-colors"
-      style={{ color: 'var(--link-text)' }}
-      {...props}
-    />
-  ),
+  a: (props: React.AnchorHTMLAttributes<HTMLAnchorElement>) => {
+    if (props.href === '/download') {
+      return (
+        <DownloadLink
+          className="underline-offset-2 hover:underline transition-colors"
+          style={{ color: 'var(--link-text)' }}
+          {...props}
+        />
+      );
+    }
+
+    return (
+      <a
+        className="underline-offset-2 hover:underline transition-colors"
+        style={{ color: 'var(--link-text)' }}
+        {...props}
+      />
+    );
+  },
   ul: (props: React.HTMLAttributes<HTMLUListElement>) => (
     <ul className="list-disc ml-6 my-4 space-y-2 marker:text-[var(--primary)]" {...props} />
   ),
