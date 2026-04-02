@@ -18,6 +18,10 @@ const STEPS = [
 
 const STEP_DURATION = 4000;
 
+interface HeroSceneProps {
+    adMode?: boolean;
+}
+
 interface HeroAnimationProps {
     loop?: boolean;
     stepDuration?: number;
@@ -31,19 +35,19 @@ const TODAY = new Date().toLocaleDateString("en-US", {
 
 // ─── Scene 1: Notification arrives ──────────────────────────────────
 
-export function NotificationContent() {
+export function NotificationContent({ adMode = false }: HeroSceneProps) {
     return (
         <div className="absolute inset-0 bg-gradient-to-b from-[#f0eeea] to-[#e6e3de] flex flex-col">
-            <div className="flex justify-between items-center px-6 pt-14 pb-1">
-                <span className="text-sm font-semibold text-foreground">9:00 AM</span>
-                <span className="text-sm text-foreground/50 tracking-wider">● ● ●</span>
+            <div className={`flex justify-between items-center px-6 ${adMode ? "pt-12 pb-2" : "pt-14 pb-1"}`}>
+                <span className={`${adMode ? "text-base" : "text-sm"} font-semibold text-foreground`}>9:00 AM</span>
+                <span className={`${adMode ? "text-base" : "text-sm"} text-foreground/50 tracking-wider`}>● ● ●</span>
             </div>
 
-            <div className="text-center mt-10 md:mt-14">
-                <p className="text-sm text-foreground/60 tracking-widest uppercase">
+            <div className={`text-center ${adMode ? "mt-7" : "mt-10 md:mt-14"}`}>
+                <p className={`${adMode ? "text-base" : "text-sm"} text-foreground/60 tracking-widest uppercase`}>
                     {TODAY}
                 </p>
-                <p className="text-6xl md:text-7xl font-extralight text-foreground mt-1">
+                <p className={`${adMode ? "text-7xl" : "text-6xl md:text-7xl"} font-extralight text-foreground mt-1`}>
                     9:00
                 </p>
             </div>
@@ -52,24 +56,24 @@ export function NotificationContent() {
                 initial={{ y: -40, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.6, type: "spring", bounce: 0.25, duration: 0.7 }}
-                className="mx-4 mt-8 md:mt-12 bg-white/85 backdrop-blur-md rounded-2xl p-4 shadow-sm border border-white/50"
+                className={`mx-4 ${adMode ? "mt-6 p-5 rounded-[1.4rem]" : "mt-8 md:mt-12 p-4 rounded-2xl"} bg-white/85 backdrop-blur-md shadow-sm border border-white/50`}
             >
-                <div className="flex items-start gap-3">
+                <div className={`flex items-start ${adMode ? "gap-4" : "gap-3"}`}>
                     <motion.div
-                        className="w-11 h-11 rounded-xl bg-primary flex items-center justify-center flex-shrink-0"
+                        className={`${adMode ? "w-12 h-12" : "w-11 h-11"} rounded-xl bg-primary flex items-center justify-center flex-shrink-0`}
                         animate={{ rotate: [0, -10, 10, -10, 0] }}
                         transition={{ delay: 1.2, duration: 0.5 }}
                     >
-                        <CiBellOn className="text-white text-xl" />
+                        <CiBellOn className={`${adMode ? "text-white text-2xl" : "text-white text-xl"}`} />
                     </motion.div>
                     <div className="min-w-0 flex-1">
                         <div className="flex items-center justify-between">
-                            <p className="text-sm font-bold text-foreground tracking-wide">
+                            <p className={`${adMode ? "text-base" : "text-sm"} font-bold text-foreground tracking-wide`}>
                                 CHECKIN MORE
                             </p>
-                            <p className="text-xs text-foreground/50">now</p>
+                            <p className={`${adMode ? "text-sm" : "text-xs"} text-foreground/50`}>now</p>
                         </div>
-                        <p className="text-sm text-foreground/80 mt-0.5 leading-relaxed">
+                        <p className={`${adMode ? "text-base mt-1" : "text-sm mt-0.5"} text-foreground/80 leading-relaxed`}>
                             It&apos;s check-in time! Tap to check in now.
                         </p>
                     </div>
@@ -81,7 +85,7 @@ export function NotificationContent() {
 
 // ─── Scene 2: User checks in ────────────────────────────────────────
 
-export function CheckInContent() {
+export function CheckInContent({ adMode = false }: HeroSceneProps) {
     const [selected, setSelected] = useState(false);
 
     useEffect(() => {
@@ -98,18 +102,18 @@ export function CheckInContent() {
 
     return (
         <div className="absolute inset-0 bg-primary flex flex-col">
-            <div className="px-4 pt-14 pb-4 relative">
-                <span className="absolute top-7 left-6 text-xs font-medium text-white">9:00 AM</span>
-                <p className="text-base font-bold text-white text-center tracking-wide">
+            <div className={`px-4 ${adMode ? "pt-12 pb-5" : "pt-14 pb-4"} relative`}>
+                <span className={`absolute left-6 ${adMode ? "top-6 text-sm" : "top-7 text-xs"} font-medium text-white`}>9:00 AM</span>
+                <p className={`${adMode ? "text-lg" : "text-base"} font-bold text-white text-center tracking-wide`}>
                     Check In
                 </p>
             </div>
 
-            <div className="flex-1 flex flex-col items-center justify-center px-6 bg-gradient-to-b from-[#f0eeea] to-[#e6e3de]">
-                <p className="text-lg font-bold text-foreground">Good Morning Sarah!</p>
-                <p className="text-sm text-foreground/60 mt-1">How are you feeling?</p>
+            <div className={`flex-1 flex flex-col items-center justify-center ${adMode ? "px-7" : "px-6"} bg-gradient-to-b from-[#f0eeea] to-[#e6e3de]`}>
+                <p className={`${adMode ? "text-xl" : "text-lg"} font-bold text-foreground`}>Good Morning Sarah!</p>
+                <p className={`${adMode ? "text-base mt-1.5" : "text-sm mt-1"} text-foreground/60`}>How are you feeling?</p>
 
-                <div className="flex gap-1 md:gap-5 mt-7">
+                <div className={`flex ${adMode ? "gap-3 mt-8" : "gap-1 md:gap-5 mt-7"}`}>
                     {moods.map((mood, i) => {
                         const Icon = mood.icon;
                         const isActive = i === 3 && selected;
@@ -118,16 +122,16 @@ export function CheckInContent() {
                                 key={mood.label}
                                 className="flex flex-col items-center gap-1.5"
                             >
-                                <div className="w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center">
+                                <div className={`${adMode ? "w-14 h-14" : "w-12 h-12 md:w-14 md:h-14"} rounded-full flex items-center justify-center`}>
                                     <Icon
-                                        className={`w-8 h-8 md:w-9 md:h-9 stroke-[1.5] transition-colors duration-300 ${
+                                        className={`${adMode ? "w-9 h-9" : "w-8 h-8 md:w-9 md:h-9"} stroke-[1.5] transition-colors duration-300 ${
                                             isActive
                                                 ? "text-primary"
                                                 : "text-foreground/50"
                                         }`}
                                     />
                                 </div>
-                                <span className={`text-xs transition-colors duration-300 ${
+                                <span className={`${adMode ? "text-sm" : "text-xs"} transition-colors duration-300 ${
                                     isActive
                                         ? "text-primary font-semibold"
                                         : "text-foreground/60"
@@ -140,7 +144,7 @@ export function CheckInContent() {
                 </div>
 
                 <motion.div
-                    className="mt-9 w-full"
+                    className={`${adMode ? "mt-10" : "mt-9"} w-full`}
                     animate={{
                         scale: [1, 1, 0.93, 1.02, 1],
                     }}
@@ -150,7 +154,7 @@ export function CheckInContent() {
                         ease: "easeInOut",
                     }}
                 >
-                    <div className="bg-primary text-white rounded-xl py-3 text-center text-base font-bold shadow-md">
+                    <div className={`bg-primary text-white rounded-xl ${adMode ? "py-3.5 text-lg" : "py-3 text-base"} text-center font-bold shadow-md`}>
                         Complete CheckIn ✓
                     </div>
                 </motion.div>
@@ -161,17 +165,17 @@ export function CheckInContent() {
 
 // ─── Scene 3: Check-in complete ─────────────────────────────────────
 
-export function CompleteContent() {
+export function CompleteContent({ adMode = false }: HeroSceneProps) {
     return (
         <div className="absolute inset-0 bg-primary flex flex-col">
-            <div className="px-4 pt-14 pb-4 relative">
-                <span className="absolute top-7 left-6 text-xs font-medium text-white">9:00 AM</span>
-                <p className="text-base font-bold text-white text-center tracking-wide">
+            <div className={`px-4 ${adMode ? "pt-12 pb-5" : "pt-14 pb-4"} relative`}>
+                <span className={`absolute left-6 ${adMode ? "top-6 text-sm" : "top-7 text-xs"} font-medium text-white`}>9:00 AM</span>
+                <p className={`${adMode ? "text-lg" : "text-base"} font-bold text-white text-center tracking-wide`}>
                     Check In
                 </p>
             </div>
 
-            <div className="flex-1 flex flex-col items-center justify-center px-6 bg-gradient-to-b from-[#f0eeea] to-[#e6e3de]">
+            <div className={`flex-1 flex flex-col items-center justify-center ${adMode ? "px-7" : "px-6"} bg-gradient-to-b from-[#f0eeea] to-[#e6e3de]`}>
                 <motion.div
                     initial={{ scale: 0, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
@@ -181,16 +185,16 @@ export function CompleteContent() {
                         bounce: 0.4,
                         duration: 0.6,
                     }}
-                    className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-green-50 flex items-center justify-center"
+                    className={`${adMode ? "w-28 h-28" : "w-24 h-24 md:w-28 md:h-28"} rounded-full bg-green-50 flex items-center justify-center`}
                 >
-                    <BsCheckCircleFill className="text-primary text-4xl md:text-5xl" />
+                    <BsCheckCircleFill className={`${adMode ? "text-primary text-5xl" : "text-primary text-4xl md:text-5xl"}`} />
                 </motion.div>
 
                 <motion.p
                     initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.45 }}
-                    className="text-xl font-bold text-foreground mt-4"
+                    className={`${adMode ? "text-2xl mt-5" : "text-xl mt-4"} font-bold text-foreground`}
                 >
                     CheckIn Complete
                 </motion.p>
@@ -199,7 +203,7 @@ export function CompleteContent() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.65 }}
-                    className="text-sm text-foreground/60 mt-2"
+                    className={`${adMode ? "text-base mt-2.5" : "text-sm mt-2"} text-foreground/60`}
                 >
                     Thanks for checking in!
                 </motion.p>
@@ -211,17 +215,17 @@ export function CompleteContent() {
 
 // ─── Scene 4: Missed check-in ───────────────────────────────────────
 
-export function MissedContent() {
+export function MissedContent({ adMode = false }: HeroSceneProps) {
     return (
         <div className="absolute inset-0 bg-foreground flex flex-col">
-            <div className="px-4 pt-14 pb-4 relative">
-                <span className="absolute top-7 left-6 text-xs font-medium text-white">11:00 AM</span>
-                <p className="text-base font-bold text-white text-center tracking-wide">
+            <div className={`px-4 ${adMode ? "pt-12 pb-5" : "pt-14 pb-4"} relative`}>
+                <span className={`absolute left-6 ${adMode ? "top-6 text-sm" : "top-7 text-xs"} font-medium text-white`}>11:00 AM</span>
+                <p className={`${adMode ? "text-lg" : "text-base"} font-bold text-white text-center tracking-wide`}>
                     Check In
                 </p>
             </div>
 
-            <div className="flex-1 flex flex-col items-center justify-center px-6 bg-gradient-to-b from-[#f0eeea] to-[#e6e3de]">
+            <div className={`flex-1 flex flex-col items-center justify-center ${adMode ? "px-7" : "px-6"} bg-gradient-to-b from-[#f0eeea] to-[#e6e3de]`}>
                 <motion.div
                     initial={{ scale: 0, rotate: -15 }}
                     animate={{ scale: 1, rotate: 0 }}
@@ -230,16 +234,16 @@ export function MissedContent() {
                         type: "spring",
                         bounce: 0.35,
                     }}
-                    className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-red-50 flex items-center justify-center"
+                    className={`${adMode ? "w-28 h-28" : "w-24 h-24 md:w-28 md:h-28"} rounded-full bg-red-50 flex items-center justify-center`}
                 >
-                    <FiClock className="text-red-500 text-4xl md:text-5xl" />
+                    <FiClock className={`${adMode ? "text-red-500 text-5xl" : "text-red-500 text-4xl md:text-5xl"}`} />
                 </motion.div>
 
                 <motion.p
                     initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.45 }}
-                    className="text-xl font-bold text-foreground mt-4"
+                    className={`${adMode ? "text-2xl mt-5" : "text-xl mt-4"} font-bold text-foreground`}
                 >
                     Missed Check-In
                 </motion.p>
@@ -248,7 +252,7 @@ export function MissedContent() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.65 }}
-                    className="text-sm text-foreground/60 mt-1.5 text-center"
+                    className={`${adMode ? "text-base mt-2" : "text-sm mt-1.5"} text-foreground/60 text-center`}
                 >
                     We notified Meridith that you missed your 9:00 AM check-in
                 </motion.p>
@@ -259,7 +263,7 @@ export function MissedContent() {
 
 // ─── Floating SMS bubble ────────────────────────────────────────────
 
-export function SmsBubble({ variant, standalone }: { variant: "success" | "alert"; standalone?: boolean }) {
+export function SmsBubble({ variant, standalone, adMode = false }: { variant: "success" | "alert"; standalone?: boolean; adMode?: boolean }) {
     const isAlert = variant === "alert";
 
     return (
@@ -275,24 +279,24 @@ export function SmsBubble({ variant, standalone }: { variant: "success" | "alert
             }}
             className={`
                 ${standalone
-                    ? "relative w-[230px]"
-                    : `absolute z-20 w-[190px] md:w-[230px] -right-8 bottom-2 md:bottom-auto md:-right-16 lg:-right-24 ${isAlert ? "md:top-[48%]" : "md:top-[38%]"}`
+                    ? `${adMode ? "relative w-[270px]" : "relative w-[230px]"}`
+                    : `absolute z-20 ${adMode ? "w-[255px] -right-14" : "w-[190px] md:w-[230px] -right-8 md:-right-16 lg:-right-24"} bottom-2 md:bottom-auto ${isAlert ? "md:top-[48%]" : "md:top-[38%]"}`
                 }
-                bg-white rounded-xl p-3 md:p-3.5 shadow-lg
+                bg-white rounded-xl ${adMode ? "p-4" : "p-3 md:p-3.5"} shadow-lg
                 border ${isAlert ? "border-foreground/20" : "border-primary/20"}
             `}
         >
-            <div className="flex items-start gap-2.5">
+            <div className={`flex items-start ${adMode ? "gap-3" : "gap-2.5"}`}>
                 <BsChatLeftTextFill
-                    className={`text-xs flex-shrink-0 mt-0.5 ${
+                    className={`${adMode ? "text-sm" : "text-xs"} flex-shrink-0 mt-0.5 ${
                         isAlert ? "text-red-500" : "text-primary"
                     }`}
                 />
                 <div className="min-w-0">
-                    <p className="text-xs md:text-sm font-bold text-gray-700">
+                    <p className={`${adMode ? "text-sm" : "text-xs md:text-sm"} font-bold text-gray-700`}>
                         {isAlert ? "CheckIn More" : "CheckIn More"}
                     </p>
-                    <p className="text-[11px] md:text-xs text-gray-500 mt-0.5 leading-relaxed">
+                    <p className={`${adMode ? "text-sm mt-1" : "text-[11px] md:text-xs mt-0.5"} text-gray-500 leading-relaxed`}>
                         {isAlert
                             ? "Sarah missed her 9:00 AM check-in"
                             : "Sarah completed her check-in and is having a great day!"}
@@ -305,7 +309,7 @@ export function SmsBubble({ variant, standalone }: { variant: "success" | "alert
 
 // ─── Floating phone call bubble ──────────────────────────────────────
 
-export function PhoneCallBubble({ variant, standalone }: { variant: "success" | "alert"; standalone?: boolean }) {
+export function PhoneCallBubble({ variant, standalone, adMode = false }: { variant: "success" | "alert"; standalone?: boolean; adMode?: boolean }) {
     const isAlert = variant === "alert";
 
     return (
@@ -321,17 +325,17 @@ export function PhoneCallBubble({ variant, standalone }: { variant: "success" | 
             }}
             className={`
                 ${standalone
-                    ? "relative w-[250px]"
-                    : "absolute z-20 w-[210px] md:w-[250px] -left-8 top-32 md:top-[26%] md:-left-16 lg:-left-24"
+                    ? `${adMode ? "relative w-[285px]" : "relative w-[250px]"}`
+                    : `${adMode ? "absolute z-20 w-[275px] -left-16 top-28 md:top-[24%]" : "absolute z-20 w-[210px] md:w-[250px] -left-8 top-32 md:top-[26%] md:-left-16 lg:-left-24"}`
                 }
-                bg-white rounded-xl p-3 md:p-3.5 shadow-lg
+                bg-white rounded-xl ${adMode ? "p-4" : "p-3 md:p-3.5"} shadow-lg
                 border ${isAlert ? "border-foreground/20" : "border-primary/20"}
             `}
         >
-            <div className="flex items-center gap-2.5">
+            <div className={`flex items-center ${adMode ? "gap-3" : "gap-2.5"}`}>
                 {/* App icon */}
                 <motion.div
-                    className="w-9 h-9 rounded-xl overflow-hidden flex-shrink-0"
+                    className={`${adMode ? "w-10 h-10" : "w-9 h-9"} rounded-xl overflow-hidden flex-shrink-0`}
                     animate={{ rotate: [0, -12, 12, -12, 12, -8, 8, 0] }}
                     transition={{
                         delay: 1.3,
@@ -346,17 +350,17 @@ export function PhoneCallBubble({ variant, standalone }: { variant: "success" | 
 
                 {/* Text */}
                 <div className="flex-1 min-w-0">
-                    <p className="text-xs font-bold text-gray-800 leading-tight">CheckIn More</p>
-                    <p className="text-[10px] text-gray-400 leading-tight">Incoming Call</p>
+                    <p className={`${adMode ? "text-sm" : "text-xs"} font-bold text-gray-800 leading-tight`}>CheckIn More</p>
+                    <p className={`${adMode ? "text-xs" : "text-[10px]"} text-gray-400 leading-tight`}>Incoming Call</p>
                 </div>
 
                 {/* Action buttons */}
                 <div className="flex gap-1.5">
-                    <button className="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0">
-                        <LuPhone className="text-white text-sm" />
+                    <button className={`${adMode ? "w-9 h-9" : "w-8 h-8"} rounded-full bg-green-500 flex items-center justify-center flex-shrink-0`}>
+                        <LuPhone className={`${adMode ? "text-white text-base" : "text-white text-sm"}`} />
                     </button>
-                    <button className="w-8 h-8 rounded-full bg-red-500 flex items-center justify-center flex-shrink-0">
-                        <LuPhone className="text-white text-sm rotate-[135deg]" />
+                    <button className={`${adMode ? "w-9 h-9" : "w-8 h-8"} rounded-full bg-red-500 flex items-center justify-center flex-shrink-0`}>
+                        <LuPhone className={`${adMode ? "text-white text-base" : "text-white text-sm"} rotate-[135deg]`} />
                     </button>
                 </div>
             </div>

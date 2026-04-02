@@ -9,6 +9,10 @@
  *   npm run dev          # in one terminal
  *   node scripts/screenshot.mjs   # in another
  *
+ * Environment variables:
+ *   SCREENSHOT_URL       Override the base URL (default: http://localhost:3000)
+ *   SCREENSHOT_VARIANT   Set to "ad" for larger, more readable exports
+ *
  * Output: screenshots/{notification,checkin,complete,missed}.png
  */
 
@@ -18,7 +22,10 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const outDir = path.join(__dirname, "..", "screenshots");
+const variant = process.env.SCREENSHOT_VARIANT ?? "default";
+const outDir = variant === "ad"
+    ? path.join(__dirname, "..", "screenshots", "ad")
+    : path.join(__dirname, "..", "screenshots");
 fs.mkdirSync(outDir, { recursive: true });
 
 const BASE_URL = process.env.SCREENSHOT_URL ?? "http://localhost:3000";
@@ -42,7 +49,12 @@ await page.emulateMedia({ reducedMotion: "reduce" });
 // Use a wide viewport so Tailwind md: breakpoints apply (bubbles use md: offsets).
 await page.setViewportSize({ width: 1440, height: 900 });
 
-await page.goto(`${BASE_URL}/screenshot-helper`);
+const helperUrl = new URL("/screenshot-helper", BASE_URL);
+if (variant !== "default") {
+    helperUrl.searchParams.set("variant", variant);
+}
+
+await page.goto(helperUrl.toString());
 
 // Override the body/html background that globals.css sets — omitBackground only
 // strips the browser's default canvas, not explicit CSS background colors.
@@ -68,4 +80,4 @@ for (const scene of scenes) {
 }
 
 await browser.close();
-console.log(`\nSaved to: ${outDir}`);
+console.log(`\nSaved ${variant} screenshots to: ${outDir}`);
