@@ -30,6 +30,10 @@ export const faqs: IFAQ[] = [
         - Pause your check-ins by temporarily disabling any scheduled check-in, giving you flexibility when needed.`,
     },
     {
+        question: `Which countries do SMS and phone call notifications support?`,
+        answer: `Currently, ${siteDetails.siteName}'s SMS and phone call notifications are only supported for US and Canadian phone numbers. Email notifications are available worldwide. We're working to expand SMS and phone call support to more countries in the future.`,
+    },
+    {
         question: `Why isn't ${siteDetails.siteName} free?`,
         answer: `Maintaining ${siteDetails.siteName} comes with real costs - app store fees, cloud hosting, SMS services, and business expenses. We charge a small fee to keep things running smoothly.\nThis approach allows us to provide better support, improve our service, and continue building features that matter to you. As a family-run project, we truly appreciate your support in helping us keep ${siteDetails.siteName} going.`
     }
