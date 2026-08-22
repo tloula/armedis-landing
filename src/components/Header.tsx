@@ -19,9 +19,9 @@ const Header: React.FC = () => {
     };
 
     return (
-        <header className="bg-transparent fixed top-0 left-0 right-0 md:absolute z-50 mx-auto w-full">
+        <header className="fixed top-0 left-0 right-0 z-50 mx-auto w-full px-3 pt-3 md:px-6 md:pt-5">
             <Container className="!px-0">
-                <nav className="shadow-md md:shadow-none bg-white md:bg-transparent mx-auto flex justify-between items-center py-2 px-5 md:py-10">
+                <nav className="border border-white/70 bg-[rgba(251,250,247,0.88)] shadow-[0_8px_30px_rgba(38,52,44,0.08)] backdrop-blur-xl mx-auto flex justify-between items-center py-2.5 px-4 md:px-5 rounded-2xl">
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-2">
                         {/* <FaUsers className="text-foreground min-w-fit w-7 h-7" /> */}
@@ -30,24 +30,24 @@ const Header: React.FC = () => {
                             alt={`${siteDetails.siteName} logo`}
                             width={32}
                             height={32}
-                            className="h-8 w-auto object-contain"
+                            className="h-8 w-auto object-contain rounded-lg"
                         />
-                        <span className="manrope text-xl font-semibold text-foreground cursor-pointer">
+                        <span className="manrope text-lg font-semibold tracking-[-0.03em] text-foreground cursor-pointer">
                             {siteDetails.siteName}
                         </span>
                     </Link>
 
                     {/* Desktop Menu */}
-                    <ul className="hidden md:flex space-x-6">
+                    <ul className="hidden md:flex items-center gap-1">
                         {menuItems.map(item => (
                             <li key={item.text}>
-                                <Link href={item.url} className="text-foreground hover:text-foreground-accent transition-colors">
+                                <Link href={item.url} className="text-sm font-medium text-foreground-accent hover:text-foreground px-3 py-2 rounded-lg transition-colors">
                                     {item.text}
                                 </Link>
                             </li>
                         ))}
                         <li>
-                            <DownloadLink className="text-[var(--accent-text)] bg-primary hover:bg-primary-accent px-8 py-3 rounded-full transition-colors">
+                            <DownloadLink className="text-[var(--accent-text)] bg-primary hover:bg-primary-accent px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors">
                                 Download
                             </DownloadLink>
                         </li>
@@ -58,7 +58,7 @@ const Header: React.FC = () => {
                         <button
                             onClick={toggleMenu}
                             type="button"
-                            className="text-[var(--accent-text)] bg-primary focus:outline-none rounded-full w-10 h-10 flex items-center justify-center"
+                            className="text-[var(--accent-text)] bg-primary focus:outline-none rounded-xl w-10 h-10 flex items-center justify-center"
                             aria-controls="mobile-menu"
                             aria-expanded={isOpen}
                         >
@@ -83,17 +83,17 @@ const Header: React.FC = () => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
             >
-                <div id="mobile-menu" className="md:hidden bg-white shadow-lg">
-                    <ul className="flex flex-col space-y-4 pt-1 pb-6 px-6">
+                <div id="mobile-menu" className="md:hidden mt-2 mx-auto max-w-7xl bg-[var(--surface)] border border-[var(--border)] rounded-2xl shadow-xl overflow-hidden">
+                    <ul className="flex flex-col gap-1 py-4 px-4">
                         {menuItems.map(item => (
                             <li key={item.text}>
-                                <Link href={item.url} className="text-foreground hover:text-primary block" onClick={toggleMenu}>
+                                <Link href={item.url} className="text-foreground hover:text-primary block px-3 py-2 rounded-lg" onClick={toggleMenu}>
                                     {item.text}
                                 </Link>
                             </li>
                         ))}
                         <li>
-                            <DownloadLink className="text-[var(--accent-text)] bg-primary hover:bg-primary-accent px-5 py-2 rounded-full block w-fit" onClick={toggleMenu}>
+                            <DownloadLink className="text-[var(--accent-text)] bg-primary hover:bg-primary-accent px-5 py-2.5 rounded-xl block w-full text-center mt-2" onClick={toggleMenu}>
                                 Download
                             </DownloadLink>
                         </li>

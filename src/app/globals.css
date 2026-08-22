@@ -14,21 +14,20 @@
 } */
 
 :root {
-  --background: #dad7cd; /* Base | Light | Background */
-  --foreground: #533737;  /* Base | Light | Subtle Text */
-  --primary: #5F794F; /* Accent | Light | Background */
-  --secondary: #533737;
-
-  --base-dark-text: #fdfcfc; /* Base | Dark | 12 - Text */
-  --accent-text: #eeecf9; /* Accent | Light | 12 - Text */
-  --border: #cbc7b9; /* Made Up? */
-
-  --link-text: #5F794F;
-  --link-hover: #7c9c68;
-
-  --primary-accent: #7c9c68; /* Accent | Light | 5 - Active UI Background */
-  --foreground-accent: #2c2121;
-  --hero-background: #F3F3F5;
+  --background: #f5f2eb;
+  --foreground: #26342c;
+  --primary: #526e57;
+  --secondary: #26342c;
+  --base-dark-text: #fbfaf7;
+  --accent-text: #fbfaf7;
+  --border: #d9d5ca;
+  --link-text: #526e57;
+  --link-hover: #405a45;
+  --primary-accent: #405a45;
+  --foreground-accent: #5e675f;
+  --hero-background: #ebe5da;
+  --surface: #fbfaf7;
+  --surface-muted: #eee9df;
 }
 
 html {
@@ -36,13 +35,13 @@ html {
 }
 
 body {
-  @apply text-lg;
-  
+  @apply text-base md:text-lg;
   color: var(--foreground);
   background: var(--background);
-  font-family: "Source Sans 3", sans-serif;
+  font-family: var(--font-body), sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
+  line-height: 1.65;
 }
 
 @layer utilities {
@@ -52,15 +51,30 @@ body {
 }
 
 .manrope {
-  font-family: "Manrope", sans-serif;
+  font-family: var(--font-display), sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Manrope", sans-serif;
+  font-family: var(--font-display), sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
+  letter-spacing: -0.035em;
+}
+
+::selection {
+  color: #ffffff;
+  background: var(--primary);
+}
+
+a, button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible, a:focus-visible {
+  outline: 3px solid rgba(82, 110, 87, 0.35);
+  outline-offset: 3px;
 }
 
 #logos svg {

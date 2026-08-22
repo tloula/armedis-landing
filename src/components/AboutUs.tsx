@@ -3,12 +3,12 @@ import { aboutUsData } from '@/data/aboutUs';
 
 const AboutUs: React.FC = () => {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
       {aboutUsData.content.map((item, index) => (
-        <div key={index}>
-          <h4 className="text-xl font-semibold mb-2">{item.heading}</h4>
+        <div key={index} className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 lg:p-8">
+          <h4 className="text-xl font-semibold mb-3">{item.heading}</h4>
           {item.heading === "Our Values" ? (
-            <div className="space-y-1 text-foreground-accent">
+            <div className="space-y-2 text-foreground-accent leading-relaxed">
               {item.text.split('\n').map((value, i) => {
                 const [label, content] = value.split(': ');
                 return (
@@ -19,7 +19,7 @@ const AboutUs: React.FC = () => {
               })}
             </div>
           ) : (
-            <p className="text-foreground-accent">{item.text}</p>
+            <p className="text-foreground-accent leading-relaxed">{item.text}</p>
           )}
         </div>
       ))}

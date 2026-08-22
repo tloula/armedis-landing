@@ -51,35 +51,35 @@ const BenefitSection: React.FC<Props> = ({ benefit, imageAtRight }: Props) => {
     const { title, description, imageSrc, imageWidth, imageHeight, bullets } = benefit;
 
     return (
-        <section className="benefit-section">
+        <section className="benefit-section rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] overflow-hidden">
             <motion.div
-                className="flex flex-wrap flex-col items-center justify-center gap-2 lg:flex-row lg:gap-20 lg:flex-nowrap mb-24"
+                className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16 px-6 py-12 sm:px-10 lg:px-16 lg:py-20"
                 variants={containerVariants}
                 initial="offscreen"
                 whileInView="onscreen"
                 viewport={{ once: true }}
             >
                 <div
-                    className={clsx("flex flex-wrap items-center w-full max-w-lg", { "justify-start": imageAtRight, "lg:order-1 justify-end": !imageAtRight })}
+                    className={clsx("flex flex-wrap items-center w-full max-w-xl mx-auto", { "lg:order-1": !imageAtRight })}
                     
                 >
-                    <div className="w-full  text-center lg:text-left ">
+                    <div className="w-full text-left">
                         <motion.div
                             className="flex flex-col w-full"
                             variants={childVariants}
                         >
                             <SectionTitle>
-                                <h3 className="lg:max-w-2xl">
+                                <h3 className="lg:max-w-2xl text-left">
                                     {title}
                                 </h3>
                             </SectionTitle>
 
-                            <p className="mt-1.5 mx-auto lg:ml-0 leading-normal text-foreground-accent">
+                            <p className="mt-3 leading-normal text-foreground-accent">
                                 {description}
                             </p>
                         </motion.div>
 
-                        <div className="mx-auto lg:ml-0 w-full">
+                        <div className="mt-7 grid gap-3 sm:grid-cols-2 w-full">
                             {bullets.map((item, index) => (
                                 <BenefitBullet key={index} title={item.title} icon={item.icon} description={item.description} />
                             ))}
@@ -87,9 +87,10 @@ const BenefitSection: React.FC<Props> = ({ benefit, imageAtRight }: Props) => {
                     </div>
                 </div>
 
-                <div className={clsx("mt-5 lg:mt-0", { "lg:order-2": imageAtRight })}>
-                    <div className={clsx("w-fit flex", { "justify-start": imageAtRight, "justify-end": !imageAtRight })}>
-                        <PhoneMockup className="w-[260px] md:w-[340px]" imageWidth={imageWidth} imageHeight={imageHeight}>
+                <div className={clsx("relative flex justify-center py-4", { "lg:order-2": imageAtRight })}>
+                    <div className="absolute inset-0 m-auto h-[82%] w-[82%] rounded-full bg-[var(--surface-muted)]" />
+                    <div className="relative w-fit flex justify-center">
+                        <PhoneMockup className="w-[245px] md:w-[300px]" imageWidth={imageWidth} imageHeight={imageHeight}>
                             <Image src={imageSrc} alt={title} fill className="object-fill" quality={100} />
                         </PhoneMockup>
                     </div>
