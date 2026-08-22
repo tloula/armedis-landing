@@ -19,7 +19,7 @@ function AppStoreButtonInner({ dark, href, onClick }: { dark?: boolean; href: st
         <a href={href} onClick={onClick}>
             <button
                 type="button"
-                className={clsx("flex items-center justify-center min-w-[205px] mt-3 px-6 h-14 rounded-full w-full sm:w-fit", { "text-white bg-foreground": dark, "text-foreground bg-white": !dark })}
+                className={clsx("flex items-center justify-center min-w-[205px] mt-3 px-6 h-14 rounded-xl w-full sm:w-fit border transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg", { "text-white bg-foreground border-foreground": dark, "text-foreground bg-white border-white": !dark })}
             >
                 <div className="mr-3">
                     <svg viewBox="0 0 384 512" width="30">

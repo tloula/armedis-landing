@@ -9,8 +9,8 @@ import { siteDetails } from '@/data/siteDetails';
 
 import "./globals.css";
 
-const manrope = Manrope({ subsets: ['latin'] });
-const sourceSans = Source_Sans_3({ subsets: ['latin'] });
+const manrope = Manrope({ subsets: ['latin'], variable: '--font-display' });
+const sourceSans = Source_Sans_3({ subsets: ['latin'], variable: '--font-body' });
 
 // const WEBSITE_UUID = '755421fc-6f7f-4418-856b-2ee915e7166c'
 
@@ -76,7 +76,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${manrope.className} ${sourceSans.className} antialiased`}
+        className={`${manrope.variable} ${sourceSans.variable} antialiased`}
       >
         {siteDetails.googleAnalyticsId && <GoogleAnalytics gaId={siteDetails.googleAnalyticsId} />}
         <Header />

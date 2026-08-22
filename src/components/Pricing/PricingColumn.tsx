@@ -13,21 +13,21 @@ const PricingColumn: React.FC<Props> = ({ tier, highlight }: Props) => {
     const { name, price, text, features } = tier;
 
     return (
-        <div className={clsx("w-full max-w-sm mx-auto rounded-xl border lg:max-w-full", { "shadow-lg": highlight }, "border-[var(--border)]")}>
-            <div className="p-6 border-[var(--border)] border-b border-gray-200 rounded-t-xl">
+        <div className={clsx("w-full max-w-sm mx-auto rounded-2xl border lg:max-w-full bg-[var(--surface)] overflow-hidden", { "shadow-lg": highlight }, "border-[var(--border)]")}>
+            <div className="p-6 lg:p-8 border-[var(--border)] border-b">
                 <h3 className="text-2xl font-semibold mb-4">{name}</h3>
-                <p className="text-3xl md:text-5xl font-bold mb-6">
+                <p className="text-3xl md:text-4xl font-semibold tracking-[-0.04em] mb-6">
                     <span className={clsx({ "text-secondary": highlight })}>
                         {typeof price === 'number' ? `$${price}` : price}
                     </span>
                     {typeof price === 'number' && <span className="text-lg font-normal text-gray-600">/mo</span>}
                 </p>
-                <DownloadLink className={clsx("w-full py-3 px-4 rounded-full transition-colors text-[var(--accent-text)] block text-center", { "bg-primary hover:bg-primary": highlight, "bg-primary hover:bg-primary-accent": !highlight })}>
+                <DownloadLink className={clsx("w-full py-3 px-4 rounded-xl transition-colors text-[var(--accent-text)] font-semibold block text-center", { "bg-primary hover:bg-primary": highlight, "bg-primary hover:bg-primary-accent": !highlight })}>
                     Get Started
                 </DownloadLink>
             </div>
-            <div className="p-6 mt-1">
-                <p className="font-bold mb-0">FEATURES</p>
+            <div className="p-6 lg:p-8 mt-1">
+                <p className="text-xs tracking-[0.14em] font-bold mb-1">FEATURES</p>
                 <p className="text-foreground-accent mb-5">{text}</p>
                 <ul className="space-y-4 mb-8">
                     {features.map((feature, index) => (
