@@ -8,13 +8,9 @@ interface TagBadgeProps {
 export default function TagBadge({ tag, className = '' }: TagBadgeProps) {
     return (
         <span
-            className={`px-2 py-1 rounded-full text-xs font-medium ${className}`}
-            style={{ 
-                backgroundColor: 'var(--primary)', 
-                color: 'var(--background)' 
-            }}
+            className={`rounded-full bg-primary-soft px-2.5 py-1 text-xs font-semibold text-primary ring-1 ring-primary/15 ${className}`}
         >
             {tag}
         </span>
     );
-} 
+}

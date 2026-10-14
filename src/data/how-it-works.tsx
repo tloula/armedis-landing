@@ -11,22 +11,30 @@ export const howItWorksSections: IHowItWorksSection[] = [
             {
                 subtitle: "Sign Up",
                 description: "Create your account by entering your name, email address, and password. You can access your account across multiple devices, ensuring seamless updates even if you switch phones or use a tablet.",
-                imageSrc: "/images/how-it-works/1-signup.webp"
+                imageSrc: "/images/how-it-works/1-signup.webp",
+                imageWidth: 1419,
+                imageHeight: 1398
             },
             {
                 subtitle: "Enable Notifications",
                 description: "Turn on notifications in your device settings for the app to receive check-in reminders.",
-                imageSrc: "/images/how-it-works/2-notifications.webp"
+                imageSrc: "/images/how-it-works/2-notifications.webp",
+                imageWidth: 1419,
+                imageHeight: 1398
             },
             {
                 subtitle: "Add Your Contacts",
                 description: "Add your contacts' names and phone numbers. Use toggles to customize what types of notifications each contact will receive, such as completed check-ins, missed check-ins, or assistance requests.",
-                imageSrc: "/images/how-it-works/3-add-contacts.webp"
+                imageSrc: "/images/how-it-works/3-add-contacts.webp",
+                imageWidth: 1419,
+                imageHeight: 1398
             },
             {
                 subtitle: "Verify Your Contacts",
                 description: "Ask your contacts to reply \"Yes\" to the verification text they'll receive. Contacts will appear as \"pending verification\" until this step is completed.",
-                imageSrc: "/images/how-it-works/4-verify-contacts.webp"
+                imageSrc: "/images/how-it-works/4-verify-contacts.webp",
+                imageWidth: 1419,
+                imageHeight: 1398
             },
             {
                 subtitle: "Set Your Check-In Schedule",
@@ -37,7 +45,9 @@ export const howItWorksSections: IHowItWorksSection[] = [
 	- **Days of the week**: Select specific days for check-ins to align with your weekly routine.
 	- **Additional check-ins**: Add multiple check-ins per day to match your schedule and ensure regular updates.
 This flexibility lets you tailor your check-ins to fit your unique lifestyle and commitments.`,
-                imageSrc: "/images/how-it-works/5-set-checkin-schedule.webp"
+                imageSrc: "/images/how-it-works/5-set-checkin-schedule.webp",
+                imageWidth: 1419,
+                imageHeight: 2796
             },
             {
                 subtitle: "Select Your Check-In Option",
@@ -47,12 +57,16 @@ This flexibility lets you tailor your check-ins to fit your unique lifestyle and
 	- **Mood Status:** Share your mood with emoji options for bad, okay, good, or great.
 	- **Request Assistance:** Notify your contacts if help is needed.
     - **Combination:** Include multiple check-in types for more detailed updates.`,
-                imageSrc: "/images/how-it-works/6-set-checkin-option.webp"
+                imageSrc: "/images/how-it-works/6-set-checkin-option.webp",
+                imageWidth: 1419,
+                imageHeight: 2796
             },
             {
                 subtitle: "Activate Your Subscription",
                 description: "Activate your subscription directly through the app store for full access to all features. Both iOS and Android support subscriptions. Start with a free trial before committing.",
-                imageSrc: "/images/how-it-works/7-activate-subscription.webp"
+                imageSrc: "/images/how-it-works/7-activate-subscription.webp",
+                imageWidth: 1419,
+                imageHeight: 1398
             }
         ]
     },
@@ -63,7 +77,9 @@ This flexibility lets you tailor your check-ins to fit your unique lifestyle and
             {
                 subtitle: "It's Check In Time",
                 description: "At the check-in time you set, you'll receive a notification reminder. Open the app and tap the active check-in to get started.",
-                imageSrc: "/images/how-it-works/8-open-checkins.webp"
+                imageSrc: "/images/how-it-works/8-open-checkins.webp",
+                imageWidth: 1419,
+                imageHeight: 1398
             },
             {
                 subtitle: "Submit Your Check-In",
@@ -72,12 +88,16 @@ This flexibility lets you tailor your check-ins to fit your unique lifestyle and
     - **Completed Check-Ins:** Contacts opted in for completed check-ins will get the time you checked in and, if applicable, your status (great, good, okay, or bad).
     - **Missed Check-Ins:** If you don't check in before the window closes, contacts set to receive missed check-in alerts will be notified.
     - **Need Assistance:** If you request assistance, an immediate text alert is sent to your designated contacts so they can follow up and provide help as needed.`,
-                imageSrc: "/images/how-it-works/9-checkin.webp"
+                imageSrc: "/images/how-it-works/9-checkin.webp",
+                imageWidth: 1419,
+                imageHeight: 2796
             },
             {
                 subtitle: "Missed a Check-In",
                 description: "If you miss a check-in, your specified contacts will be notified as soon as the check-in window closes.",
-                imageSrc: "/images/how-it-works/10-sms-missed.webp"
+                imageSrc: "/images/how-it-works/10-sms-missed.webp",
+                imageWidth: 1419,
+                imageHeight: 1398
             }
         ]
     },
@@ -87,17 +107,23 @@ This flexibility lets you tailor your check-ins to fit your unique lifestyle and
             {
                 subtitle: "Review Your Check-In History",
                 description: "Track completion times, check-in responses, and notifications sent. Use this feature for identifying patterns or monitoring mood trends.",
-                imageSrc: "/images/how-it-works/11-history.webp"
+                imageSrc: "/images/how-it-works/11-history.webp",
+                imageWidth: 1419,
+                imageHeight: 2796
             },
             {
                 subtitle: "Pause Your Check-In Schedule",
                 description: "Disable check-ins temporarily by editing the schedule in the app.",
-                imageSrc: "/images/how-it-works/12-pause-checkin.webp"
+                imageSrc: "/images/how-it-works/12-pause-checkin.webp",
+                imageWidth: 1419,
+                imageHeight: 1398
             },
             {
                 subtitle: "In-App Support",
                 description: "Need help? Tap the \"?\" icon in the app for detailed guidance on any step of the process.",
-                imageSrc: "/images/how-it-works/13-support.webp"
+                imageSrc: "/images/how-it-works/13-support.webp",
+                imageWidth: 1419,
+                imageHeight: 1398
             }
         ]
     },

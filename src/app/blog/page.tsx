@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import BlogCard from '@/components/Blog/BlogCard';
 import { getBlogPosts } from '@/libs/mdx';
 import Container from '@/components/Container';
-import SectionTitle from '@/components/SectionTitle';
+import PageHeader from '@/components/PageHeader';
 
 export const metadata: Metadata = {
   title: 'Blog - CheckIn More',
@@ -16,34 +16,23 @@ export default async function BlogPage() {
   const posts = await getBlogPosts();
 
   return (
-    <div className="py-20 lg:py-32">
-      <Container>
-        <div className="text-center mb-16">
-          <SectionTitle>
-            <h2 className="my-3 !leading-snug">Our Blog</h2>
-          </SectionTitle>
-          <p
-            className="mt-4"
-            style={{ color: 'var(--foreground-accent)' }}
-          >
-            Stay up to date with the latest news, tips, and insights from the folks behind CheckIn More.
-          </p>
-        </div>
-
+    <>
+      <PageHeader
+        title="Our Blog"
+        description="Stay up to date with the latest news, tips, and insights from the folks behind CheckIn More."
+      />
+      <Container className="pb-20 lg:pb-28">
         {posts.length === 0 ? (
-          <div className="text-center py-20">
-            <h3
-              className="text-2xl font-semibold mb-4"
-              style={{ color: 'var(--foreground)' }}
-            >
+          <div className="card mx-auto max-w-xl text-center px-6 py-16">
+            <h2 className="text-2xl font-bold mb-3 text-foreground">
               No blog posts yet
-            </h3>
-            <p style={{ color: 'var(--foreground-accent)' }}>
+            </h2>
+            <p className="text-foreground/75">
               We&apos;re working on creating great content for you. Check back soon!
             </p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
             {posts.map((post) => (
               <BlogCard
                 key={post.slug}
@@ -60,6 +49,6 @@ export default async function BlogPage() {
           </div>
         )}
       </Container>
-    </div>
+    </>
   );
 }

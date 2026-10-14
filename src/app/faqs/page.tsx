@@ -1,6 +1,6 @@
 import Container from "@/components/Container";
 import FAQAccordian from "@/components/FAQAccordian";
-import Section from "@/components/Section";
+import PageHeader from "@/components/PageHeader";
 import { IFAQ } from "@/types";
 import { overviewFAQs } from "@/data/faq-overview";
 import { notificationFAQs } from "@/data/faq-notification";
@@ -23,6 +23,16 @@ const allFAQs: IFAQ[] = [
     ...supportFAQs,
 ];
 
+const faqGroups: { id: string; title: string; faqs: IFAQ[] }[] = [
+    { id: "overview", title: "Overview", faqs: overviewFAQs },
+    { id: "subscription", title: "Subscription", faqs: subscriptionFAQs },
+    { id: "setup", title: "Setup", faqs: setupFAQs },
+    { id: "usage", title: "Usage", faqs: usageFAQs },
+    { id: "notifications", title: "Notifications", faqs: notificationFAQs },
+    { id: "use-cases", title: "Use Cases", faqs: useCaseFAQs },
+    { id: "support", title: "Support", faqs: supportFAQs },
+];
+
 const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -43,41 +53,33 @@ const FAQsPage = () => {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
             />
-            <Container className="mt-12">
-            <Section
-                id="faqs"
-                title="FAQs"
-                description="Frequently Asked Questions"
-            >
-                <div className="w-full lg:max-w-6xl mx-auto border-b">
-                    <h4 className="text-2xl font-semibold mb-6">Overview</h4>
-                    <FAQAccordian faqs={overviewFAQs} />
-                </div>
-                <div className="w-full lg:max-w-6xl mx-auto border-b">
-                    <h4 className="text-2xl font-semibold mb-6 mt-6">Subscription</h4>
-                    <FAQAccordian faqs={subscriptionFAQs} />
-                </div>
-                <div className="w-full lg:max-w-6xl mx-auto border-b">
-                    <h4 className="text-2xl font-semibold mb-6 mt-6">Setup</h4>
-                    <FAQAccordian faqs={setupFAQs} />
-                </div>
-                <div className="w-full lg:max-w-6xl mx-auto border-b">
-                    <h4 className="text-2xl font-semibold mb-6 mt-6">Usage</h4>
-                    <FAQAccordian faqs={usageFAQs} />
-                </div>
-                <div className="w-full lg:max-w-6xl mx-auto border-b">
-                    <h4 className="text-2xl font-semibold mb-6 mt-6">Notifications</h4>
-                    <FAQAccordian faqs={notificationFAQs} />
-                </div>
-                <div className="w-full lg:max-w-6xl mx-auto border-b">
-                    <h4 className="text-2xl font-semibold mb-6 mt-6">Use Cases</h4>
-                    <FAQAccordian faqs={useCaseFAQs} />
-                </div>
-                <div className="w-full lg:max-w-6xl mx-auto border-b">
-                    <h4 className="text-2xl font-semibold mb-6 mt-6">Support</h4>
-                    <FAQAccordian faqs={supportFAQs} />
-                </div>
-            </Section>
+            <PageHeader title="FAQs" description="Frequently Asked Questions" />
+            <Container className="pb-20 lg:pb-28">
+                <section id="faqs" className="flex flex-col lg:flex-row gap-10 lg:gap-16">
+                    <nav aria-label="FAQ categories" className="hidden lg:block lg:w-56 flex-shrink-0">
+                        <ul className="sticky top-28 space-y-1">
+                            {faqGroups.map(group => (
+                                <li key={group.id}>
+                                    <a
+                                        href={`#${group.id}`}
+                                        className="block rounded-full px-4 py-2 text-base font-medium text-foreground/75 hover:bg-foreground/5 hover:text-foreground transition-colors"
+                                    >
+                                        {group.title}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </nav>
+
+                    <div className="w-full max-w-3xl mx-auto lg:mx-0 space-y-14">
+                        {faqGroups.map(group => (
+                            <div key={group.id} id={group.id}>
+                                <h2 className="text-2xl md:text-3xl font-extrabold mb-5">{group.title}</h2>
+                                <FAQAccordian faqs={group.faqs} />
+                            </div>
+                        ))}
+                    </div>
+                </section>
             </Container>
         </>
     );

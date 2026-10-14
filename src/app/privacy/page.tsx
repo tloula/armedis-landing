@@ -1,15 +1,13 @@
 import Container from "@/components/Container";
-import Section from "@/components/Section";
+import PageHeader from "@/components/PageHeader";
 
 const PrivacyPage = () => {
     return (
-        <Container className="mt-12">
-            <Section
-                id="privacy"
-                title="Privacy Policy"
-                description="How we handle and protect your personal information"
-            >
-                <div className="prose max-w-none">
+        <>
+            <PageHeader title="Privacy Policy" description="How we handle and protect your personal information" />
+            <Container className="pb-20 lg:pb-28">
+            <section id="privacy">
+                <div className="card legal mx-auto max-w-4xl p-6 sm:p-10 md:p-14">
                     <p className="font-semibold">Last updated: March 15, 2025</p>
 
                     <div className="mt-6">
@@ -1019,8 +1017,9 @@ const PrivacyPage = () => {
                         </div>
                     </div>
                 </div>
-            </Section>
-        </Container>
+            </section>
+            </Container>
+        </>
     );
 };
 

@@ -1,15 +1,13 @@
 import Container from "@/components/Container";
-import Section from "@/components/Section";
+import PageHeader from "@/components/PageHeader";
 
 const CookiesPage = () => {
     return (
-        <Container className="mt-12">
-            <Section
-                id="cookies"
-                title="Cookie Policy"
-                description="Information about how we use cookies on our website"
-            >
-                <div className="prose max-w-none">
+        <>
+            <PageHeader title="Cookie Policy" description="Information about how we use cookies on our website" />
+            <Container className="pb-20 lg:pb-28">
+            <section id="cookies">
+                <div className="card legal mx-auto max-w-4xl p-6 sm:p-10 md:p-14">
                     <p className="font-semibold">Last updated: March 15, 2025</p>
 
                     <div className="mt-8 space-y-6">
@@ -147,8 +145,9 @@ const CookiesPage = () => {
                         </div>
                     </div>
                 </div>
-            </Section>
-        </Container>
+            </section>
+            </Container>
+        </>
     );
 };
 

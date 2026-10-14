@@ -16,12 +16,11 @@ interface PlayStoreButtonProps {
 
 function PlayStoreButtonInner({ dark, href, onClick }: { dark?: boolean; href: string; onClick?: () => void }) {
     return (
-        <a href={href} onClick={onClick}>
-            <button
-                type="button"
-                className={clsx("flex items-center justify-center min-w-[205px] mt-3 px-6 h-14 rounded-xl w-full sm:w-fit border transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg", { "text-white bg-foreground border-foreground": dark, "text-foreground bg-white border-white": !dark })}
+        <a href={href} onClick={onClick} className="group mt-3 block w-full sm:w-fit rounded-full">
+            <span
+                className={clsx("flex items-center justify-center min-w-[205px] px-6 h-14 rounded-full w-full sm:w-fit transition-all duration-200 group-hover:-translate-y-0.5", { "text-white bg-foreground shadow-[0_10px_24px_-10px_rgba(83,55,55,0.8)] group-hover:shadow-[0_16px_30px_-12px_rgba(83,55,55,0.9)]": dark, "text-foreground bg-white shadow-[0_10px_24px_-12px_rgba(0,0,0,0.35)] group-hover:shadow-[0_16px_30px_-12px_rgba(0,0,0,0.45)]": !dark })}
             >
-                <div className="mr-3">
+                <span className="mr-3">
                     <svg viewBox="30 336.7 120.9 129.2" width="30">
                         <path fill="#FFD400" d="M119.2,421.2c15.3-8.4,27-14.8,28-15.3c3.2-1.7,6.5-6.2,0-9.7  c-2.1-1.1-13.4-7.3-28-15.3l-20.1,20.2L119.2,421.2z">
                         </path>
@@ -32,16 +31,16 @@ function PlayStoreButtonInner({ dark, href, onClick }: { dark?: boolean; href: s
                         <path fill="#3BCCFF" d="M99.1,401.1l-64.3-64.3c-2.6,0.6-4.8,2.9-4.8,7.6  c0,7.5,0,107.5,0,113.8c0,4.3,1.7,7.4,4.9,7.7L99.1,401.1z">
                         </path>
                     </svg>
-                </div>
-                <div>
-                    <div className="text-xs">
+                </span>
+                <span className="text-left">
+                    <span className="block text-xs">
                         GET IT ON
-                    </div>
-                    <div className="-mt-1 font-sans text-xl font-semibold">
+                    </span>
+                    <span className="block -mt-1 font-sans text-xl font-semibold">
                         Google Play
-                    </div>
-                </div>
-            </button>
+                    </span>
+                </span>
+            </span>
         </a>
     )
 }
