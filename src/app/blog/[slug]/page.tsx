@@ -1,12 +1,14 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
+import Link from 'next/link';
 import { format, parse } from 'date-fns';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import remarkGfm from 'remark-gfm';
 import { getBlogPost, getBlogPosts, getAllBlogSlugs } from '@/libs/mdx';
 import { mdxComponents } from '@/components/Blog/MdxComponents';
 import Container from '@/components/Container';
+import PageBackdrop from '@/components/PageBackdrop';
 import TagBadge from '@/components/Blog/TagBadge';
 import BlogCard from '@/components/Blog/BlogCard';
 
@@ -109,7 +111,7 @@ export default async function BlogPost({ params }: Props) {
   };
 
   return (
-    <div className="py-20 lg:py-32">
+    <div className="relative pt-32 pb-20 md:pt-40 lg:pb-28">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
@@ -118,77 +120,74 @@ export default async function BlogPost({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
+      <div className="absolute inset-x-0 top-0 h-[560px] -z-10">
+        <PageBackdrop />
+      </div>
       <Container>
-        <article className="-mx-5 sm:mx-auto sm:max-w-4xl border-0 sm:border rounded-none sm:rounded-lg p-5 sm:p-8 sm:shadow-sm" style={{ borderColor: 'var(--border)', backgroundColor: '#faf9f6' }}>
+        <article>
           {/* Header */}
-          <div className="mb-8">
-            {post.image && (
-              <div className="relative aspect-video w-full mb-8 rounded-lg overflow-hidden">
-                <Image
-                  src={post.image}
-                  alt={post.title}
-                  fill
-                  sizes="(max-width: 1200px) 100vw, 1200px"
-                  className="object-cover"
-                  priority
-                />
+          <header className="mx-auto max-w-3xl">
+            <Link
+              href="/blog"
+              className="inline-flex items-center gap-1.5 text-base font-semibold text-foreground/70 hover:text-foreground transition-colors"
+            >
+              <span aria-hidden="true">&larr;</span> Blog
+            </Link>
+
+            {post.tags && post.tags.length > 0 && (
+              <div className="mt-6 flex gap-1.5 flex-wrap">
+                {post.tags.map((tag) => (
+                  <TagBadge key={tag} tag={tag} />
+                ))}
               </div>
             )}
 
-            <div className="space-y-4">
-              {post.tags && post.tags.length > 0 && (
-                <div className="flex gap-2 flex-wrap">
-                  {post.tags.map((tag) => (
-                    <TagBadge key={tag} tag={tag} />
-                  ))}
-                </div>
+            <h1 className="mt-5 text-4xl md:text-5xl md:leading-[1.08] font-extrabold text-foreground text-balance">
+              {post.title}
+            </h1>
+
+            {post.description && (
+              <p className="mt-5 text-xl leading-relaxed text-foreground/75">
+                {post.description}
+              </p>
+            )}
+
+            <div className="mt-6 flex flex-wrap items-center gap-x-2 text-base text-foreground/60">
+              {post.author && (
+                <span className="font-semibold text-foreground/80">
+                  {post.author}
+                </span>
               )}
-
-              <h1
-                className="text-3xl lg:text-4xl font-bold leading-tight"
-                style={{ color: 'var(--foreground)' }}
-              >
-                {post.title}
-              </h1>
-
-              {post.description && (
-                <p
-                  className="text-xl leading-relaxed"
-                  style={{ color: 'var(--foreground-accent)' }}
-                >
-                  {post.description}
-                </p>
+              {post.author && post.date && <span aria-hidden="true">·</span>}
+              {post.date && (
+                <time dateTime={post.date}>
+                  {format(parse(post.date, 'yyyy-MM-dd', new Date()), 'MMMM d, yyyy')}
+                </time>
               )}
-
-              <div
-                className="flex items-center gap-4 text-sm pt-2 mt-2 border-t"
-                style={{ color: 'var(--foreground-accent)', borderColor: 'var(--border)', opacity: 0.75 }}
-              >
-                {post.author && (
-                  <span className="font-medium">
-                    {post.author}
-                  </span>
-                )}
-                {post.author && post.date && (
-                  <span style={{ color: 'var(--border)' }}>|</span>
-                )}
-                {post.date && (
-                  <time>
-                    {format(parse(post.date, 'yyyy-MM-dd', new Date()), 'MMMM d, yyyy')}
-                  </time>
-                )}
-                {post.readTime && (
-                  <>
-                    <span style={{ color: 'var(--border)' }}>|</span>
-                    <span>{post.readTime}</span>
-                  </>
-                )}
-              </div>
+              {post.readTime && (
+                <>
+                  <span aria-hidden="true">·</span>
+                  <span>{post.readTime}</span>
+                </>
+              )}
             </div>
-          </div>
+          </header>
+
+          {post.image && (
+            <div className="relative mx-auto mt-10 aspect-video w-full max-w-5xl overflow-hidden rounded-3xl shadow-[0_30px_60px_-30px_rgba(83,55,55,0.5)]">
+              <Image
+                src={post.image}
+                alt={post.title}
+                fill
+                sizes="(max-width: 1100px) 100vw, 1024px"
+                className="object-cover"
+                priority
+              />
+            </div>
+          )}
 
           {/* Content */}
-          <div className="max-w-none">
+          <div className="mx-auto mt-12 max-w-3xl">
             <MDXRemote
               source={post.content}
               components={mdxComponents}
@@ -203,14 +202,11 @@ export default async function BlogPost({ params }: Props) {
 
         {/* Related Posts */}
         {relatedPosts.length > 0 && (
-          <div className="mt-20">
-            <h2
-              className="text-3xl font-bold mb-8 text-center"
-              style={{ color: 'var(--foreground)' }}
-            >
+          <div className="mt-24 border-t border-foreground/10 pt-16">
+            <h2 className="text-3xl lg:text-4xl font-extrabold mb-10 text-center text-foreground">
               Related Posts
             </h2>
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
               {relatedPosts.map((relatedPost) => (
                 <BlogCard
                   key={relatedPost.slug}

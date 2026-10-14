@@ -14,34 +14,50 @@
 } */
 
 :root {
-  --background: #f5f2eb;
-  --foreground: #26342c;
-  --primary: #526e57;
-  --secondary: #26342c;
-  --base-dark-text: #fbfaf7;
-  --accent-text: #fbfaf7;
-  --border: #d9d5ca;
-  --link-text: #526e57;
-  --link-hover: #405a45;
-  --primary-accent: #405a45;
-  --foreground-accent: #5e675f;
-  --hero-background: #ebe5da;
-  --surface: #fbfaf7;
-  --surface-muted: #eee9df;
+  --background: #dad7cd; /* Base | Light | Background */
+  --foreground: #533737;  /* Base | Light | Subtle Text */
+  --primary: #5F794F; /* Accent | Light | Background */
+  --secondary: #533737;
+
+  --base-dark-text: #fdfcfc; /* Base | Dark | 12 - Text */
+  --accent-text: #eeecf9; /* Accent | Light | 12 - Text */
+  --border: #cbc7b9; /* Made Up? */
+
+  --link-text: #5F794F;
+  --link-hover: #7c9c68;
+
+  --primary-accent: #7c9c68; /* Accent | Light | 5 - Active UI Background */
+  --foreground-accent: #2c2121;
+  --hero-background: #F3F3F5;
+
+  --surface: #f4f2ec; /* Raised cards on the base background */
+  --primary-soft: #e3e8da; /* Tinted fill behind icons and badges */
 }
 
 html {
   @apply scroll-smooth;
+  scroll-padding-top: 6rem;
 }
 
 body {
-  @apply text-base md:text-lg;
+  @apply text-lg;
+
   color: var(--foreground);
   background: var(--background);
-  font-family: var(--font-body), sans-serif;
+  font-family: var(--font-source-sans), "Source Sans 3", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
-  line-height: 1.65;
+}
+
+::selection {
+  background: var(--primary);
+  color: var(--accent-text);
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+  border-radius: 6px;
 }
 
 @layer utilities {
@@ -50,31 +66,83 @@ body {
   }
 }
 
+@layer components {
+  /* Raised card used across testimonials, pricing, about and FAQ */
+  .card {
+    @apply rounded-3xl border border-white/60 bg-surface/80 shadow-[0_1px_2px_rgba(83,55,55,0.04),0_12px_32px_-12px_rgba(83,55,55,0.18)] backdrop-blur-sm;
+  }
+
+  /* Text inputs, selects and textareas on the contact and data request forms */
+  .form-field {
+    @apply mt-1.5 block w-full rounded-xl border border-foreground/15 bg-white/70 px-4 py-3 text-base text-foreground placeholder:text-foreground/40 shadow-[inset_0_1px_2px_rgba(83,55,55,0.06)] transition-colors focus:border-primary focus:bg-white focus:outline-none focus:ring-4 focus:ring-primary/15;
+  }
+
+  .form-label {
+    @apply block text-base font-semibold text-foreground;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 font-semibold text-[var(--accent-text)] shadow-[0_8px_20px_-8px_rgba(95,121,79,0.8)] transition-all hover:-translate-y-px hover:bg-primary-accent disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-y-0;
+  }
+
+  /* Long-form legal text; low specificity so per-element utilities still win */
+  .legal :where(p, li) {
+    @apply leading-relaxed text-foreground/85;
+  }
+
+  .legal :where(h2, h3) {
+    @apply text-foreground;
+  }
+
+  .legal :where(h2) {
+    @apply pt-2;
+  }
+
+  .legal :where(strong) {
+    @apply font-semibold text-foreground;
+  }
+
+  .legal :where(a) {
+    @apply font-medium text-primary underline decoration-primary/30 underline-offset-2 transition-colors hover:text-primary-accent hover:decoration-primary-accent;
+  }
+
+  .legal :where(ul) {
+    @apply list-disc pl-6 marker:text-primary;
+  }
+
+  .legal :where(li + li) {
+    @apply mt-1.5;
+  }
+
+  .legal :where(table) {
+    @apply w-full overflow-hidden rounded-xl text-base;
+  }
+
+  .legal :where(tr) {
+    @apply border-b border-foreground/10;
+  }
+
+  .legal :where(th) {
+    @apply bg-foreground/5 text-left font-semibold;
+  }
+
+  /* Soft blurred colour wash used as a decorative backdrop */
+  .glow {
+    @apply pointer-events-none absolute rounded-full blur-3xl;
+  }
+}
+
 .manrope {
-  font-family: var(--font-display), sans-serif;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display), sans-serif;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
-  letter-spacing: -0.035em;
-}
-
-::selection {
-  color: #ffffff;
-  background: var(--primary);
-}
-
-a, button {
-  -webkit-tap-highlight-color: transparent;
-}
-
-button:focus-visible, a:focus-visible {
-  outline: 3px solid rgba(82, 110, 87, 0.35);
-  outline-offset: 3px;
+  letter-spacing: -0.02em;
 }
 
 #logos svg {
@@ -83,4 +151,10 @@ button:focus-visible, a:focus-visible {
 
 .benefit-section:last-of-type > div {
   @apply mb-10;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }

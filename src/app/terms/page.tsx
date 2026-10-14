@@ -1,16 +1,14 @@
 import Container from "@/components/Container";
-import Section from "@/components/Section";
+import PageHeader from "@/components/PageHeader";
 import { siteDetails } from "@/data/siteDetails";
 
 const TermsPage = () => {
     return (
-        <Container className="mt-12">
-            <Section
-                id="terms"
-                title="Terms of Service"
-                description="The rules and guidelines for using our services"
-            >
-                <div className="prose max-w-none">
+        <>
+            <PageHeader title="Terms of Service" description="The rules and guidelines for using our services" />
+            <Container className="pb-20 lg:pb-28">
+            <section id="terms">
+                <div className="card legal mx-auto max-w-4xl p-6 sm:p-10 md:p-14">
                     <p className="font-semibold">Last updated: March 15, 2025</p>
 
                     <div className="mt-6">
@@ -743,8 +741,9 @@ const TermsPage = () => {
                         </div>
                     </div>
                 </div>
-            </Section>
-        </Container >
+            </section>
+            </Container>
+        </>
     );
 };
 

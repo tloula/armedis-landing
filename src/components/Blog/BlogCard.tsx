@@ -27,78 +27,62 @@ const BlogCard: React.FC<BlogCardProps> = ({
     href,
     className = '',
 }) => {
+    const meta = [
+        date ? format(parse(date, 'yyyy-MM-dd', new Date()), 'MMM d, yyyy') : null,
+        readTime,
+    ].filter(Boolean);
+
     return (
         <article
-            className={`rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 ${className}`}
-            style={{ 
-                backgroundColor: 'var(--background)', 
-                borderColor: 'var(--border)',
-                border: '1px solid'
-            }}
+            className={`group card overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_48px_-20px_rgba(83,55,55,0.35)] ${className}`}
         >
-            <Link href={href} className="block">
+            <Link href={href} className="flex h-full flex-col">
                 {image && (
                     <div className="relative aspect-video w-full overflow-hidden">
-                        <Image 
-                            src={image} 
-                            alt={title} 
-                            fill 
+                        <Image
+                            src={image}
+                            alt={title}
+                            fill
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                            className="object-cover hover:scale-105 transition-transform duration-300" 
+                            className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                         />
                     </div>
                 )}
-                <div className="p-6">
-                    <div className="space-y-4">
-                        {tags.length > 0 && (
-                            <div className="flex gap-2 flex-wrap">
-                                {tags.slice(0, 3).map((tag) => (
-                                    <TagBadge tag={tag} key={tag} />
-                                ))}
-                            </div>
-                        )}
-                        <h2 
-                            className="text-xl font-semibold leading-tight transition-colors hover:text-[var(--link-text)]"
-                            style={{ 
-                                color: 'var(--foreground)' 
-                            }}
-                        >
-                            {title}
-                        </h2>
-                        {description && (
-                            <p 
-                                className="line-clamp-3"
-                                style={{ color: 'var(--foreground-accent)' }}
-                            >
-                                {description}
-                            </p>
-                        )}
-                        {(author || date || readTime) && (
-                            <div 
-                                className="flex items-center gap-4 text-sm"
-                                style={{ color: 'var(--foreground-accent)' }}
-                            >
-                                {author && (
-                                    <span 
-                                        className="font-medium"
-                                        style={{ color: 'var(--foreground)' }}
-                                    >
-                                        {author}
-                                    </span>
-                                )}
-                                {date && (
-                                    <time>
-                                        {format(parse(date, 'yyyy-MM-dd', new Date()), 'MMM d, yyyy')}
-                                    </time>
-                                )}
-                                {readTime && <span>{readTime}</span>}
-                            </div>
-                        )}
-                    </div>
+                <div className="flex flex-1 flex-col p-6">
+                    {tags.length > 0 && (
+                        <div className="mb-4 flex gap-1.5 flex-wrap">
+                            {tags.slice(0, 2).map((tag) => (
+                                <TagBadge tag={tag} key={tag} />
+                            ))}
+                        </div>
+                    )}
+                    <h2 className="text-xl font-bold leading-snug text-foreground transition-colors group-hover:text-primary">
+                        {title}
+                    </h2>
+                    {description && (
+                        <p className="mt-2.5 text-base leading-relaxed text-foreground/75 line-clamp-3">
+                            {description}
+                        </p>
+                    )}
+                    {(author || meta.length > 0) && (
+                        <div className="mt-auto flex flex-wrap items-center gap-x-2 pt-5 text-sm text-foreground/60">
+                            {author && (
+                                <span className="font-semibold text-foreground/80">
+                                    {author}
+                                </span>
+                            )}
+                            {meta.map((item) => (
+                                <React.Fragment key={item}>
+                                    <span aria-hidden="true">·</span>
+                                    <span>{item}</span>
+                                </React.Fragment>
+                            ))}
+                        </div>
+                    )}
                 </div>
             </Link>
         </article>
     );
 };
 
-export default BlogCard; 
+export default BlogCard;

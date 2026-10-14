@@ -16,17 +16,17 @@ interface Props {
 const containerVariants: Variants = {
     offscreen: {
         opacity: 0,
-        y: 100
+        y: 60
     },
     onscreen: {
         opacity: 1,
         y: 0,
         transition: {
             type: "spring",
-            bounce: 0.2,
+            bounce: 0.15,
             duration: 0.9,
-            delayChildren: 0.2,
-            staggerChildren: 0.1,
+            delayChildren: 0.15,
+            staggerChildren: 0.08,
         }
     }
 };
@@ -34,15 +34,15 @@ const containerVariants: Variants = {
 export const childVariants = {
     offscreen: {
         opacity: 0,
-        x: -50,
+        y: 16,
     },
     onscreen: {
         opacity: 1,
-        x: 0,
+        y: 0,
         transition: {
             type: "spring",
-            bounce: 0.2,
-            duration: 1,
+            bounce: 0.15,
+            duration: 0.8,
         }
     },
 };
@@ -51,46 +51,52 @@ const BenefitSection: React.FC<Props> = ({ benefit, imageAtRight }: Props) => {
     const { title, description, imageSrc, imageWidth, imageHeight, bullets } = benefit;
 
     return (
-        <section className="benefit-section rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] overflow-hidden">
+        <section className="benefit-section">
             <motion.div
-                className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16 px-6 py-12 sm:px-10 lg:px-16 lg:py-20"
+                className="flex flex-wrap flex-col items-center justify-center gap-10 lg:flex-row lg:gap-20 lg:flex-nowrap mb-28 lg:mb-36"
                 variants={containerVariants}
                 initial="offscreen"
                 whileInView="onscreen"
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.2 }}
             >
                 <div
-                    className={clsx("flex flex-wrap items-center w-full max-w-xl mx-auto", { "lg:order-1": !imageAtRight })}
-                    
+                    className={clsx("flex flex-wrap items-center w-full max-w-xl", { "justify-start": imageAtRight, "lg:order-1 justify-end": !imageAtRight })}
                 >
-                    <div className="w-full text-left">
+                    <div className="w-full text-center lg:text-left">
                         <motion.div
-                            className="flex flex-col w-full"
+                            className="flex flex-col items-center lg:items-start w-full"
                             variants={childVariants}
                         >
                             <SectionTitle>
-                                <h3 className="lg:max-w-2xl text-left">
+                                <h3 className="lg:max-w-2xl text-balance">
                                     {title}
                                 </h3>
                             </SectionTitle>
 
-                            <p className="mt-3 leading-normal text-foreground-accent">
+                            <p className="mt-3 text-xl text-foreground/75">
                                 {description}
                             </p>
                         </motion.div>
 
-                        <div className="mt-7 grid gap-3 sm:grid-cols-2 w-full">
-                            {bullets.map((item, index) => (
-                                <BenefitBullet key={index} title={item.title} icon={item.icon} description={item.description} />
+                        <div className="mt-8 grid gap-3 sm:grid-cols-2 w-full text-left">
+                            {bullets.map((item, bulletIndex) => (
+                                <BenefitBullet key={bulletIndex} title={item.title} icon={item.icon} description={item.description} />
                             ))}
                         </div>
                     </div>
                 </div>
 
-                <div className={clsx("relative flex justify-center py-4", { "lg:order-2": imageAtRight })}>
-                    <div className="absolute inset-0 m-auto h-[82%] w-[82%] rounded-full bg-[var(--surface-muted)]" />
-                    <div className="relative w-fit flex justify-center">
-                        <PhoneMockup className="w-[245px] md:w-[300px]" imageWidth={imageWidth} imageHeight={imageHeight}>
+                <div className={clsx("relative", { "lg:order-2": imageAtRight })}>
+                    {/* Tinted backdrop behind the phone */}
+                    <div
+                        aria-hidden="true"
+                        className={clsx(
+                            "absolute inset-x-[-12%] top-[10%] bottom-[6%] rounded-[3rem] bg-gradient-to-br from-primary/25 via-primary-soft/60 to-[#c9a98f]/25",
+                            imageAtRight ? "rotate-3" : "-rotate-3"
+                        )}
+                    />
+                    <div className={clsx("relative w-fit flex", { "justify-start": imageAtRight, "justify-end": !imageAtRight })}>
+                        <PhoneMockup className="w-[260px] md:w-[320px]" imageWidth={imageWidth} imageHeight={imageHeight}>
                             <Image src={imageSrc} alt={title} fill className="object-fill" quality={100} />
                         </PhoneMockup>
                     </div>

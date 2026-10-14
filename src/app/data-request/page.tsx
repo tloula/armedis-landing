@@ -1,7 +1,7 @@
 "use client";
 
 import Container from "@/components/Container";
-import Section from "@/components/Section";
+import PageHeader from "@/components/PageHeader";
 import { siteDetails } from "@/data/siteDetails";
 import Botpoison from "@botpoison/browser";
 import axios from "axios";
@@ -60,16 +60,14 @@ const DataRequestPage = () => {
     };
 
     return (
-        <Container className="mt-12">
-            <Section
-                id="data-request"
-                title="Data Request"
-                description="Request your data be updated, exported, or deleted"
-            >
-                <div className="max-w-lg mx-auto">
+        <>
+            <PageHeader title="Data Request" description="Request your data be updated, exported, or deleted" />
+            <Container className="pb-20 lg:pb-28">
+            <section id="data-request">
+                <div className="card max-w-xl mx-auto p-6 sm:p-10">
                     <form className="space-y-6" onSubmit={handleSubmit}>
                         <div>
-                            <label htmlFor="name" className="block text-base font-semibold">
+                            <label htmlFor="name" className="form-label">
                                 Full Name
                             </label>
                             <input
@@ -78,13 +76,13 @@ const DataRequestPage = () => {
                                 id="name"
                                 value={formData.name}
                                 onChange={handleInputChange}
-                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary text-base py-2 px-4"
+                                className="form-field"
                                 required
                             />
                         </div>
 
                         <div>
-                            <label htmlFor="email" className="block text-base font-semibold">
+                            <label htmlFor="email" className="form-label">
                                 Email Address
                             </label>
                             <input
@@ -93,13 +91,13 @@ const DataRequestPage = () => {
                                 id="email"
                                 value={formData.email}
                                 onChange={handleInputChange}
-                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary text-base py-2 px-4"
+                                className="form-field"
                                 required
                             />
                         </div>
 
                         <div>
-                            <label htmlFor="request-type" className="block text-base font-semibold">
+                            <label htmlFor="request-type" className="form-label">
                                 Request Type
                             </label>
                             <select
@@ -107,7 +105,7 @@ const DataRequestPage = () => {
                                 name="request-type"
                                 value={formData["request-type"]}
                                 onChange={handleInputChange}
-                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary text-base py-2 px-4"
+                                className="form-field"
                                 required
                             >
                                 <option value="">Select a request type</option>
@@ -119,7 +117,7 @@ const DataRequestPage = () => {
                         </div>
 
                         <div>
-                            <label htmlFor="details" className="block text-base font-semibold">
+                            <label htmlFor="details" className="form-label">
                                 Additional Details
                             </label>
                             <textarea
@@ -128,13 +126,13 @@ const DataRequestPage = () => {
                                 rows={4}
                                 value={formData.details}
                                 onChange={handleInputChange}
-                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary text-base py-3 px-4"
+                                className="form-field"
                                 placeholder="Please provide any additional information that might help us process your request"
                             />
                         </div>
 
                         {submitMessage && (
-                            <div className={`p-4 rounded-md ${submitMessage.includes('error') || submitMessage.includes('Sorry') ? 'bg-red-50 text-red-800' : 'bg-green-50 text-green-800'}`}>
+                            <div className={`p-4 rounded-xl text-base ${submitMessage.includes('error') || submitMessage.includes('Sorry') ? 'bg-red-50 text-red-800' : 'bg-green-50 text-green-800'}`}>
                                 {submitMessage}
                             </div>
                         )}
@@ -143,7 +141,7 @@ const DataRequestPage = () => {
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
-                                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary disabled:opacity-50 disabled:cursor-not-allowed"
+                                className="btn-primary w-full"
                             >
                                 {isSubmitting ? "Submitting..." : "Submit Request"}
                             </button>
@@ -157,8 +155,9 @@ const DataRequestPage = () => {
                         <p>If you choose to delete your account, all of your data will be deleted except for purchase history, which we retain in Stripe and/or RevenueCat for legal and bookkeeping purposes.</p>
                     </div>
                 </div>
-            </Section>
-        </Container>
+            </section>
+            </Container>
+        </>
     );
 };
 

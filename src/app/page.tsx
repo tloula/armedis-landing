@@ -6,7 +6,6 @@ import CTA from "@/components/CTA";
 import FAQ from "@/components/FAQ";
 import Hero from "@/components/Hero";
 import Pricing from "@/components/Pricing/Pricing";
-import Promo from "@/components/Promo";
 import Section from "@/components/Section";
 import Testimonials from "@/components/Testimonials";
 import { faqs } from "@/data/faq";
@@ -35,7 +34,6 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <Hero />
-      <Promo />
       <Container>
         <Benefits />
 

@@ -1,7 +1,7 @@
 "use client";
 
 import Container from "@/components/Container";
-import Section from "@/components/Section";
+import PageHeader from "@/components/PageHeader";
 import { siteDetails } from "@/data/siteDetails";
 import Botpoison from "@botpoison/browser";
 import axios from "axios";
@@ -60,16 +60,14 @@ const ContactPage = () => {
     };
 
     return (
-        <Container className="mt-12">
-            <Section
-                id="contact"
-                title="Contact Us"
-                description="Get in touch with our team"
-            >
-                <div className="max-w-lg mx-auto">
+        <>
+            <PageHeader title="Contact Us" description="Get in touch with our team" />
+            <Container className="pb-20 lg:pb-28">
+            <section id="contact">
+                <div className="card max-w-xl mx-auto p-6 sm:p-10">
                     <form className="space-y-6" onSubmit={handleSubmit}>
                         <div>
-                            <label htmlFor="name" className="block text-base font-semibold">
+                            <label htmlFor="name" className="form-label">
                                 Name
                             </label>
                             <input
@@ -78,13 +76,13 @@ const ContactPage = () => {
                                 id="name"
                                 value={formData.name}
                                 onChange={handleInputChange}
-                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary text-base py-2 px-4"
+                                className="form-field"
                                 required
                             />
                         </div>
 
                         <div>
-                            <label htmlFor="email" className="block text-base font-semibold">
+                            <label htmlFor="email" className="form-label">
                                 Email
                             </label>
                             <input
@@ -93,13 +91,13 @@ const ContactPage = () => {
                                 id="email"
                                 value={formData.email}
                                 onChange={handleInputChange}
-                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary text-base py-2 px-4"
+                                className="form-field"
                                 required
                             />
                         </div>
 
                         <div>
-                            <label htmlFor="subject" className="block text-base font-semibold">
+                            <label htmlFor="subject" className="form-label">
                                 Subject
                             </label>
                             <input
@@ -108,13 +106,13 @@ const ContactPage = () => {
                                 id="subject"
                                 value={formData.subject}
                                 onChange={handleInputChange}
-                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary text-base py-2 px-4"
+                                className="form-field"
                                 required
                             />
                         </div>
 
                         <div>
-                            <label htmlFor="message" className="block text-base font-semibold">
+                            <label htmlFor="message" className="form-label">
                                 Message
                             </label>
                             <textarea
@@ -123,13 +121,13 @@ const ContactPage = () => {
                                 rows={4}
                                 value={formData.message}
                                 onChange={handleInputChange}
-                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary text-base py-3 px-4"
+                                className="form-field"
                                 required
                             />
                         </div>
 
                         {submitMessage && (
-                            <div className={`p-4 rounded-md ${submitMessage.includes('error') || submitMessage.includes('Sorry') ? 'bg-red-50 text-red-800' : 'bg-green-50 text-green-800'}`}>
+                            <div className={`p-4 rounded-xl text-base ${submitMessage.includes('error') || submitMessage.includes('Sorry') ? 'bg-red-50 text-red-800' : 'bg-green-50 text-green-800'}`}>
                                 {submitMessage}
                             </div>
                         )}
@@ -138,15 +136,16 @@ const ContactPage = () => {
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
-                                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary disabled:opacity-50 disabled:cursor-not-allowed"
+                                className="btn-primary w-full"
                             >
                                 {isSubmitting ? "Sending..." : "Send Message"}
                             </button>
                         </div>
                     </form>
                 </div>
-            </Section>
-        </Container>
+            </section>
+            </Container>
+        </>
     );
 };
 

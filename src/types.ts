@@ -60,6 +60,8 @@ export interface IHowItWorksSubsection {
     subtitle: string;
     description: string;
     imageSrc?: string;
+    imageWidth?: number;
+    imageHeight?: number;
 }
 
 export interface IHowItWorksSection {

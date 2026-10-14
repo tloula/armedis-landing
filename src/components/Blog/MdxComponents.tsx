@@ -144,35 +144,35 @@ function Phone() {
 export const mdxComponents = {
   h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h1
-      className="text-2xl lg:text-3xl font-bold mt-10 mb-4"
+      className="text-3xl lg:text-4xl font-extrabold mt-14 mb-5 scroll-mt-28"
       style={{ color: 'var(--foreground)' }}
       {...props}
     />
   ),
   h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h2
-      className="text-2xl lg:text-3xl font-bold mt-10 mb-4"
+      className="text-2xl lg:text-[2rem] lg:leading-tight font-extrabold mt-14 mb-5 scroll-mt-28"
       style={{ color: 'var(--foreground)' }}
       {...props}
     />
   ),
   h3: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h3
-      className="text-xl lg:text-2xl font-semibold mt-8 mb-3"
+      className="text-xl lg:text-2xl font-bold mt-10 mb-3 scroll-mt-28"
       style={{ color: 'var(--foreground)' }}
       {...props}
     />
   ),
   h4: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h4
-      className="text-lg lg:text-xl font-semibold mt-6 mb-2"
+      className="text-lg lg:text-xl font-bold mt-8 mb-2"
       style={{ color: 'var(--foreground)' }}
       {...props}
     />
   ),
   p: (props: React.HTMLAttributes<HTMLParagraphElement>) => (
     <p
-      className="mb-4 leading-relaxed"
+      className="mb-5 text-lg leading-[1.75]"
       style={{ color: 'var(--foreground-accent)' }}
       {...props}
     />
@@ -184,7 +184,7 @@ export const mdxComponents = {
     if (props.href === '/download') {
       return (
         <DownloadLink
-          className="underline-offset-2 hover:underline transition-colors"
+          className="font-medium underline decoration-primary/30 underline-offset-2 hover:decoration-current transition-colors"
           style={{ color: 'var(--link-text)' }}
           {...props}
         />
@@ -193,34 +193,32 @@ export const mdxComponents = {
 
     return (
       <a
-        className="underline-offset-2 hover:underline transition-colors"
+        className="font-medium underline decoration-primary/30 underline-offset-2 hover:decoration-current transition-colors"
         style={{ color: 'var(--link-text)' }}
         {...props}
       />
     );
   },
   ul: (props: React.HTMLAttributes<HTMLUListElement>) => (
-    <ul className="list-disc ml-6 my-4 space-y-2 marker:text-[var(--primary)]" {...props} />
+    <ul className="list-disc ml-6 mt-2 mb-6 space-y-2 marker:text-[var(--primary)]" {...props} />
   ),
   ol: (props: React.HTMLAttributes<HTMLOListElement>) => (
-    <ol className="list-decimal ml-6 my-4 space-y-2 marker:text-[var(--primary)]" {...props} />
+    <ol className="list-decimal ml-6 mt-2 mb-6 space-y-2 marker:text-[var(--primary)] marker:font-semibold" {...props} />
   ),
   li: (props: React.HTMLAttributes<HTMLLIElement>) => (
-    <li className="pl-1 leading-relaxed" style={{ color: 'var(--foreground-accent)' }} {...props} />
+    <li className="pl-1 text-lg leading-[1.7]" style={{ color: 'var(--foreground-accent)' }} {...props} />
   ),
   blockquote: (props: React.HTMLAttributes<HTMLQuoteElement>) => (
     <blockquote
-      className="border-l-4 pl-4 my-6 py-3 rounded-r-lg italic [&>p]:mb-1 [&>p:last-child]:mb-0"
+      className="border-l-4 border-primary bg-surface/70 pl-5 pr-5 my-8 py-4 rounded-r-2xl [&>p]:mb-1 [&>p:last-child]:mb-0"
       style={{
-        borderColor: 'var(--primary)',
-        backgroundColor: 'rgba(95, 121, 79, 0.05)',
         color: 'var(--foreground-accent)',
       }}
       {...props}
     />
   ),
   table: (props: React.HTMLAttributes<HTMLTableElement>) => (
-    <div className="overflow-x-auto my-6 rounded-lg border" style={{ borderColor: 'var(--border)' }}>
+    <div className="overflow-x-auto my-8 rounded-2xl border border-white/60 bg-surface/80 shadow-[0_12px_32px_-16px_rgba(83,55,55,0.25)]">
       <table className="min-w-full text-base" {...props} />
     </div>
   ),
@@ -232,15 +230,14 @@ export const mdxComponents = {
   ),
   tr: (props: React.HTMLAttributes<HTMLTableRowElement>) => (
     <tr
-      className="even:bg-[#f5f3ee] border-b last:border-b-0"
-      style={{ borderColor: 'var(--border)' }}
+      className="even:bg-foreground/[0.03] border-b border-foreground/10 last:border-b-0"
       {...props}
     />
   ),
   td: (props: React.HTMLAttributes<HTMLTableCellElement>) => (
     <td className="px-4 py-3 text-sm" style={{ color: 'var(--foreground-accent)' }} {...props} />
   ),
-  hr: () => <hr className="my-10 border-t" style={{ borderColor: 'var(--border)' }} />,
+  hr: () => <hr className="my-12 border-t border-foreground/15" />,
   Icon,
   Yes,
   No,

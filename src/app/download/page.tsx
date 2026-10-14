@@ -64,8 +64,8 @@ function DownloadPageContent() {
     return (
       <div className="min-h-screen flex items-center justify-center px-4">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[var(--foreground)] mx-auto mb-4"></div>
-          <p className="text-lg" style={{ color: 'var(--foreground)' }}>Redirecting to app store...</p>
+          <div className="animate-spin rounded-full h-12 w-12 border-[3px] border-primary/20 border-t-primary mx-auto mb-5"></div>
+          <p className="text-lg font-medium text-foreground/80">Redirecting to app store...</p>
         </div>
       </div>
     );
@@ -73,15 +73,15 @@ function DownloadPageContent() {
 
   // Fallback: show both options if device can't be detected
   return (
-    <Container className="min-h-screen flex items-center justify-center">
-      <div className="max-w-md w-full text-center">
-        <h1 className="text-3xl font-bold mb-6" style={{ color: 'var(--foreground)' }}>Download CheckIn More</h1>
-        <p className="text-lg mb-8" style={{ color: 'var(--foreground-accent)' }}>
+    <Container className="min-h-screen flex items-center justify-center pt-32 pb-20">
+      <div className="card max-w-xl w-full text-center px-8 py-12 sm:px-12">
+        <h1 className="text-3xl lg:text-4xl font-extrabold mb-4 text-foreground">Download CheckIn More</h1>
+        <p className="text-lg mb-6 text-foreground/75">
           Choose your platform to download the app:
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <AppStoreButton />
-          <PlayStoreButton />
+        <div className="flex flex-col sm:flex-row sm:gap-4 justify-center items-center">
+          <AppStoreButton dark />
+          <PlayStoreButton dark />
         </div>
       </div>
     </Container>
@@ -93,8 +93,8 @@ export default function DownloadPage() {
     <Suspense fallback={
       <div className="min-h-screen flex items-center justify-center px-4">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[var(--foreground)] mx-auto mb-4"></div>
-          <p className="text-lg" style={{ color: 'var(--foreground)' }}>Loading...</p>
+          <div className="animate-spin rounded-full h-12 w-12 border-[3px] border-primary/20 border-t-primary mx-auto mb-5"></div>
+          <p className="text-lg font-medium text-foreground/80">Loading...</p>
         </div>
       </div>
     }>

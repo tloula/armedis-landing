@@ -9,8 +9,8 @@ import { siteDetails } from '@/data/siteDetails';
 
 import "./globals.css";
 
-const manrope = Manrope({ subsets: ['latin'], variable: '--font-display' });
-const sourceSans = Source_Sans_3({ subsets: ['latin'], variable: '--font-body' });
+const manrope = Manrope({ subsets: ['latin'], variable: '--font-manrope' });
+const sourceSans = Source_Sans_3({ subsets: ['latin'], variable: '--font-source-sans' });
 
 // const WEBSITE_UUID = '755421fc-6f7f-4418-856b-2ee915e7166c'
 
