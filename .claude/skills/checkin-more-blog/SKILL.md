@@ -1,6 +1,6 @@
 ---
 name: checkin-more-blog
-description: Write and publish a new CheckIn More marketing blog post (MDX + Pixabay hero image via lens) and open a PR. Use when asked to add, draft, or publish a blog post on checkinmore.com.
+description: Write and publish a new CheckIn More marketing blog post (MDX + Pixabay hero image via lens) then merge it to publish. Use when asked to add, draft, or publish a blog post on checkinmore.com.
 ---
 
 # CheckIn More blog post
@@ -59,9 +59,9 @@ npm run build   # regenerates src/libs/blogData.js and public/sitemap.xml, then 
 
 The build must pass. Commit the regenerated `src/libs/blogData.js` and `public/sitemap.xml` with the post.
 
-## 5. Open the PR
+## 5. Open the PR and publish
 
 - Branch: the session's designated branch if one is given, otherwise `blog/<slug>`.
 - One commit: `Blog: <Title>` containing the `.mdx`, the image, and the regenerated files.
 - Open a PR to `main` (GitHub MCP, or `gh api repos/tloula/armedis-landing/pulls` if MCP is unavailable) titled `Blog: <Title>`. Body: target keyword, one-line summary, image credit, and the future URL `https://checkinmore.com/blog/<slug>`.
-- Don't merge it; Trevor reviews and merges.
+- Merge it right away (merge commit) to publish; don't wait for review. The push to `main` triggers the Pages deploy. Report the live URL.
