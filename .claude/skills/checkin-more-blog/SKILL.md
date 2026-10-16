@@ -39,14 +39,14 @@ lens (`github.com/tloula/lens`) reads `PIXABAY_API_KEY` / `LENS_PIXABAY_API_KEY`
 
 ```sh
 command -v lens || uv tool install git+https://github.com/tloula/lens
-lens search "<concrete visual subject>" --orientation landscape --limit 8
-# curl a few preview_url candidates into the scratch dir and look at them;
+lens search "<concrete visual subject>" --orientation landscape --limit 8   # JSON: .photos[].{id,preview_url,alt}
+# curl a few preview_url candidates (browser User-Agent) into a fresh scratch subfolder and look at them;
 # pick one whose subject is obvious at a glance
 lens download <id> --output "$SCRATCH/<slug>.jpg"   # any scratch dir outside the repo
 cp "$SCRATCH/<slug>.jpg" public/images/<slug>.jpg
 ```
 
-Search for a scene, not the keyword (e.g. "woman hiking alone mountain trail", not "check-in service"). Avoid images with visible logos or text. Don't commit the `.photo.json` sidecar; instead add the printed `credit_markdown` as the post's last line, in italics: `*<credit_markdown>*` (it already starts with "Photo by").
+Search for a scene, not the keyword (e.g. "woman hiking alone mountain trail", not "check-in service"). Avoid images with visible logos or text. Don't commit the `.photo.json` sidecar; instead take `.photo.credit_markdown` from the sidecar and add it as the post's last line, in italics: `*<credit_markdown>*` (it already starts with "Photo by").
 
 If lens can't reach Pixabay, stop and report the blocker; don't ship a post without an image or reuse an unrelated one.
 
