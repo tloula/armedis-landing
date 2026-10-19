@@ -40,15 +40,16 @@ lens (`github.com/tloula/lens`) reads `PIXABAY_API_KEY` / `LENS_PIXABAY_API_KEY`
 ```sh
 command -v lens || uv tool install git+https://github.com/tloula/lens
 lens search "<concrete visual subject>" --orientation landscape --limit 8   # JSON: .photos[].{id,preview_url,alt}
-# curl a few preview_url candidates (browser User-Agent) into a fresh scratch subfolder and look at them;
+# curl 3-4 preview_url candidates one at a time, a few seconds apart (Pixabay returns 429 on bursts),
+# with a browser User-Agent into a fresh scratch subfolder, and look at them;
 # pick one whose subject is obvious at a glance
 lens download <id> --output "$SCRATCH/<slug>.jpg"   # any scratch dir outside the repo
 cp "$SCRATCH/<slug>.jpg" public/images/<slug>.jpg
 ```
 
-Search for a scene, not the keyword (e.g. "woman hiking alone mountain trail", not "check-in service"). Avoid images with visible logos or text. Don't commit the `.photo.json` sidecar; instead take `.photo.credit_markdown` from the sidecar and add it as the post's last line, in italics: `*<credit_markdown>*` (it already starts with "Photo by").
+Search for a scene, not the keyword (e.g. "woman hiking alone mountain trail", not "check-in service"). Avoid images with visible logos or text. Don't commit the `.photo.json` sidecar; instead take the `credit_markdown` field inside the sidecar's top-level `photo` object (jq: `.photo.credit_markdown` on the `.photo.json` file) and add it as the post's last line, in italics: `*<credit_markdown>*` (it already starts with "Photo by").
 
-If lens can't reach Pixabay, stop and report the blocker; don't ship a post without an image or reuse an unrelated one.
+On HTTP 429, wait 30 seconds and retry (a few times at most). If lens still can't reach Pixabay, stop and report the blocker; don't ship a post without an image or reuse an unrelated one.
 
 ## 4. Build
 
